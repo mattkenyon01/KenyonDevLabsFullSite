@@ -1,0 +1,225 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = KenyonDevLabs
+build_property.RootNamespace = KenyonDevLabs
+build_property.ProjectDir = C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Layout/GamesAndAppsLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEdhbWVzQW5kQXBwc0xheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnect.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnectHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdEhlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnectPatchNotes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdFBhdGNoTm90ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnectPrivacyPolicy.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdFByaXZhY3lQb2xpY3kucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbersAchievements.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzQWNoaWV2ZW1lbnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbersCharacter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzQ2hhcmFjdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbersHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzSGVhZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbersLevels.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzTGV2ZWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbersOST.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzT1NULnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbersPatchNotes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzUGF0Y2hOb3Rlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Castle Climbers/CastleClimbersPrivacyPolicy.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FzdGxlIENsaW1iZXJzXENhc3RsZUNsaW1iZXJzUHJpdmFjeVBvbGljeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalk.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkChildSafetyStandards.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrQ2hpbGRTYWZldHlTdGFuZGFyZHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrSGVhZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkPatchNotes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrUGF0Y2hOb3Rlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkPrivacyPolicy.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrUHJpdmFjeVBvbGljeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/HomeHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZUhlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/News.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications Folder/BucketConnect.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucyBGb2xkZXJcQnVja2V0Q29ubmVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications Folder/CraftingRecipies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucyBGb2xkZXJcQ3JhZnRpbmdSZWNpcGllcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications Folder/GirlsWhoWalk.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucyBGb2xkZXJcR2lybHNXaG9XYWxrLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications Folder/InteractiveWorldMap.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucyBGb2xkZXJcSW50ZXJhY3RpdmVXb3JsZE1hcC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications Folder/KenyonDevLabsWebsite.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucyBGb2xkZXJcS2VueW9uRGV2TGFic1dlYnNpdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications Folder/LiveList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucyBGb2xkZXJcTGl2ZUxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications Folder/ReceiptScanner.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucyBGb2xkZXJcUmVjZWlwdFNjYW5uZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Applications.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEFwcGxpY2F0aW9ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/2DPlatformer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclwyRFBsYXRmb3JtZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/CarArcadeGame.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxDYXJBcmNhZGVHYW1lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/CastleClimbers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxDYXN0bGVDbGltYmVycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/CmakeGame.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxDbWFrZUdhbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/CmakeWorld.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxDbWFrZVdvcmxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/ConwaysGameOfLife.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxDb253YXlzR2FtZU9mTGlmZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/GroupProject.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxHcm91cFByb2plY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/ProcedurallyGeneratedWaterWorld.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxQcm9jZWR1cmFsbHlHZW5lcmF0ZWRXYXRlcldvcmxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/StrokeGame.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxTdHJva2VHYW1lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/TopDownShooter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxUb3BEb3duU2hvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games Folder/UnityWorld.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzIEZvbGRlclxVbml0eVdvcmxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Games.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXEdhbWVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Portfolio.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXFBvcnRmb2xpby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/PortfolioHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXFBvcnRmb2xpb0hlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Portfolio/Technologies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvXFRlY2hub2xvZ2llcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-eyxzkz3hn2
+
+[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-8gxkc6cuic

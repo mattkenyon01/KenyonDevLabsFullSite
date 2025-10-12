@@ -1,0 +1,12 @@
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\web.config
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\emcc-props.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\KenyonDevLabs.staticwebassets.endpoints.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\wwwroot\data\BucketConnectPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\wwwroot\data\CastleClimbersCharacters.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\wwwroot\data\CastleClimbersPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\wwwroot\data\GirlsWhoWalkPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\wwwroot\data\IgnorionPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\wwwroot\sample-data\weather.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\Site\wwwroot\_framework\blazor.boot.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\emcc-props.json
+C:\Users\theke\source\repos\KenyonDevLabs\Site\web.config

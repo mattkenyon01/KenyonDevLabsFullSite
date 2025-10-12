@@ -1,0 +1,57 @@
+[
+  {
+    "Title": "Castle Climbers 0.1.0",
+    "Date": "2023-09-12",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#5b0a0a",
+    "BottomColour": "#911f1f",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Original release of Castle Climbers",
+    "IconUrl": "images/castle_climbers/icons/1.0 CC.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Castle Climbers 0.2.0",
+    "Date": "2023-10-06",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#5b0a0a",
+    "BottomColour": "#911f1f",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Castle Climbers 0.2.0 is here, and there's a lot of new features, including the new accounts system, allowing you to play from any device, as well as the leaderboard system, allowing you to challenge your friends and fight for that number 1 spot. There have also been minor bug fixes and assistance with controls.",
+    "IconUrl": "images/castle_climbers/icons/2.0 CC.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Castle Climbers 0.2.1",
+    "Date": "2023-10-16",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#5b0a0a",
+    "BottomColour": "#911f1f",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "New Halloween characters can be found in the shop, along with minor bug fixes.",
+    "IconUrl": "images/castle_climbers/icons/2.0 CC.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Castle Climbers 0.3.0",
+    "Date": "2024-01-22",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#5b0a0a",
+    "BottomColour": "#911f1f",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Version 0.3.0 brings newly designed menu screens to replace the old simple screens, and brings more life to the game.",
+    "IconUrl": "images/castle_climbers/icons/3.0 CC.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Castle Climbers 0.3.1",
+    "Date": "2024-01-23",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#5b0a0a",
+    "BottomColour": "#911f1f",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Minor bug fixes.",
+    "IconUrl": "images/castle_climbers/icons/3.0 CC.png",
+    "ImageUrl": null
+  }
+]

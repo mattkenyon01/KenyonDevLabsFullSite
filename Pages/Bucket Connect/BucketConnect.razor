@@ -1,0 +1,771 @@
+﻿@page "/BucketConnect"
+
+@using System.Globalization
+@using KenyonDevLabs.Models
+@using KenyonDevLabs.Services
+@inject HttpClient Http
+@inject NewsFileService NewsData
+@inject NavigationManager Nav
+
+
+
+<PageTitle>Bucket Connect</PageTitle>
+
+<BucketConnectHeader />
+
+<div class="hero-wrapper">
+    <img src="images/Bucket_Connect_web_cover_2.png" alt="Girls Who Walk" class="hero-img">
+</div>
+
+<section class="intro-section" aria-labelledby="intro-title">
+    <h2 id="intro-title">Welcome to Bucket Connect</h2>
+    <p>
+        Girls Who Walk helps women discover local walking groups, make new friends,
+        and explore their area safely. Whether you want to get active, connect with
+        others, or simply enjoy the outdoors, the app makes it easy to join
+        walks in your community.
+    </p>
+
+    <div class="intro-actions">
+       
+
+        <a href="https://apps.apple.com/gb/app/bucket-connect/id6503246436" target="_blank" class="btn-img">
+            <img src="images/App Store Button.png" alt="Get on App Store" />
+        </a>
+    </div>
+</section>
+
+
+
+<style>
+    /* ===== Intro Section ===== */
+    .intro-section {
+        width: min(var(--page-max, 900px), 90vw);
+        margin: 2rem auto;
+        text-align: center;
+        color: #fff;
+    }
+
+        .intro-section h2 {
+            margin: 0 0 0.75rem 0;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 800;
+            color: #fff; /* changed */
+        }
+
+
+        .intro-section p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #fff; /* changed */
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+    .intro-actions {
+        margin-top: 1.25rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        background: var(--brand, #097969);
+        color: #fff;
+        transition: background .2s ease;
+    }
+
+        .btn:hover {
+            background: #d495a8;
+        }
+
+        .btn.ghost {
+            background: none;
+            border: 1px solid var(--brand, #097969);
+            color: var(--brand, #097969);
+        }
+
+            .btn.ghost:hover {
+                background: var(--brand, #097969);
+                color: #fff;
+            }
+
+    .btn-img img {
+        height: 40px; /* 👈 this sets the size */
+        width: auto;
+
+    }
+
+
+
+</style>
+
+<!-- ===== About the App ===== -->
+<section class="about-app" aria-labelledby="about-title">
+    <!-- Feature 1 -->
+    <article class="feature">
+        <div class="feature-media">
+            <img src="images/Bucket Connect/Cover 1.png" alt="Discover local walks near you" loading="lazy">
+        </div>
+        <div class="feature-body">
+            <h3>Create your ultimate bucket list</h3>
+            <p>Follow your dreams and create your bucket list with Bucket Connect</p>
+            <ul class="feature-list">
+                <li>Create different lists for different goals</li>
+                <li>Tick off events to show their completion</li>
+                <li>See your progress for each list</li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- Feature 2 -->
+    <article class="feature">
+        <div class="feature-media">
+            <img src="images/Bucket Connect/Cover 2.png" alt="Chat with your group and stay updated" loading="lazy">
+        </div>
+        <div class="feature-body">
+            <h3>Connect with friends</h3>
+            <p>Add your friends and view their lists to encourage them to follow their dreams</p>
+        </div>
+    </article>
+
+    <!-- Feature 3 -->
+    <article class="feature">
+        <div class="feature-media">
+            <img src="images/Bucket Connect/Cover 3.png" alt="Create and manage your own walks easily" loading="lazy">
+        </div>
+        <div class="feature-body">
+            <h3>Be a high achiever</h3>
+            <p>Progress through your bucket lists to get trophies and achievements</p>
+            <ul class="feature-list">
+                <li>Track your overall progress through all of your events</li>
+                <li>Earn trophies for making lists and completing their events</li>
+                 </ul>
+        </div>
+    </article>
+</section>
+
+<style>
+    /* ===== About the App ===== */
+    .about-app {
+        width: min(var(--page-max, 1200px), 95vw);
+        margin: 2rem auto 0;
+        color: #fff; /* 👈 default text colour white */
+    }
+
+        .about-app #about-title {
+            margin: 0 0 1rem 0;
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 800;
+            color: #fff;
+        }
+
+    .feature {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr; /* image a bit larger */
+        gap: 1.1rem;
+        align-items: center;
+        padding: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+        /* Alternate left/right layout */
+        .feature:nth-child(even) {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+            .feature:nth-child(even) .feature-media {
+                order: 2;
+            }
+
+            .feature:nth-child(even) .feature-body {
+                order: 1;
+            }
+
+    /* Media container with rounded edges */
+    .feature-media {
+        border-radius: 20px;
+        overflow: hidden; /* ensures img follows curve */
+    }
+
+        .feature-media img {
+            width: 100%;
+            height: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+
+    .feature-body h3 {
+        margin: 0 0 .35rem 0;
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: #fff; /* 👈 white */
+    }
+
+    .feature-body p {
+        margin: 0 0 .5rem 0;
+        color: #fff; /* 👈 white */
+        line-height: 1.4;
+        font-size: 1.05rem;
+    }
+
+    .feature-list {
+        margin: 0;
+        padding-left: 1.1rem;
+        color: #fff; /* 👈 white */
+    }
+
+        .feature-list li {
+            margin: .25rem 0;
+            font-size: 1.05rem;
+            color: #fff; /* 👈 white */
+        }
+
+    /* Responsive: stack on mobile */
+    @@media (max-width: 820px) {
+        .feature, .feature:nth-child(even)
+
+    {
+        grid-template-columns: 1fr; /* stack vertically */
+    }
+
+    .feature-body {
+        order: 2 !important; /* always text below image */
+    }
+
+    .feature-media img {
+        max-height: 280px;
+    }
+
+    }
+
+    :root {
+        --brand: #097969;
+    }
+
+    body {
+        background: var(--brand);
+    }
+
+    .hero-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto 1rem auto;
+        width: 100%;
+    }
+
+    .hero-img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px; /* 👈 adjust value for more/less curve */
+        display: block;
+    }
+
+    .hp {
+        position: absolute;
+        left: -10000px;
+    }
+
+    .testing-section {
+        width: min(var(--page-max, 1200px), 95vw);
+        margin: 2rem auto;
+        padding: 1.5rem;
+        border-radius: var(--radius, 12px);
+        text-align: center;
+    }
+
+        .testing-section h2 {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            display: inline-flex; /* let text and icon align nicely */
+            align-items: center;
+            gap: 0.5rem; /* space between icon and text */
+            color: #fff; /* 👈 white */
+        }
+
+    .testing-icon {
+        width: 24px;
+        height: 24px;
+        position: relative; /* allows manual nudge */
+        top: -6px;
+        left: -8px;
+    }
+
+    .testing-section p {
+        color: #fff; /* 👈 white */
+        margin-bottom: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .testing-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+        .testing-form input {
+            padding: 0.6rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: var(--radius, 12px);
+            font-size: 1rem;
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+
+        .testing-form button {
+            background: #fff;
+            color: white; /* 👈 corrected in hover */
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius, 12px);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+            .testing-form button:hover {
+                background: #097969;
+                color: #fff;
+            }
+</style>
+
+
+@code {
+    // Email form state
+    private string testerEmail = string.Empty;
+    private string honeypot = string.Empty;
+    private bool submitting = false;
+    private string? message = null;
+    private bool error = false;
+
+    private async Task HandleSubmit()
+    {
+        if (submitting) return;
+        message = null; error = false;
+
+        // Bot trap
+        if (!string.IsNullOrWhiteSpace(honeypot))
+        {
+            message = "Thanks!";
+            return;
+        }
+
+        submitting = true;
+        try
+        {
+            var payload = new { email = testerEmail };
+            var resp = await Http.PostAsJsonAsync("/api/testers", payload);
+
+            if (resp.IsSuccessStatusCode)
+            {
+                message = "You're in!";
+                testerEmail = string.Empty;
+            }
+            else
+            {
+                var body = await resp.Content.ReadAsStringAsync();
+                message = string.IsNullOrWhiteSpace(body) ? "Something went wrong." : body;
+                error = true;
+            }
+        }
+        catch
+        {
+            message = "Network error. Please try again.";
+            error = true;
+        }
+        finally
+        {
+            submitting = false;
+            StateHasChanged();
+        }
+    }
+}
+
+<script>
+    (function () {
+        const cards = Array.from(document.querySelectorAll('.rectangle-row .card'));
+        if (!cards.length) return;
+        const duration = parseInt(getComputedStyle(document.documentElement)
+                          .getPropertyValue('--timer-ms')) || 5000;
+        const hero = document.getElementById('hero');
+        hero.src = cards[0].querySelector('img').src;
+        hero.onload = () => { hero.style.opacity = 1; };
+        let index = 0, currentFillEndHandler = null;
+        function setHeroFromCard(i) {
+            const src = cards[i].querySelector('img').src;
+            hero.style.opacity = 0;
+            const apply = () => { hero.style.opacity = 1; };
+            if (hero.src === src) { requestAnimationFrame(apply); return; }
+            hero.onload = apply;
+            hero.src = src;
+        }
+        function clearAnimations() {
+            cards.forEach(c => {
+                const f = c.querySelector('.progress-fill');
+                f.style.animation = 'none';
+                void f.offsetWidth;
+                f.style.animation = '';
+                c.classList.remove('active');
+            });
+            if (currentFillEndHandler) {
+                currentFillEndHandler.target?.removeEventListener('animationend', currentFillEndHandler);
+                currentFillEndHandler = null;
+            }
+        }
+        function activate(i) {
+            clearAnimations();
+            const card = cards[i];
+            const fill = card.querySelector('.progress-fill');
+            card.classList.add('active');
+            setHeroFromCard(i);
+            fill.style.animation = `load ${duration}ms linear forwards`;
+            const onEnd = () => {
+                currentFillEndHandler = null;
+                index = (i + 1) % cards.length;
+                activate(index);
+            };
+            currentFillEndHandler = onEnd;
+            fill.addEventListener('animationend', onEnd, { once: true });
+        }
+        cards.forEach((card) => {
+            const fill = card.querySelector('.progress-fill');
+            card.addEventListener('mouseenter', () => {
+                if (fill.style.animation) fill.style.animationPlayState = 'paused';
+            });
+            card.addEventListener('mouseleave', () => {
+                if (fill.style.animation) fill.style.animationPlayState = 'running';
+            });
+            card.addEventListener('click', () => {
+                index = cards.indexOf(card);
+                activate(index);
+            });
+        });
+        activate(index);
+    })();
+</script>
+
+<!-- ===== News & Updates ===== -->
+<section class="news-section" aria-labelledby="news-title">
+    <div class="news-header">
+        <h2 id="news-title">
+            Patch Notes
+            <NavLink href="/BucketConnect/PatchNotes">
+                <svg class="news-arrow" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24" width="18" height="18"
+                     fill="none" stroke="white" stroke-width="4"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 5l8 7-8 7" />
+                </svg>
+            </NavLink>
+
+
+
+        </h2>
+
+    </div>
+
+    <div class="news-grid">
+        
+        @foreach (var item in GirlsWhoWalkNotes.Take(3))
+        {
+            <article class="news-card">
+                <div class="news-date" style="background: linear-gradient(180deg, @item.TopColour, @item.BottomColour); color: @item.DateTextColour;">
+                    <span class="day">@item.Date.ToString("dd")</span>
+                    <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
+                    <span class="yr">@item.Date.ToString("yyyy")</span>
+                </div>
+                <div class="news-body">
+                    <h3>@item.Title</h3>
+                    <p>@((MarkupString)item.Summary)</p>
+
+                    @if (!string.IsNullOrEmpty(item.Summary) && item.Summary.Length > 200)
+                    {
+                        <a class="news-link" href="/GirlsWhoWalk/PatchNotes">Read more</a>
+                    }
+                </div>
+            </article>
+        }
+        
+    </div>
+
+
+</section>
+
+<style>
+    .news-section {
+        width: min(var(--page-max, 1200px), 95vw);
+        margin: 2rem auto 0;
+        color: #111;
+    }
+
+        .news-section #news-title {
+            margin: 0 0 1rem 0;
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 800;
+            color: white;
+        }
+
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap, 1.25rem);
+    }
+
+    @@media (max-width: 1000px) {
+        .news-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @@media (max-width: 680px) {
+        .news-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .news-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.9rem;
+        background: #fff;
+        border-radius: var(--radius, 12px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        overflow: hidden;
+        transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+        }
+
+    .news-date {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        padding: 0.75rem 0.9rem;
+        font-weight: 800;
+        min-width: 72px;
+    }
+
+        .news-date .day {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .news-date .mon, .news-date .yr {
+            font-size: 0.75rem;
+            opacity: 0.85;
+            letter-spacing: .03em;
+        }
+
+    .news-body {
+        padding: 0.9rem 1rem 1rem 0;
+    }
+
+        .news-body h3 {
+            margin: 0 0 0.35rem 0;
+            font-size: 1.2rem;
+            font-weight: bold; /* or font-weight: 700; */
+        }
+
+
+        .news-body p {
+            margin: 0 0 0.6rem 0;
+            color: #333;
+            line-height: 1.35;
+            /* clamp after 4 lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* number of lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+    .news-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 0.6rem;
+    }
+
+        .news-tags .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 999px;
+            background: rgba(239,178,196,0.18);
+            border: 1px solid rgba(239,178,196,0.6);
+            color: #444;
+        }
+
+    .news-link {
+        display: inline-block;
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 2px solid currentColor;
+        line-height: 1.2;
+        color: #111;
+    }
+
+        .news-link:hover {
+            color: var(--brand, #097969);
+        }
+</style>
+
+@code {
+    private List<NewsItem> GirlsWhoWalkNotes = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Http.BaseAddress is null)
+            Http.BaseAddress = new Uri(Nav.BaseUri);
+
+        var items = await NewsData.GetNewsAsync("BucketConnectPatchNotes.json");
+        GirlsWhoWalkNotes = items
+            // optional: keep only items tagged correctly
+            .Where(n => n.Tags?.Contains("Girls Who Walk") == true)
+            .OrderByDescending(n => n.Date)
+            .ToList();
+    }
+}
+
+<!-- ===== Site Footer ===== -->
+<footer class="site-footer" aria-labelledby="footer-title">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+   
+            
+
+            <!-- Legal -->
+            <nav class="footer-block" aria-label="Legal">
+                <h3>Legal</h3>
+                <ul class="footer-list">
+                    <li><NavLink href="/BucketConnect/PrivacyPolicy">Privacy Policy</NavLink></li>
+                      </ul>
+            </nav>
+
+           
+        </div>
+
+
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        margin-top: 3rem;
+        color: #fff; /* 👈 all footer text white */
+        text-align: center; /* Center everything */
+    }
+
+        .site-footer .footer-inner {
+            width: min(var(--page-max, 900px), 95vw);
+            margin: 0 auto;
+            padding: 2rem 0 2.5rem;
+        }
+
+    /* Stack vertically instead of grid */
+    .footer-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-block {
+        max-width: 500px;
+    }
+
+        .footer-block h3 {
+            margin: 0 0 .5rem 0;
+            font-size: 1rem;
+            font-weight: 800;
+            color: #fff; /* 👈 white */
+        }
+
+        .footer-block p,
+        .footer-address,
+        .footer-list,
+        .footer-actions,
+        .footer-bottom {
+            margin: 0.25rem 0;
+            color: #fff; /* 👈 white */
+        }
+
+    .footer-address {
+        font-style: normal;
+        color: #fff; /* 👈 white */
+    }
+
+    .footer-list {
+        list-style: none;
+        padding: 0;
+        margin: 0.25rem 0;
+        color: #fff; /* 👈 white */
+    }
+
+        .footer-list li {
+            margin: .35rem 0;
+        }
+
+        .footer-list a {
+            text-decoration: none;
+            color: #fff; /* 👈 white links */
+            border-bottom: 1px solid transparent;
+            transition: color .12s ease, border-color .12s ease;
+        }
+
+            .footer-list a:hover {
+                color: var(--brand, #097969); /* keep green hover */
+                border-bottom-color: currentColor;
+            }
+
+    /* Buttons */
+    .footer-actions {
+        display: flex;
+        justify-content: center;
+        gap: .75rem;
+        margin: .5rem 0;
+    }
+
+    .btn-footer {
+        padding: .5rem .9rem;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        background: none;
+        border: 1px solid #fff; /* 👈 white border */
+        color: #fff; /* 👈 white text */
+        transition: color .12s ease, border-color .12s ease;
+    }
+
+        .btn-footer:hover {
+            color: var(--brand, #097969);
+            border-color: var(--brand, #097969);
+            background: #fff; /* 👈 optional: white fill on hover */
+        }
+
+        .btn-footer.ghost {
+            opacity: 0.75;
+        }
+
+            .btn-footer.ghost:hover {
+                opacity: 1;
+            }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        font-size: .9rem;
+        color: #fff; /* 👈 white */
+    }
+</style>

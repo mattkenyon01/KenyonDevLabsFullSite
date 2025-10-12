@@ -1,0 +1,182 @@
+﻿@page "/Applications/bucketconnect"
+@using KenyonDevLabs.Pages
+@using KenyonDevLabs.Utilities
+@inject IJSRuntime JS
+@layout GamesAndAppsLayout
+
+<img src="Images/Bucket Connect Cover.png" alt="Banner Image" class="main-banner" />
+<h1 id="about">Bucket Connect</h1>
+<p class="description">
+    Bucket Connect is an intuitive bucket list app, allowing users to make lists, track their progress, view their friends lists
+    and get inspired by public bucket lists. It was my first fully functional social media app I developed, as 
+    I am quite an adventerous person and wanted somewhere to list my goals in a well designed application.
+</p>
+
+<hr class="section-divider" />
+
+<div class="stats-section" id="games">
+    <h2>App Production</h2>
+    <div class="stats-content">
+        <!-- Charts group -->
+        <div class="chart-group">
+            <div class="chart-item">
+                <div class="chart-container">
+                    <canvas id="grade"></canvas>
+                    <div class="chart-value" id="gradeValue">@DownloadStats.BucketConnectDownloads</div>
+                </div>
+                <p class="chart-title">Total Downloads</p>
+            </div>
+        </div>
+
+        <!-- Note to the right -->
+        <div class="stats-note">
+            The app was released to the App store in July 2024, and has gained @DownloadStats.BucketConnectDownloads downloads
+            so far, with minimal advertising and positive feedback. The numbers it has gained so far are great, and I intend
+            to provide more advertising and promotion for the application so its reach can improve.
+        </div>
+    </div>
+</div>
+
+<hr class="section-divider" />
+
+<section class="image-text-section">
+    <img src="Images/Cover 1.png" alt="Project Screenshot" />
+    <div class="image-text-content">
+        <h2>Create Bucket Lists</h2>
+        <p>
+            The app allows users to create multiple different lists, so their goals are nicely organised. They can 
+            add goals with relevant images, and area able to highlight their completed goals and when they were completed. 
+            The lists also track progress, so the user can see how close they are to reaching their goals.
+        </p>
+    </div>
+</section>
+
+<section class="image-text-section">
+    <div class="image-text-content">
+        <h2>Connect with Friends</h2>
+        <p>
+            The app contains a friend system, equipped with requests and the ability to block users. If a friend is added, their lists
+            can be viewed, along with their progress, in the friends tab.
+        </p>
+    </div>
+    <img src="Images/Cover 2.png" alt="Project Screenshot" />
+</section>
+<section class="image-text-section">
+    <img src="Images/Cover 3.png" alt="Project Screenshot" />
+    <div class="image-text-content">
+        <h2>Achieve</h2>
+        <p>
+            Overall progress is also tracked, and achievements can be collected to encourage the user to utilise all
+            parts of the application to complete their goals.
+        </p>
+    </div>
+
+</section>
+
+<hr class="section-divider" />
+<section class="features-section">
+    <h2>Software</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icons">
+                <img class="feature-icon" src="@IconRef.GetIcon("flutter")" alt="Unity Icon">
+                <img class="feature-icon" src="@IconRef.GetIcon("dart")" alt="C# Icon">
+            </div>
+            <div class="feature-title">Flutter + Dart</div>
+            <p class="feature-desc">
+                This was the first time using Flutter and Dart, as this was the first app I designed for the phone that was not a game. Flutter 
+                works well for development on phones due to it being cross-platform between iOS and android, and having much better
+                performance than Unity for the functions I required.
+            </p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icons">
+                <img class="feature-icon" src="@IconRef.GetIcon("firebase")" alt="Unity Icon">
+            </div>
+            <div class="feature-title">Firebase</div>
+            <p class="feature-desc">
+                Firebase was used for the backend functionality of the app, such as storing the users information in the server. It used the Realtime Database and authentication for
+                the user's data and lists, paired with storage to store images. Firestore was used for public inspiration and ideas by users, and functions to show the updated download
+                count for public inspirational lists.
+            </p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icons">
+                <img class="feature-icon" src="@IconRef.GetIcon("Javascript")" alt="Unity Icon">
+            </div>
+            <div class="feature-title">Javascript</div>
+            <p class="feature-desc">
+                Javascript was paired with firebase functions to update the download count for public lists, which was executed every morning.
+            </p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icons">
+                <img class="feature-icon" src="@IconRef.GetIcon("xcode")" alt="Unity Icon">
+                <img class="feature-icon" src="@IconRef.GetIcon("appstore")" alt="C# Icon">
+            </div>
+            <div class="feature-title">Xcode + App Store</div>
+            <p class="feature-desc">
+                Xcode was used to release the app to the App store. Since its release, it has gained @DownloadStats.BucketConnectDownloads downloads and a 5 star rating from users.
+            </p>
+        </div>
+
+
+        <div class="feature-card">
+            <div class="feature-icons">
+                <img class="feature-icon" src="@IconRef.GetIcon("admob")" alt="Unity Icon">
+            </div>
+            <div class="feature-title">AdMob</div>
+            <p class="feature-desc">
+                AdMob was used to incorporate carefully placed banner ads into the app, so that revenue could be generated.
+            </p>
+        </div>
+    </div>
+</section>
+<script>
+    window.renderChart = function (chartId, values) {
+        const el = document.getElementById(chartId);
+        if (!el || !window.Chart) return;
+
+        const ctx = el.getContext('2d');
+
+        // Destroy previous chart if it exists
+        if (el._chartInstance) {
+            el._chartInstance.destroy();
+        }
+
+        el._chartInstance = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['iPhone', 'iPad', 'Desktop'], // used only for tooltips
+                datasets: [{
+                    data: values,
+                    backgroundColor: ['#48dfcc', '#24b0a0', '#018276'], // green, blue, orange
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                cutout: '65%',
+                animation: { duration: 700 },
+                plugins: {
+                    legend: { display: false }, // hides labels above
+                    tooltip: { enabled: true }   // keeps hover tooltips
+                }
+            }
+        });
+    };
+</script>
+
+
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("renderChart", "grade", new object[] { 231, 36, 18 });
+        }
+    }
+}

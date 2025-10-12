@@ -1,0 +1,53 @@
+﻿@page "/Games/cargame"
+@using KenyonDevLabs.Pages
+@using KenyonDevLabs.Utilities
+@inject IJSRuntime JS
+@layout GamesAndAppsLayout
+
+<!-- Section 1: Hero -->
+<img src="Images/Car Game.png" alt="Banner Image" class="main-banner" />
+<h1 id="about">Car Arcade Game</h1>
+<p class="description">
+    I’m a passionate software developer dedicated to creating intuitive, impactful programs that assist people.
+
+    <br /><br />
+
+    I attended Newcastle University, where I was awarded the Degree of Masters of Computing with First Class Honours in
+    Computer Science (Game Engineering).
+</p>
+<hr class="section-divider" />
+<section class="features-section">
+    <h2>Software</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icons">
+                <img class="feature-icon" src="@IconRef.GetIcon("unity")" alt="Unity Icon">
+                <img class="feature-icon" src="@IconRef.GetIcon("c#")" alt="C# Icon">
+            </div>
+            <div class="feature-title">Unity + C#</div>
+            <p class="feature-desc">
+                Unity was the best application to use with OpenCV, as the pinpoints in the hand could easily be dealt with as individual game objects. This made it easy to verify whether the hand movements were completed correctly, as only the proximity of the objects needed to be checked.
+            </p>
+        </div>
+    </div>
+</section>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Example: Dissertation chart (marksChart) at 85%
+            await JS.InvokeVoidAsync("renderChart", "dissertation", 78.5);
+
+            // Example: Oral Examination chart (sessionsChart) at 90%
+            await JS.InvokeVoidAsync("renderChart", "poster", 82.5);
+            // Example: Oral Examination chart (sessionsChart) at 90%
+            await JS.InvokeVoidAsync("renderChart", "proposal", 77.25);
+            // Example: Oral Examination chart (sessionsChart) at 90%
+            await JS.InvokeVoidAsync("renderChart", "presentation", 90);
+            // …add more as needed
+        }
+    }
+
+}

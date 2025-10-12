@@ -1,0 +1,101 @@
+[
+  {
+    "Title": "Bucket Connect 1.0.0",
+    "Date": "2024-07-14",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Original release of Bucket Connect.",
+    "IconUrl": "images/Bucket Connect/icons/1.0.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.0.1",
+    "Date": "2024-07-16",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Minor bug fixes.",
+    "IconUrl": "images/Bucket Connect/icons/1.0.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.0.2",
+    "Date": "2024-07-16",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Minor bug fixes.",
+    "IconUrl": "images/Bucket Connect/icons/1.0.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.0.3",
+    "Date": "2024-07-26",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "- New like feature. Congratulate your friends for reaching thier goals by liking their events. <br> - Minor bug fixes.",
+    "IconUrl": "images/Bucket Connect/icons/1.0.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.0.4",
+    "Date": "2024-08-24",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "- Ability to block users added <br> - Privacy Policy added to settings.",
+    "IconUrl": "images/Bucket Connect/icons/1.0.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.1.0",
+    "Date": "2024-09-03",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "- Navigation bar added to allow for quicker transitions between screens. <br> - Added the ability to create multiple lists, each with their own covers. <br> - Added the ability to see progress on each list <br> - Added ideas function, allowing users to create, share and download user submitted lists <br> - Total progress can be seen in the account page <br> - Added achievements page <br> - Settings page added, providing the functionality to view blocked users, view the privacy policy, logout of the account or delete the current account <br> - Minor bug fixes",
+    "IconUrl": "images/Bucket Connect/icons/1.1.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.1.1",
+    "Date": "2024-09-04",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "- Added functionality to report issues <br> - Minor bug fixes",
+    "IconUrl": "images/Bucket Connect/icons/1.1.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.1.2",
+    "Date": "2024-09-17",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "- List view and photo view features added to lists <br> - Download counter for ideas fixed <br> - Limit of lists adjusted <br> - Major bug fixes",
+    "IconUrl": "images/Bucket Connect/icons/1.1.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Bucket Connect 1.1.3",
+    "Date": "2024-10-19",
+    "Tags": [ "Apps", "Girls Who Walk" ],
+    "TopColour": "#098d80",
+    "BottomColour": "#43d8c6",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "- Search bar implemented into ideas page <br> - Improved loading, downloading and deleting times <br> - Minor bug fixes",
+    "IconUrl": "images/Bucket Connect/icons/1.1.png",
+    "ImageUrl": null
+  }
+]
