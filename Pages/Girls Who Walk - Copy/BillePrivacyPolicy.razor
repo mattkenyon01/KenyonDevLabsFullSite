@@ -1,0 +1,538 @@
+﻿@page "/Bille/PrivacyPolicy"
+@using System.Globalization
+@using KenyonDevLabs.Models
+@using KenyonDevLabs.Services
+@inject HttpClient Http
+@inject NewsFileService NewsData
+@inject NavigationManager Nav
+
+<PageTitle>Bill E</PageTitle>
+
+<BilleHeader />
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-section">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="/images/Lock.png" alt="Girls Who Connect" />
+            </div>
+
+            <div class="hero-text">
+                <h1>Privacy Policy</h1>
+                <p>
+                    Bill E values your privacy and is committed to protecting your personal
+                    information. This page outlines how we handle your data and ensure it’s used safely
+                    and responsibly.
+                    <br /><br />
+                    Effective Date: 14th April 2026
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --brand: #6a54e8;
+    }
+
+    html, body {
+        overflow-x: clip;
+    }
+
+    .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 200%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 150%;
+        padding-top: calc((var(--hero-extra, 20%) / 2));
+        padding-bottom: 100px;
+        box-sizing: border-box;
+        z-index: 1;
+        overflow: hidden;
+        background: var(--brand);
+        margin-top: -6rem; /* ⬅️ moves the whole section upward */
+    }
+
+    /* Content wrapper stays centered horizontally */
+    .hero-inner {
+        padding-top: 5vh;
+        margin: 0 auto;
+        width: min(var(--page-max, 1100px), 50%);
+    }
+
+    /* Wave as BACKGROUND (behind content) */
+    .hero-section::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -20px; /* moves it 20px lower */
+        height: 140px; /* wave height */
+        pointer-events: none;
+        z-index: 0; /* behind content */
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% 100%;
+        transform: translateY(-16px); /* ✅ lifts wave upward slightly */
+        /* White wave so it fades into the white section below */
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,32 C240,96 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z" fill="%23ffffff"/></svg>');
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        flex-direction: row; /* ✅ ensures side-by-side on desktop */
+    }
+
+    .hero-text {
+        flex: 1 1 400px;
+        color: #fff;
+        text-align: left;
+        order: 1; /* ✅ text first */
+    }
+
+        .hero-text h1 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+        }
+
+    .hero-image {
+        flex: 1 1 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2; /* ✅ image second (on the right) */
+    }
+
+        .hero-image img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+    /* ===== Responsive ===== */
+    @@media (max-width: 800px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            padding-bottom: 95px; /* keep good spacing */
+        }
+
+            .hero-section::after {
+                height: 120px;
+                transform: translateY(-12px); /* less lift for small screens */
+            }
+
+        .hero-image img {
+            max-width: 340px;
+            order: 1;
+        }
+
+        .hero-text {
+            text-align: center;
+            order: 2;
+        }
+    }
+
+    @@media (max-width: 400px) {
+        .hero-content {
+            margin-top: 2rem; /* adjust as needed */
+        }
+    }
+</style>
+
+<!-- ===== INFO SECTION ===== -->
+<section class="info-section" aria-labelledby="info-title">
+    <div class="info-inner">
+        <h2 id="info-title">Consent</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    By using Bill E, you consent to the terms outlined in this Privacy Policy.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-inner">
+        <h2 id="info-title">Advertisements</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    When you use BillE, we may collect information through services such
+                    as Google AdMob, including:
+                </p>
+
+                <ul>
+                    <li><strong>Personal Information:</strong> Includes data that can identify you, such as your device ID, IP address, and other device-specific details.</li>
+                    <li><strong>Non-Personal Information:</strong> Includes aggregated or anonymised data such as device type, operating system, general location, and usage statistics.</li>
+                </ul>
+
+                <p>
+                    Advertisements help support the ongoing development and maintenance of the app.
+                    Revenue generated from ads allows us to fund backend infrastructure and invest
+                    more time and resources into improving the overall experience for our community.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @*
+    <div class="info-inner">
+        <h2 id="info-title">How We Use Collected Information</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    Girls Who Connect collects and stores certain information to enable core features
+                    and personalise your experience. This includes:
+                </p>
+
+                <ul>
+                    <li>Username - used to identify you within the app and display on your profile</li>
+                    <li>Email address - used for account management and communication</li>
+                    <li>Walking location - used to show events and chat groups relevant to your area</li>
+                    <li>Language - used to display content in your preferred language</li>
+                    <li>Role (user, admin, or developer) - used to manage access to admin and moderation features</li>
+                </ul>
+
+                <p>
+                    This data is stored securely and is only accessible to authorised members of the
+                    Girls Who Connect team where necessary.
+                </p>
+            </div>
+        </div>
+    </div>
+    *@
+
+    <div class="info-inner">
+        <h2 id="info-title">How Advertisements Use Information</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    Information collected by third-party services such as Google AdMob may be used for:
+                </p>
+
+                <ul>
+                    <li>Serving personalised advertisements relevant to your interests and behaviour</li>
+                    <li>Measuring the effectiveness of adverts displayed in the app</li>
+                    <li>Providing aggregated reporting to help us understand user engagement with ads</li>
+                    <li>Improving ad quality, frequency, and relevance based on user data</li>
+                </ul>
+
+                <p>
+                    For more details on how Google uses this data, you may review Google's advertising
+                    privacy policies directly.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-inner">
+        <h2 id="info-title">Optional Image Review for Support</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    If there is an issue with scanning or processing a receipt, Bill E may give you the
+                    option to send the receipt image to us for further review and support.
+                </p>
+
+                <p>
+                    This will only happen if you explicitly choose to allow it. Your receipt image will
+                    not be sent for manual review automatically.
+                </p>
+
+                <p>
+                    Any images you choose to share in this way will only be used to investigate the issue,
+                    improve the accuracy of the app, and provide support where needed.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-inner">
+        <h2 id="info-title">Updates to This Policy</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    We may update this Privacy Policy from time to time. Any changes will be reflected
+                    with a new effective date listed at the top of this page.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-inner">
+        <h2 id="info-title">Contact</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    If you have any questions or concerns about this Privacy Policy, please contact us at
+                    matt@kenyondevlabs.com.
+                </p>
+
+                <p>
+                    By using Bill E, you acknowledge that you have read, understood, and agree to
+                    the terms outlined in this Privacy Policy. If you have any questions, suggestions, or
+                    concerns, you can send feedback or report issues directly within the app using the
+                    built-in feedback and reporting features.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ===== Info Section (Text + Image) ===== */
+    .info-section {
+        color: #111;
+        padding: 0;
+        box-sizing: border-box;
+        background: #fff;
+        margin-top: -20px;
+    }
+
+    .info-inner {
+        width: min(var(--page-max, 1100px), 100%);
+        margin: 0 auto;
+    }
+
+    .info-section h2 {
+        text-align: left;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        font-weight: 800;
+        margin: 1rem 0 0.75rem 0;
+    }
+
+    .info-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .info-text {
+        flex: 1 1 480px;
+        color: #333;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        min-width: 0;
+        text-align: left;
+    }
+
+        .info-text p {
+            margin-bottom: 1rem;
+        }
+
+    .info-image {
+        flex: 1 1 420px;
+        display: flex;
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+        .info-image img {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border-radius: var(--radius, 16px);
+            box-shadow: 0 10px 24px rgba(0,0,0,.1);
+        }
+
+    /* ===== Responsive Stack ===== */
+    @@media (max-width: 800px) {
+        .info-content {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 0rem;
+            margin-top: 0;
+        }
+
+        .info-text,
+        .info-image {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 480px;
+        }
+
+            .info-image img {
+                max-width: 360px;
+            }
+
+        .info-section h2 {
+            text-align: left;
+        }
+    }
+</style>
+
+<hr class="section-divider" />
+<!-- ===== Site Footer ===== -->
+<footer class="site-footer" aria-labelledby="footer-title">
+    <div class="footer-inner">
+        <div class="footer-grid">
+
+            <!-- Legal -->
+            <nav class="footer-block" aria-label="Legal">
+                <h3>Legal</h3>
+                <ul class="footer-list">
+                    <li><NavLink href="/GirlsWhoConnect/PrivacyPolicy">Privacy Policy</NavLink></li>
+                    <li><NavLink href="/GirlsWhoConnect/ChildSafetyStandards">Child Safety Standards</NavLink></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        margin-top: 3rem;
+        color: #111;
+        text-align: center; /* Center everything */
+    }
+
+        .site-footer .footer-inner {
+            width: min(var(--page-max, 900px), 100%); /* ✅ prevent overflow in parent */
+            margin: 0 auto;
+            padding: 0 1rem 2.5rem; /* ✅ small gutters on mobile */
+            box-sizing: border-box; /* ✅ sizing safety */
+        }
+
+    /* Stack vertically instead of grid */
+    .footer-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-block {
+        max-width: 500px;
+        width: 100%; /* ✅ let it center and shrink gracefully */
+    }
+
+        .footer-block h3 {
+            margin: 0 0 .5rem 0;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .footer-block p,
+        .footer-address,
+        .footer-list,
+        .footer-actions,
+        .footer-bottom {
+            margin: 0.25rem 0;
+            color: #333;
+        }
+
+    .footer-address {
+        font-style: normal;
+    }
+
+    .footer-list {
+        list-style: none;
+        padding: 0;
+        margin: 0.25rem 0;
+        display: flex;
+        gap: .75rem 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center; /* center them */
+    }
+
+        .footer-list li {
+            margin: .35rem 0;
+        }
+
+        .footer-list a {
+            text-decoration: none;
+            color: #111;
+            border-bottom: 1px solid transparent;
+        }
+
+            .footer-list a:hover {
+                color: var(--brand, #6a54e8);
+                border-bottom-color: currentColor;
+            }
+
+    /* Buttons */
+    .footer-actions {
+        display: flex;
+        justify-content: center;
+        gap: .75rem;
+        margin: .5rem 0;
+        width: 100%;
+        max-width: 520px; /* ✅ nice width on small screens */
+    }
+
+    .btn-footer {
+        padding: .5rem .9rem;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        background: none;
+        border: 1px solid #6a54e8;
+        color: #111;
+        transition: color .12s ease, border-color .12s ease;
+    }
+
+        .btn-footer:hover {
+            color: var(--brand, #6a54e8);
+            border-color: var(--brand, #6a54e8);
+        }
+
+        .btn-footer.ghost {
+            opacity: 0.75;
+        }
+
+            .btn-footer.ghost:hover {
+                opacity: 1;
+            }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        font-size: .9rem;
+        color: #444;
+    }
+
+    /* Divider between sections */
+    hr.section-divider {
+        border: none;
+        height: 4px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 10px auto;
+        background: #6a54e8;
+        border-radius: 0;
+        padding-inline: 10px;
+        box-sizing: border-box;
+    }
+</style>

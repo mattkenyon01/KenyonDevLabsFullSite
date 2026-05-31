@@ -1,2 +1,12 @@
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\web.config
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\emcc-props.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\KenyonDevLabs.staticwebassets.endpoints.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\wwwroot\data\BucketConnectPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\wwwroot\data\CastleClimbersCharacters.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\wwwroot\data\CastleClimbersPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\wwwroot\data\GirlsWhoConnectPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\wwwroot\data\IgnorionPatchNotes.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\wwwroot\sample-data\weather.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\Site\wwwroot\_framework\blazor.boot.json
 C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\emcc-props.json
 C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Release\net8.0\browser-wasm\PubTmp\Out\web.config

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KenyonDevLabs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab671545593e61fcd693580e22e855e8c6169ab3")]
 [assembly: System.Reflection.AssemblyProductAttribute("KenyonDevLabs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KenyonDevLabs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

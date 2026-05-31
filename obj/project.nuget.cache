@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RwSAbZ2rTx8=",
+  "dgSpecHash": "3MNKSF/Kxns=",
   "success": true,
   "projectFilePath": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\KenyonDevLabs\\KenyonDevLabs.csproj",
   "expectedPackageFiles": [
@@ -37,8 +37,8 @@
     "C:\\Users\\theke\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.9\\microsoft.extensions.primitives.9.0.9.nupkg.sha512",
     "C:\\Users\\theke\\.nuget\\packages\\microsoft.jsinterop\\8.0.20\\microsoft.jsinterop.8.0.20.nupkg.sha512",
     "C:\\Users\\theke\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.20\\microsoft.jsinterop.webassembly.8.0.20.nupkg.sha512",
-    "C:\\Users\\theke\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.20\\microsoft.net.illink.tasks.8.0.20.nupkg.sha512",
-    "C:\\Users\\theke\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.9\\microsoft.net.sdk.webassembly.pack.9.0.9.nupkg.sha512",
+    "C:\\Users\\theke\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.27\\microsoft.net.illink.tasks.8.0.27.nupkg.sha512",
+    "C:\\Users\\theke\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.8\\microsoft.net.sdk.webassembly.pack.10.0.8.nupkg.sha512",
     "C:\\Users\\theke\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.9\\system.diagnostics.diagnosticsource.9.0.9.nupkg.sha512",
     "C:\\Users\\theke\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\theke\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"

@@ -1,107 +1,387 @@
 ﻿@page "/bucketconnect/privacypolicy"
 <BucketConnectHeader />
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-section">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="/images/
+/Lock.png" alt="Girls Who Connect" />
+            </div>
+
+            <div class="hero-text">
+                <h1>Privacy Policy</h1>
+                <p>
+                    At Bucket Connect, your privacy is a top priority. This Privacy Policy 
+                    outlines the types of data we collect and record, as well as how we use 
+                    and protect this information.
+                    <br /><br />
+                    Effective Date: 1st September 2024
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <style>
-    body {
-        margin: 0;
-        background-color: #097969;
-        font-family: sans-serif;
+    :root {
+        --brand: #efb2c4;
     }
 
-    .privacy-container {
-        max-width: 800px;
+    html, body {
+        overflow-x: clip;
+    }
+
+    .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 150%;
+        padding-top: calc((var(--hero-extra, 20%) / 2));
+        padding-bottom: 100px;
+        box-sizing: border-box;
+        z-index: 1;
+        overflow: hidden;
+        background: url("/images/Bucket Connect/Hills_Background.jpg") center/cover no-repeat;
+        margin-top: -6rem; /* ⬅️ moves the whole section upward */
+    }
+
+
+    /* Content wrapper stays centered horizontally */
+    .hero-inner {
+        padding-top: 5vh;
         margin: 0 auto;
-        padding: 40px 20px;
-        color: white;
+        width: min(var(--page-max, 1100px), 100%);
+    }
+
+
+
+    /* Wave as BACKGROUND (behind content) */
+    .hero-section::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -50px; /* moves it 20px lower */
+        height: 140px; /* wave height */
+        pointer-events: none;
+        z-index: 0; /* behind content */
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% 100%;
+        transform: translateY(-16px); /* ✅ lifts wave upward slightly */
+        /* White wave so it fades into the white section below */
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,32 C240,96 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z" fill="%23ffffff"/></svg>');
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        flex-direction: row; /* ✅ ensures side-by-side on desktop */
+    }
+
+    .hero-text {
+        position: relative;
+        flex: 1 1 400px;
+        color: #fff;
+        text-align: left;
+        order: 1; /* ✅ text first */
+        /* === Visual style === */
+        background: rgba(0, 0, 0, 0.6); /* translucent black */
+        box-shadow: -20px 0 40px rgba(0, 0, 0, 0.4); /* soft shadow expanding left */
+        backdrop-filter: blur(6px); /* optional: glassy effect */
+        border-radius: 12px ; /* rounded right edge only */
+        padding: 2rem;
+        /* === Make it visually expand left === */
+
+        z-index: 1; /* keep it above background images */
+    }
+
+
+        .hero-text h1 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+        }
+
+    .hero-image {
+        flex: 1 1 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2; /* ✅ image second (on the right) */
+    }
+
+        .hero-image img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+    @@media (max-width: 800px) {
+        .hero-section
+
+    {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 95px; /* keep good spacing */
+    }
+
+    .hero-section::after {
+        height: 120px;
+        transform: translateY(-12px); /* less lift for small screens */
+    }
+
+    .hero-image img {
+        max-width: 340px;
+        order: 1;
+    }
+
+    .hero-text {
+        text-align: center;
+        order: 2;
+        /* ✅ Add breathing room on mobile */
+        margin: 0 1.5rem; /* space on left and right */
         border-radius: 12px;
     }
 
-    .privacy-title {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-align: center;
     }
 
-    .privacy-section {
-        margin-bottom: 20px;
+
+    @@media (max-width: 400px) {
+        .hero-content {
+            margin-top: 2rem; /* adjust as needed */
+        }
     }
-
-        .privacy-section h2 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .privacy-section p,
-        .privacy-section li {
-            font-size: 16px;
-            line-height: 1.6;
-        }
 </style>
 
-<div class="privacy-container">
-    <div class="privacy-title">Privacy Policy</div>
-
-    <div class="privacy-section">
-        <h2>Effective Date</h2>
-        <p>September 1, 2024</p>
+<section class="info-section" aria-labelledby="info-title">
+    <div class="info-inner">
+        <h2 id="info-title">Consent</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    By using Bucket Connect, you consent to the terms outlined in this Privacy Policy.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="privacy-section">
-        <p>At <strong>Bucket Connect</strong>, your privacy is a top priority. This Privacy Policy outlines the types of data we collect and record, as well as how we use and protect this information.</p>
+    <div class="info-inner">
+        <h2 id="info-title">Image Sharing</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    Users can upload images from their camera roll to use as profile pictures.
+                    Profile pictures are public and visible to all users. Images can also be used
+                    as covers for lists and events. When used for personal lists and events,
+                    these images are private and accessible only to friends specifically chosen
+                    by the user. However, if images are used for covers in the ideas function,
+                    they will be visible to all users and cannot be removed once posted.
+                </p>
+                <p>
+                    Please make sure images are suitable for public viewing before uploading.
+                    If images used for profile pictures, lists, events, or ideas are deemed
+                    inappropriate, they will be removed. Inappropriate content includes, but is
+                    not limited to, images that are offensive, sexually explicit, violent,
+                    defamatory, or violate the rights of others. We reserve the right to determine
+                    what constitutes inappropriate content.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="privacy-section">
-        <h2>1. Consent</h2>
-        <p>By using Bucket Connect, you consent to the terms outlined in this Privacy Policy.</p>
+    <div class="info-inner">
+        <h2 id="info-title">Advertisements</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    When you use Bucket Connect, we may collect information through Google AdMob,
+                    including:
+                </p>
+                <ul>
+                    <li><strong>Personal Information:</strong> Device ID, IP address, and other device-specific information.</li>
+                    <li><strong>Non-Personal Information:</strong> Aggregated user data, device type, operating system, and user behavior data that cannot be used to identify you personally.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="privacy-section">
-        <h2>2. Image Sharing</h2>
-        <p>Users can upload images from their camera roll to use as profile pictures. Profile pictures are public and visible to all users. Images can also be used as covers for lists and events. When used for personal lists and events, these images are private and accessible only to friends specifically chosen by the user. However, if images are used for covers in the ideas function, they will be visible to all users and cannot be removed once posted.</p>
-        <p>Please make sure images are suitable for public viewing before uploading. If images used for profile pictures, lists, events, or ideas are deemed inappropriate, they will be removed. Inappropriate content includes, but is not limited to, images that are offensive, sexually explicit, violent, defamatory, or violate the rights of others. We reserve the right to determine what constitutes inappropriate content.</p>
+    <div class="info-inner">
+        <h2 id="info-title">How We Use Collected Information</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>The information collected through Google AdMob is used for:</p>
+                <ul>
+                    <li><strong>Serving Ads:</strong> Display personalized ads that are relevant to you.</li>
+                    <li><strong>Improving Ad Quality and Relevance:</strong> Analyze and understand how ads perform to enhance their quality and relevance.</li>
+                    <li><strong>Analytics and Reporting:</strong> Provide aggregated reporting to understand ad performance and user engagement.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="privacy-section">
-        <h2>3. Advertisements</h2>
-        <p>When you use Bucket Connect, we may collect information through Google AdMob, including:</p>
-        <ul>
-            <li><strong>Personal Information:</strong> Device ID, IP address, and other device-specific information.</li>
-            <li><strong>Non-Personal Information:</strong> Aggregated user data, device type, operating system, and user behavior data that cannot be used to identify you personally.</li>
-        </ul>
+    <div class="info-inner">
+        <h2 id="info-title">Data Security</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    We employ reasonable measures to protect your information from unauthorised
+                    access, use, or disclosure. However, no internet or mobile application can
+                    be entirely secure, and we cannot guarantee the absolute security of your
+                    information.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="privacy-section">
-        <h2>4. How We Use Collected Information</h2>
-        <p>The information collected through Google AdMob is used for:</p>
-        <ul>
-            <li><strong>Serving Ads:</strong> Display personalized ads that are relevant to you.</li>
-            <li><strong>Improving Ad Quality and Relevance:</strong> Analyze and understand how ads perform to enhance their quality and relevance.</li>
-            <li><strong>Analytics and Reporting:</strong> Provide aggregated reporting to understand ad performance and user engagement.</li>
-        </ul>
+    <div class="info-inner">
+        <h2 id="info-title">Account Deletion</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    If you would like to delete your account and all data linked to it, use the
+                    “Delete Account” button in the account menu.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="privacy-section">
-        <h2>5. Data Security</h2>
-        <p>We employ reasonable measures to protect your information from unauthorised access, use, or disclosure. However, no internet or mobile application can be entirely secure, and we cannot guarantee the absolute security of your information.</p>
+    <div class="info-inner">
+        <h2 id="info-title">Updates to This Policy</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    We may update this Privacy Policy from time to time. Any changes will be
+                    reflected with a new effective date at the top of this document.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="privacy-section">
-        <h2>6. Account Deletion</h2>
-        <p>If you would like to delete your account and all data linked to it, use the <strong>“Delete Account”</strong> button in the account menu.</p>
+    <div class="info-inner">
+        <h2 id="info-title">Contact</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    If you have any questions or concerns about our Privacy Policy, please
+                    contact us at <a href="mailto:bucketconnectapp@gmail.com">bucketconnectapp@gmail.com</a>.
+                </p>
+                <p>
+                    By using Bucket Connect, you acknowledge that you have read and understood
+                    this Privacy Policy and agree to its terms.
+                </p>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="privacy-section">
-        <h2>7. Updates to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be reflected with a new effective date at the top of this document.</p>
-    </div>
 
-    <div class="privacy-section">
-        <h2>8. Contact</h2>
-        <p>If you have any questions or concerns about our Privacy Policy, please contact us at <strong>bucketconnectapp@gmail.com</strong>.</p>
-    </div>
+<style>
+    /* ===== Info Section (Text + Image) ===== */
+    .info-section {
+        color: #111;
+        padding: 0;
+        box-sizing: border-box;
+        background: #fff;
+        margin-top: -10px;
+    }
 
-    <div class="privacy-section">
-        <p>By using Bucket Connect, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</p>
-    </div>
-</div>
+    .info-inner {
+        width: min(var(--page-max, 1100px), 100%);
+        margin: 0 auto;
+    }
+
+    .info-section h2 {
+        text-align: left;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        font-weight: 800;
+        margin: 1rem 0 0.75rem 0;
+    }
+
+    .info-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .info-text {
+        flex: 1 1 480px;
+        color: #333;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        min-width: 0;
+        text-align: left;
+    }
+
+        .info-text p {
+            margin-bottom: 1rem;
+        }
+
+    .info-image {
+        flex: 1 1 420px;
+        display: flex;
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+        .info-image img {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border-radius: var(--radius, 16px);
+            box-shadow: 0 10px 24px rgba(0,0,0,.1);
+        }
+
+    /* ===== Responsive Stack ===== */
+    @@media (max-width: 800px) {
+        .info-content {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 0rem;
+            margin-top: 0;
+        }
+
+        .info-text,
+        .info-image {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 480px;
+        }
+
+            .info-image img {
+                max-width: 360px;
+            }
+
+        .info-section h2 {
+            text-align: left;
+        }
+    }
+</style>

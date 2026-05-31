@@ -1,70 +1,192 @@
-﻿@page "/GirlsWhoWalk/PatchNotes"
+﻿@page "/GirlsWhoConnect/PatchNotes"
 @using System.Globalization
 @using KenyonDevLabs.Models
 @using KenyonDevLabs.Services
 @inject HttpClient Http
 @inject NewsFileService NewsData
 
-
-<PageTitle>Girls Who Walk</PageTitle>
+<PageTitle>
+    Girls Who Connect
+</PageTitle>
 
 <GirlsWhoWalkHeader />
 
-<!-- ===== News & Updates ===== -->
-<section class="news-section" aria-labelledby="news-title">
-    <h2 id="news-title">News &amp; Updates</h2>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-section">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="/images/Girls Who Connect/icons/1.0 GWW.png" alt="Girls Who Connect" />
+            </div>
 
-   
-    <div class="news-grid">
-        
-        @foreach (var item in FilteredNews)
-        {
-            <article class="news-card">
-                <!-- Left colour block (date badge with gradient + custom text colour) -->
-                <div class="news-date" style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
-                    <span class="day">@item.Date.ToString("dd")</span>
-                    <span class="mon">@item.Date.ToString("MMM")</span>
-                    <span class="yr">@item.Date.ToString("yyyy")</span>
-                </div>
-
-                <!-- Text content -->
-                <div class="news-body">
-                    <div class="title-row">
-                        @if (!string.IsNullOrWhiteSpace(item.IconUrl))
-                        {
-                            <img class="title-icon" src="@item.IconUrl" alt="" />
-                        }
-                        <h3>@item.Title</h3>
-                      
-                    </div>
-
-                    <p>@((MarkupString)item.Summary)</p>
-
-                </div>
-
-                <!-- Right image (optional) -->
-                @if (!string.IsNullOrWhiteSpace(item.ImageUrl))
-                {
-                    <img class="news-media" src="@item.ImageUrl" alt="" />
-                }
-            </article>
-        }
+            <div class="hero-text">
+                <h1>Patch Notes</h1>
+                <p>
+                    See the latest improvements, new features, and fixes for the
+                    Girls Who Connect app.
+                    <br /><br />
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 
 <style>
-    .news-section {
-        width: min(var(--page-max, 1200px), 95vw);
-        margin: 2rem auto 3rem;
-        color: #111;
+    :root {
+        --brand: #efb2c4;
     }
 
-        .news-section #news-title {
-            margin: 0 0 1rem 0;
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    html, body {
+        overflow-x: clip;
+        background: #ffffff; /* ✅ no pink background */
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 200%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 150%;
+        padding-top: calc((var(--hero-extra, 20%) / 2));
+        padding-bottom: 100px;
+        box-sizing: border-box;
+        z-index: 1;
+        overflow: hidden;
+        background: var(--brand);
+        margin-top: -6rem;
+    }
+
+    .hero-inner {
+        padding-top: 5vh;
+        margin: 0 auto;
+        width: min(var(--page-max, 1100px), 50%);
+        box-sizing: border-box;
+    }
+
+    /* Wave background */
+    .hero-section::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -20px;
+        height: 140px;
+        pointer-events: none;
+        z-index: 0;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% 100%;
+        transform: translateY(-16px);
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,32 C240,96 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z" fill="%23ffffff"/></svg>');
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .hero-text {
+        flex: 1 1 400px;
+        color: #111;
+        text-align: left;
+        order: 1;
+    }
+
+        .hero-text h1 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
             font-weight: 800;
-            color: black;
+            margin-bottom: 1rem;
+            color: #111;
         }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+        }
+
+    .hero-image {
+        flex: 1 1 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2;
+    }
+
+        .hero-image img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+    /* ===== Responsive ===== */
+    @@media (max-width: 800px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            padding-bottom: 95px;
+        }
+
+            .hero-section::after {
+                height: 120px;
+                transform: translateY(-12px);
+            }
+
+        .hero-image img {
+            max-width: 340px;
+            order: 1;
+        }
+
+        .hero-text {
+            text-align: center;
+            order: 2;
+        }
+    }
+
+    @@media (max-width: 400px) {
+        .hero-content {
+            margin-top: 2rem;
+        }
+    }
+
+    /* ===== NEWS SECTION ===== */
+    .news-section {
+        width: 100%;
+        margin: 0rem 0 4rem 0;
+        color: #111;
+        background: #ffffff; /* ✅ white background */
+        margin-top: -35px;
+    }
+
+    .news-inner {
+        box-sizing: border-box; /* ✅ include padding in width */
+        width: min(var(--page-max, 1200px), 100%);
+        margin: 0 auto;
+        padding: 0 clamp(16px, 3vw, 32px);
+    }
+
+    #news-title {
+        margin: 2rem 0 1rem 0;
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        font-weight: 800;
+        color: black;
+    }
 
     /* ===== Tag filter ===== */
     .news-filter {
@@ -147,9 +269,8 @@
         display: flex;
         align-items: center;
         gap: .6rem;
-        justify-content: flex-start; /* 👈 instead of space-between */
+        justify-content: flex-start;
     }
-
 
     .news-tags {
         display: flex;
@@ -209,11 +330,43 @@
             object-fit: cover;
         }
     }
-
-    body {
-        background: #efb2c4;
-    }
 </style>
+
+<!-- ===== News & Updates ===== -->
+<section class="news-section" aria-labelledby="news-title">
+    <div class="news-inner">
+        <h2 id="news-title">News &amp; Updates</h2>
+
+        <div class="news-grid">
+            @foreach (var item in FilteredNews)
+            {
+                <article class="news-card">
+                    <div class="news-date" style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
+                        <span class="day">@item.Date.ToString("dd")</span>
+                        <span class="mon">@item.Date.ToString("MMM")</span>
+                        <span class="yr">@item.Date.ToString("yyyy")</span>
+                    </div>
+
+                    <div class="news-body">
+                        <div class="title-row">
+                            @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                            {
+                                <img class="title-icon" src="@item.IconUrl" alt="" />
+                            }
+                            <h3>@item.Title</h3>
+                        </div>
+                        <p>@((MarkupString)item.Summary)</p>
+                    </div>
+
+                    @if (!string.IsNullOrWhiteSpace(item.ImageUrl))
+                    {
+                        <img class="news-media" src="@item.ImageUrl" alt="" />
+                    }
+                </article>
+            }
+        </div>
+    </div>
+</section>
 
 @code {
     private List<NewsItem> Items = new();
@@ -221,14 +374,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        const string file = "GirlsWhoWalkPatchNotes.json";
+        const string file = "GirlsWhoConnectPatchNotes.json";
 
         try
         {
             var items = await NewsData.GetNewsAsync(file);
-            var count = items?.Count ?? 0;
-            Console.WriteLine($"[News] Loaded {count} items from {file}");
-
             Items = (items ?? new List<NewsItem>())
                 .OrderByDescending(i => i.Date)
                 .ToList();

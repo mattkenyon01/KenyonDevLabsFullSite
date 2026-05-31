@@ -8,7 +8,7 @@
     <!-- Left side: Logo + App name -->
     <div class="logo">
         <img src="images/Kenyon Dev Labs NB.png"
-             alt="Girls Who Walk Logo"
+             alt="Girls Who Connect Logo"
              class="logo-img" />
         <span class="app-name">Kenyon Dev Labs</span>
     </div>
@@ -40,9 +40,8 @@
         <ul>
             <li><a href="">Home</a></li>
             <li><a href="/News">News</a></li>
-            <li><a href="/GirlsWhoWalk">Girls Who Walk</a></li>
+            <li><a href="/GirlsWhoConnect">Girls Who Connect</a></li>
             <li><a href="/BucketConnect">Bucket Connect</a></li>
-            <li><a href="/CastleClimbers">Castle Climbers</a></li>
         </ul>
     </nav>
 </header>
@@ -54,17 +53,18 @@
 
 <style>
     .site-header {
-        position: sticky; /* positioned ancestor for absolute nav */
+        position: sticky;
         top: 0;
         z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 2rem;
-        background: #1b202c;
+        padding: 1rem 1.5rem;
+        background: #280a16; /* updated */
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
     }
 
-    /* Logo */
     .logo {
         display: flex;
         align-items: center;
@@ -79,10 +79,9 @@
     .app-name {
         font-size: 1.25rem;
         font-weight: 700;
-        color: #fff; /* changed to white */
+        color: #fff;
     }
 
-    /* Toggle */
     .nav-toggle {
         display: none;
         background: none;
@@ -90,27 +89,27 @@
         padding: .25rem;
         cursor: pointer;
         line-height: 0;
-        color: #fff; /* changed to white */
+        color: #fff;
     }
 
         .nav-toggle .bar {
             display: block;
             width: 22px;
             height: 2px;
-            background: #fff; /* changed to white */
+            background: #fff;
             margin: 4px 0;
             border-radius: 2px;
         }
 
         .nav-toggle svg {
             display: block;
-            stroke: #fff; /* ensure minus/close icon shows white */
+            stroke: #fff;
         }
 
-    /* Nav links (desktop) */
     .nav-links {
         display: flex;
         align-items: center;
+        background: #280a16; /* updated */
     }
 
         .nav-links > ul {
@@ -125,113 +124,55 @@
         .nav-links a {
             text-decoration: none;
             font-weight: 600;
-            color: #fff; /* changed to white */
+            color: #fff;
             padding: .4rem .6rem;
             border-radius: 6px;
             transition: color .2s ease, background .2s ease;
         }
 
             .nav-links a:hover {
-                background: rgba(255,255,255,0.12); /* subtle hover effect */
+                background: rgba(255,255,255,0.12);
             }
 
-    /* (Unused) dropdown stubs */
-    .has-dropdown {
-        position: relative;
-    }
-
-    .dropdown {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: none;
-        min-width: 200px;
-        background: #fff;
-        border-radius: 10px;
-        padding: .5rem 0;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        animation: fadeDown .15s ease;
-    }
-
-        .dropdown li {
-            list-style: none;
-        }
-
-        .dropdown a {
-            display: block;
-            padding: .6rem 1rem;
-            color: #333;
-        }
-
-    /* Razor-safe keyframes */
-    @@keyframes fadeDown {
-        from {
-            opacity: 0;
-            transform: translateY(-5px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @@keyframes slidePanel {
-        from {
-            opacity: 0;
-            transform: translateY(-6px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Mobile */
     @@media (max-width: 900px) {
-        .nav-toggle {
-            display: inline-block;
-            position: relative;
-            z-index: 1200; /* keeps minus above the panel */
+        .nav-toggle
+
+    {
+        display: inline-block;
+        position: relative;
+        z-index: 1200;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 0;
+        right: 2rem;
+        width: min(280px, 90vw);
+        background: #280a16 !important; /* updated */
+        border-radius: 12px;
+        box-shadow: 0 10px 28px rgba(0,0,0,.14);
+        overflow: hidden;
+        display: none;
+        animation: slidePanel .18s ease;
+        z-index: 1100;
+    }
+
+        .nav-links.open {
+            display: block;
         }
 
-        .nav-links {
-            position: absolute;
-            top: 0;
-            right: 2rem;
-            left: auto;
-            width: min(280px, 90vw);
-            background: #1b202c; /* dark background for mobile menu */
-            border-radius: 12px;
-            box-shadow: 0 10px 28px rgba(0,0,0,.14);
-            overflow: hidden;
-            display: none;
-            animation: slidePanel .18s ease;
-            z-index: 1100;
+        .nav-links > ul {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.8rem;
+            padding: .75rem;
         }
 
-            .nav-links.open {
-                display: block;
-            }
+        .nav-links a {
+            padding: .75rem .75rem;
+            border-radius: 8px;
+            color: #fff;
+        }
 
-            .nav-links > ul {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.8rem;
-                padding: .75rem;
-                margin: 0;
-            }
-
-            .nav-links a {
-                padding: .75rem .75rem;
-                border-radius: 8px;
-                color: #fff; /* white text on mobile */
-                background: transparent;
-            }
-
-                .nav-links a:hover {
-                    background: rgba(255,255,255,0.12);
-                }
     }
 </style>

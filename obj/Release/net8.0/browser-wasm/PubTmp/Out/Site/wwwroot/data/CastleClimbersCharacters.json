@@ -1,0 +1,419 @@
+{
+  "groups": [
+    {
+      "group": "Colours",
+      "cards": [
+        {
+          "tl": "Leeko",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Slime 1.png",
+          "imageAlt": "Leeko",
+          "background": "#119d18",
+          "outline": "#074c0b",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 0
+        },
+        {
+          "tl": "Blanc",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Blanc Sprite Sheet.png",
+          "imageAlt": "Blanc",
+          "background": "#ffffff",
+          "outline": "#8d8d8d",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 50
+        },
+        {
+          "tl": "Noir",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Noir.png",
+          "imageAlt": "Noir",
+          "background": "#262626",
+          "outline": "#000000",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 1000
+        },
+        {
+          "tl": "Cinnamon",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Brown Sprite Sheet.png",
+          "imageAlt": "Cinnamon",
+          "background": "#893b00",
+          "outline": "#4e2100",
+          "textColor": "#FFFFFF",
+          "isCoins": true,
+          "price": 100
+        },
+        {
+          "tl": "Ginger",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Orange slime Sprite Sheet.png",
+          "imageAlt": "Ginger",
+          "background": "#de7300",
+          "outline": "#914b00",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 2000
+        },
+        {
+          "tl": "Coral",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Pink slime sprite sheet.png",
+          "imageAlt": "Coral",
+          "background": "#de00f2",
+          "outline": "#8a0097",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 150
+        },
+        {
+          "tl": "Ruby",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Red slime Sprite Sheet.png",
+          "imageAlt": "Ruby",
+          "background": "#f20000",
+          "outline": "#920000",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 3000
+        },
+        {
+          "tl": "Saffron",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Yellow Slime Sprite Sheet.png",
+          "imageAlt": "Saffron",
+          "background": "#ddd500",
+          "outline": "#8d8800",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 200
+        },
+        {
+          "tl": "Azure",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Cyan slime sprite sheet.png",
+          "imageAlt": "Azure",
+          "background": "#00efdf",
+          "outline": "#00bbae",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 4000
+        },
+        {
+          "tl": "Lime",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Lime Green Sprite Sheet.png",
+          "imageAlt": "Lime",
+          "background": "#18d800",
+          "outline": "#13ab00",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 250
+        },
+        {
+          "tl": "Amethyst",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Purple slime sprite sheet.png",
+          "imageAlt": "Amethyst",
+          "background": "#5900ff",
+          "outline": "#3b00a9",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 5000
+        },
+        {
+          "tl": "Cobalt",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Blue slime sprite sheet.png",
+          "imageAlt": "Cobalt",
+          "background": "#0037ff",
+          "outline": "#0028b7",
+          "textColor": "#FFFFFF",
+          "isCoins": true,
+          "price": 300
+        }
+      ]
+    },
+    {
+      "group": "Gradients",
+      "cards": [
+        {
+          "tl": "Olive",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Lime Green Yellow.png",
+          "imageAlt": "Olive",
+          "background": "#9dff00",
+          "outline": "#FFFFFF",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 10000
+        },
+        {
+          "tl": "Obsidian",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Gradient Sprite Sheet 4.png",
+          "imageAlt": "Obsidian",
+          "background": "#000000",
+          "outline": "#ffffff",
+          "textColor": "#FFFFFF",
+          "isCoins": true,
+          "price": 500
+        },
+        {
+          "tl": "Cerulean",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Gradient Sprite Sheet.png",
+          "imageAlt": "Cerulean",
+          "background": "#0099ff",
+          "outline": "#ffffff",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 15000
+        },
+        {
+          "tl": "Violet",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Gradient Sprite Sheet 3.png",
+          "imageAlt": "Violet",
+          "background": "#8c00ff",
+          "outline": "#ffffff",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 750
+        },
+        {
+          "tl": "Topaz",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Gradient Sprite Sheet 2.png",
+          "imageAlt": "Topaz",
+          "background": "#ff0000",
+          "outline": "#ffffff",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 20000
+        },
+        {
+          "tl": "Pearl",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Gradient Sprite Sheet 5.png",
+          "imageAlt": "Pearl",
+          "background": "#ff0055",
+          "outline": "#ffffff",
+          "textColor": "#FFFFFF",
+          "isCoins": true,
+          "price": 1000
+        },
+        {
+          "tl": "Emerald",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Gradient Sprite Sheet 6.png",
+          "imageAlt": "Emerald",
+          "background": "#00ffc6",
+          "outline": "#ffffff",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 25000
+        },
+        {
+          "tl": "Lapis",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Blue Purple Slime.png",
+          "imageAlt": "Lapis",
+          "background": "#8c00ff",
+          "outline": "#ffffff",
+          "textColor": "#FFFFFF",
+          "isCoins": true,
+          "price": 1500
+        }
+      ]
+    },
+    {
+      "group": "Space",
+      "cards": [
+        {
+          "tl": "Moon",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Moon Sprite Sheet.png",
+          "imageAlt": "Moon",
+          "background": "#edcc67",
+          "outline": "#9a8442",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 30000
+        },
+        {
+          "tl": "Saturn",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Saturn Sprite Sheet.png",
+          "imageAlt": "Saturn",
+          "background": "#d1b448",
+          "outline": "#785631",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 1250
+        },
+        {
+          "tl": "Mars",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Mars.png",
+          "imageAlt": "Mars",
+          "background": "#dd3700",
+          "outline": "#731d00",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 35000
+        },
+        {
+          "tl": "Earth",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/World Slime sprite sheet.png",
+          "imageAlt": "Earth",
+          "background": "#00b7e5",
+          "outline": "#00596f",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 1500
+        }
+      ]
+    },
+    {
+      "group": "Halloween",
+      "cards": [
+        {
+          "tl": "Webs",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Webs.png",
+          "imageAlt": "Webs",
+          "background": "#1c1c1c",
+          "outline": "#000000",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 10000
+        },
+        {
+          "tl": "Mummy",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Mummy.png",
+          "imageAlt": "Mummy",
+          "background": "#887d3f",
+          "outline": "#3d391d",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 750
+        },
+        {
+          "tl": "Devil",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Sprite Sheet Devil.png",
+          "imageAlt": "Devil",
+          "background": "#650101",
+          "outline": "#500000",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 15000
+        },
+        {
+          "tl": "Vampire",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Sprite Sheet Ghost copy.png",
+          "imageAlt": "Vampire",
+          "background": "#9251c0",
+          "outline": "#733f97",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 1000
+        },
+        {
+          "tl": "Pumpkin",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Pumpkin.png",
+          "imageAlt": "Pumpkin",
+          "background": "#e09112",
+          "outline": "#ce8510",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 20000
+        },
+        {
+          "tl": "Bionic",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Future Slime.png",
+          "imageAlt": "Bionic",
+          "background": "#363636",
+          "outline": "#000000",
+          "textColor": "#FFFFFF",
+          "isCoins": true,
+          "price": 1500
+        }
+      ]
+    },
+    {
+      "group": "Super",
+      "cards": [
+        {
+          "tl": "Taylor",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Distinguished Slimes.png",
+          "imageAlt": "Taylor",
+          "background": "#7700ff",
+          "outline": "#000000",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 50000
+        },
+        {
+          "tl": "Hearty",
+          "tr": "Secondary Text",
+          "image": "images/castle_climbers/slimes/Heart Sprites.png",
+          "imageAlt": "Hearty",
+          "background": "#e20000",
+          "outline": "#da9100",
+          "textColor": "#000000",
+          "isCoins": true,
+          "price": 2000
+        }
+      ]
+    },
+    {
+      "group": "Unreleased",
+      "cards": [
+        {
+          "tl": "Clown",
+          "tr": "-",
+          "image": "images/castle_climbers/slimes/Clown.png",
+          "imageAlt": "Clown",
+          "background": "#d6d6d6",
+          "outline": "#8e0000",
+          "textColor": "#000000",
+          "isCoins": false,
+          "price": 0
+        },
+        {
+          "tl": "Mushy",
+          "tr": "-",
+          "image": "images/castle_climbers/slimes/Mushy Sprite Sheet.png",
+          "imageAlt": "Mushy",
+          "background": "#8a0000",
+          "outline": "#430000",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 0
+        },
+        {
+          "tl": "Mushu",
+          "tr": "-",
+          "image": "images/castle_climbers/slimes/Mushroom Slime 2.png",
+          "imageAlt": "Mushu",
+          "background": "#215e0e",
+          "outline": "#143a08",
+          "textColor": "#FFFFFF",
+          "isCoins": false,
+          "price": 0
+        }
+      ]
+    }
+  ]
+}

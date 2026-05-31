@@ -6,9 +6,182 @@
 @inject NewsFileService NewsData
 
 
-<PageTitle>Girls Who Walk</PageTitle>
+<PageTitle>Bucket Connect</PageTitle>
 
 <BucketConnectHeader />
+
+<section class="hero-section">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="/images/Bucket Connect/icons/1.1 Wide.png" alt="
+" />
+            </div>
+
+            <div class="hero-text">
+                <h1>Patch Notes</h1>
+                <p>
+                    At Bucket Connect, your privacy is a top priority. This Privacy Policy
+                    outlines the types of data we collect and record, as well as how we use
+                    and protect this information.
+                    <br /><br />
+                    Effective Date: 1st September 2024
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --brand: #efb2c4;
+    }
+
+    html, body {
+        overflow-x: clip;
+    }
+
+    .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 150%;
+        padding-top: calc((var(--hero-extra, 20%) / 2));
+        padding-bottom: 100px;
+        box-sizing: border-box;
+        z-index: 1;
+        overflow: hidden;
+        background: url("/images/Bucket Connect/Pichu_Background.jpg") center/cover no-repeat;
+        margin-top: -6rem; /* ⬅️ moves the whole section upward */
+    }
+
+
+    /* Content wrapper stays centered horizontally */
+    .hero-inner {
+        padding-top: 5vh;
+        margin: 0 auto;
+        width: min(var(--page-max, 1100px), 100%);
+    }
+
+
+
+    /* Wave as BACKGROUND (behind content) */
+    .hero-section::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -50px; /* moves it 20px lower */
+        height: 140px; /* wave height */
+        pointer-events: none;
+        z-index: 0; /* behind content */
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% 100%;
+        transform: translateY(-16px); /* ✅ lifts wave upward slightly */
+        /* White wave so it fades into the white section below */
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,32 C240,96 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z" fill="%23097969"/></svg>');
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        flex-direction: row; /* ✅ ensures side-by-side on desktop */
+    }
+
+    .hero-text {
+        position: relative;
+        flex: 1 1 400px;
+        color: #fff;
+        text-align: left;
+        order: 1; /* ✅ text first */
+        /* === Visual style === */
+        background: rgba(0, 0, 0, 0.6); /* translucent black */
+        box-shadow: -20px 0 40px rgba(0, 0, 0, 0.4); /* soft shadow expanding left */
+        backdrop-filter: blur(6px); /* optional: glassy effect */
+        border-radius: 12px; /* rounded right edge only */
+        padding: 2rem;
+        /* === Make it visually expand left === */
+
+        z-index: 1; /* keep it above background images */
+    }
+
+
+        .hero-text h1 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+        }
+
+    .hero-image {
+        flex: 1 1 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2; /* ✅ image second (on the right) */
+    }
+
+        .hero-image img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+    @@media (max-width: 800px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            padding-bottom: 95px; /* keep good spacing */
+        }
+
+            .hero-section::after {
+                height: 120px;
+                transform: translateY(-12px); /* less lift for small screens */
+            }
+
+        .hero-image img {
+            max-width: 340px;
+            order: 1;
+        }
+
+        .hero-text {
+            text-align: center;
+            order: 2;
+            /* ✅ Add breathing room on mobile */
+            margin: 0 1.5rem; /* space on left and right */
+            border-radius: 12px;
+        }
+    }
+
+
+    @@media (max-width: 400px) {
+        .hero-content {
+            margin-top: 2rem; /* adjust as needed */
+        }
+    }
+</style>
 
 <!-- ===== News & Updates ===== -->
 <section class="news-section" aria-labelledby="news-title">

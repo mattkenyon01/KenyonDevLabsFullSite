@@ -9,7 +9,9 @@ window.renderChart = function (climbers, bucket, girls) {
     new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Castle Climbers', 'Bucket Connect', 'Girls Who Walk'],
+            labels: ['Castle Climbers', 'Bucket Connect', '
+
+'],
             datasets: [{
                 data: [climbers, bucket, girls],
                 backgroundColor: ['#911f1f', '#41d5c3', '#eda193'],

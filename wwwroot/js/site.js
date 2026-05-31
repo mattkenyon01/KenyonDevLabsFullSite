@@ -8,7 +8,7 @@
     new Chart(ctx, {
         type: "doughnut",
         data: {
-            labels: ["Castle Climbers", "Girls Who Walk", "Bucket Connect"],
+            labels: ["Castle Climbers", "Girls Who Connect", "Bucket Connect"],
             datasets: [{
                 data: [184, 68, 154], // Percentage values
                 backgroundColor: ["#911F1F", "#F8846A", "#44D9C7"]

@@ -13,17 +13,175 @@
 
 <BucketConnectHeader />
 
-<div class="hero-wrapper">
-    <img src="images/Bucket_Connect_web_cover_2.png" alt="Girls Who Walk" class="hero-img">
-</div>
 
+<section class="hero-section">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="images/Bucket Connect/icons/Icon Wide.png" alt="Girls Who Connect" />
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --brand: #efb2c4;
+    }
+
+    html, body {
+        overflow-x: clip;
+    }
+
+    .hero-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 150%;
+        padding-top: calc((var(--hero-extra, 20%) / 2));
+        padding-bottom: 100px;
+        box-sizing: border-box;
+        z-index: 1;
+        overflow: hidden;
+        background: url("images/Bucket Connect/Main_Background.jpg") center/cover no-repeat;
+        margin-top: -6rem; /* ⬅️ moves the whole section upward */
+    }
+
+
+    /* Content wrapper stays centered horizontally */
+    .hero-inner {
+        padding-top: 5vh;
+        margin: 0 auto;
+        width: min(var(--page-max, 1100px), 100%);
+    }
+
+
+
+    /* Wave as BACKGROUND (behind content) */
+    .hero-section::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -50px; /* moves it 20px lower */
+        height: 140px; /* wave height */
+        pointer-events: none;
+        z-index: 0; /* behind content */
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 100% 100%;
+        transform: translateY(-16px); /* ✅ lifts wave upward slightly */
+        /* White wave so it fades into the white section below */
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,32 C240,96 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z" fill="%23097969"/></svg>');
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        flex-direction: row; /* ✅ ensures side-by-side on desktop */
+    }
+
+    .hero-text {
+        position: relative;
+        flex: 1 1 400px;
+        color: #fff;
+        text-align: left;
+        order: 1; /* ✅ text first */
+        /* === Visual style === */
+        background: rgba(0, 0, 0, 0.6); /* translucent black */
+        box-shadow: -20px 0 40px rgba(0, 0, 0, 0.4); /* soft shadow expanding left */
+        backdrop-filter: blur(6px); /* optional: glassy effect */
+        border-radius: 12px; /* rounded right edge only */
+        padding: 2rem;
+        /* === Make it visually expand left === */
+
+        z-index: 1; /* keep it above background images */
+    }
+
+
+        .hero-text h1 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+        }
+
+    .hero-image {
+        flex: 1 1 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2; /* ✅ image second (on the right) */
+    }
+
+        .hero-image img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+    @@media (max-width: 800px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            padding-bottom: 95px; /* keep good spacing */
+        }
+
+            .hero-section::after {
+                height: 120px;
+                transform: translateY(-12px); /* less lift for small screens */
+            }
+
+        .hero-image img {
+            max-width: 340px;
+            order: 1;
+        }
+
+        .hero-text {
+            text-align: center;
+            order: 2;
+            /* ✅ Add breathing room on mobile */
+            margin: 0 1.5rem; /* space on left and right */
+            border-radius: 12px;
+        }
+    }
+
+
+    @@media (max-width: 400px) {
+        .hero-content {
+            margin-top: 2rem; /* adjust as needed */
+        }
+    }
+</style>
 <section class="intro-section" aria-labelledby="intro-title">
     <h2 id="intro-title">Welcome to Bucket Connect</h2>
     <p>
-        Girls Who Walk helps women discover local walking groups, make new friends,
-        and explore their area safely. Whether you want to get active, connect with
-        others, or simply enjoy the outdoors, the app makes it easy to join
-        walks in your community.
+        Bucket Connect is the best way for you to track and chase your dreams. This bucket list
+        app allows you to make multiple lists, share with friends, and see what lists the community
+        are making to inspire you to dream big.
     </p>
 
     <div class="intro-actions">
@@ -35,7 +193,7 @@
     </div>
 </section>
 
-
+<hr class="section-divider" />
 
 <style>
     /* ===== Intro Section ===== */
@@ -107,9 +265,10 @@
 <!-- ===== About the App ===== -->
 <section class="about-app" aria-labelledby="about-title">
     <!-- Feature 1 -->
+    <!-- Feature 2 -->
     <article class="feature">
         <div class="feature-media">
-            <img src="images/Bucket Connect/Cover 1.png" alt="Discover local walks near you" loading="lazy">
+            <img src="images/Bucket Connect/Cover 2.png" alt="Chat with your group and stay updated" loading="lazy">
         </div>
         <div class="feature-body">
             <h3>Create your ultimate bucket list</h3>
@@ -122,31 +281,7 @@
         </div>
     </article>
 
-    <!-- Feature 2 -->
-    <article class="feature">
-        <div class="feature-media">
-            <img src="images/Bucket Connect/Cover 2.png" alt="Chat with your group and stay updated" loading="lazy">
-        </div>
-        <div class="feature-body">
-            <h3>Connect with friends</h3>
-            <p>Add your friends and view their lists to encourage them to follow their dreams</p>
-        </div>
-    </article>
 
-    <!-- Feature 3 -->
-    <article class="feature">
-        <div class="feature-media">
-            <img src="images/Bucket Connect/Cover 3.png" alt="Create and manage your own walks easily" loading="lazy">
-        </div>
-        <div class="feature-body">
-            <h3>Be a high achiever</h3>
-            <p>Progress through your bucket lists to get trophies and achievements</p>
-            <ul class="feature-list">
-                <li>Track your overall progress through all of your events</li>
-                <li>Earn trophies for making lists and completing their events</li>
-                 </ul>
-        </div>
-    </article>
 </section>
 
 <style>
@@ -193,12 +328,15 @@
     }
 
         .feature-media img {
-            width: 100%;
-            height: 100%;
-            max-height: 360px;
+            width: 75%; /* ✅ smaller image width */
+            height: auto; /* keeps correct proportions */
+            max-height: 320px; /* optional: slightly lower cap */
             object-fit: cover;
             display: block;
+            margin: 0 auto; /* centers the image */
+            border-radius: 20px;
         }
+
 
     .feature-body h3 {
         margin: 0 0 .35rem 0;
@@ -336,7 +474,149 @@
                 color: #fff;
             }
 </style>
+<hr class="section-divider" />
+<!-- ===== Be a High Achiever ===== -->
+<section class="achiever-section" aria-labelledby="achiever-title">
+    <div class="achiever-inner">
+        <h2 id="achiever-title">Be a High Achiever</h2>
 
+        <div class="achiever-grid">
+            <!-- Card 1 -->
+            <article class="achiever-card">
+                <div class="achiever-icon" aria-hidden="true">
+                    <!-- Trophy -->
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 21h8M12 17v4M7 4h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4z" />
+                        <path d="M7 7H5a3 3 0 0 0 3 3M17 7h2a3 3 0 0 1-3 3" />
+                    </svg>
+                </div>
+                <h3>Trophies & Milestones</h3>
+                <p>Unlock trophies for creating lists, completing items, and engaging with friends - see your effort pay off.</p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="achiever-card">
+                <div class="achiever-icon" aria-hidden="true">
+                    <!-- Progress / chart -->
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v18h18" />
+                        <rect x="6" y="12" width="3" height="6" rx="1" />
+                        <rect x="11" y="9" width="3" height="9" rx="1" />
+                        <rect x="16" y="6" width="3" height="12" rx="1" />
+                    </svg>
+                </div>
+                <h3>See Your Progress</h3>
+                <p>Track completion by list and overall - simple visuals keep you focused and moving forward.</p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="achiever-card">
+                <div class="achiever-icon" aria-hidden="true">
+                    <!-- Celebrate / confetti -->
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15 10 23 10 17 14 19 22 12 17 5 22 7 14 1 10 9 10 12 2" />
+                    </svg>
+
+                </div>
+                <h3>Celebrate Wins</h3>
+                <p>Share achievements with friends and keep each other motivated to tick off the next big goal.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    /* Divider between sections */
+    hr.section-divider {
+        border: none;
+        height: 4px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 10px auto;
+        background: #fff;
+        border-radius: 0;
+        padding-inline: 10px;
+        box-sizing: border-box;
+    }
+    .achiever-section {
+        width: 100%;
+        color: #fff; /* on green background */
+        margin: 2.5rem 0 0;
+    }
+
+    .achiever-inner {
+        width: min(var(--page-max, 1200px), 95vw);
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 clamp(16px, 3vw, 32px);
+        box-sizing: border-box;
+    }
+
+    #achiever-title {
+        margin: 0 0 1rem 0;
+        font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+        font-weight: 800;
+        color: #fff;
+    }
+
+    .achiever-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap, 1.25rem);
+    }
+
+    .achiever-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 16px;
+        padding: 1.1rem;
+        text-align: center;
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+        .achiever-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+    .achiever-icon {
+        display: grid;
+        place-items: center;
+        margin-bottom: 0.6rem;
+    }
+
+    .achiever-card h3 {
+        margin: 0 0 0.35rem 0;
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #fff;
+    }
+
+    .achiever-card p {
+        margin: 0;
+        color: #fff;
+        opacity: 0.95;
+        line-height: 1.45;
+        font-size: 1.02rem;
+    }
+
+    /* Responsive */
+    @@media (max-width: 1000px) {
+        .achiever-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @@media (max-width: 640px) {
+        .achiever-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<hr class="section-divider" />
 
 @code {
     // Email form state
@@ -488,7 +768,7 @@
 
                     @if (!string.IsNullOrEmpty(item.Summary) && item.Summary.Length > 200)
                     {
-                        <a class="news-link" href="/GirlsWhoWalk/PatchNotes">Read more</a>
+                        <a class="news-link" href="/girlswhoconnect/PatchNotes">Read more</a>
                     }
                 </div>
             </article>
@@ -632,7 +912,7 @@
         var items = await NewsData.GetNewsAsync("BucketConnectPatchNotes.json");
         GirlsWhoWalkNotes = items
             // optional: keep only items tagged correctly
-            .Where(n => n.Tags?.Contains("Girls Who Walk") == true)
+            .Where(n => n.Tags?.Contains("Girls Who Connect") == true)
             .OrderByDescending(n => n.Date)
             .ToList();
     }

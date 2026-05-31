@@ -1,0 +1,70 @@
+[
+  {
+    "Title": "Girls Who Connect 0.1.0",
+    "Date": "2024-03-02",
+    "Tags": [ "Apps", "Girls Who Connect" ],
+    "TopColour": "#de607d",
+    "BottomColour": "#efb2c4",
+    "DateTextColour": "#000000",
+    "Summary": "Original release of Girls Who Connect.",
+    "IconUrl": "/images/Girls Who Connect/icons/0.1.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Girls Who Connect 1.0.0",
+    "Date": "2025-08-01",
+    "Tags": [ "Apps", "Girls Who Connect" ],
+    "TopColour": "#de607d",
+    "BottomColour": "#efb2c4",
+    "DateTextColour": "#000000",
+    "Summary": "With version 1.0.0, Girls Who Connect has been completely redesigned - replacing the outdated, clunk interface with a fresh, streamlined look that's faster, more intuitive and easier on the eyes. <br><br> It's also packed with much more content, including screens to discover walks in your area, chats to talk to friends and connect with other members of the community, and customisation options found in your profile. <br><br> There are also new tools for admins and leaders, giving them greater control over their walks and making event organisation much easier.",
+    "IconUrl": "/images/Girls Who Connect/icons/GWW 1.0.0.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Girls Who Connect 1.0.1",
+    "Date": "2025-08-18",
+    "Tags": [ "Apps", "Girls Who Connect" ],
+    "TopColour": "#de607d",
+    "BottomColour": "#efb2c4",
+    "DateTextColour": "#000000",
+    "Summary": "- New Child Safety Standards documentation <br> - Updated age rating in line with Child Safety Standards <br> - New report feature allows users to report inappropriate users and content, which will be handled by moderators and admins <br>- New splash screen ",
+    "IconUrl": "/images/Girls Who Connect/icons/GWW 1.0.1.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Girls Who Connect 1.0.2",
+    "Date": "2025-08-22",
+    "Tags": [ "Apps", "Girls Who Connect" ],
+    "TopColour": "#de607d",
+    "BottomColour": "#efb2c4",
+    "DateTextColour": "#000000",
+    "Summary": "- Removed invasive advertisements from admin and profile pages",
+    "IconUrl": "/images/Girls Who Connect/icons/GWW 1.0.1.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Girls Who Connect 1.1.0",
+    "Date": "2025-10-28",
+    "Tags": [ "Apps", "Girls Who Connect" ],
+    "TopColour": "#de607d",
+    "BottomColour": "#efb2c4",
+    "DateTextColour": "#000000",
+    "Summary": "- Updated Privacy Policy <br> - App name changed to 'Girls Who Connect' for branding reasons",
+    "IconUrl": "/images/Girls Who Connect/icons/GWW 1.0.1.png",
+    "ImageUrl": null
+  },
+  {
+    "Title": "Girls Who Connect 1.1.1",
+    "Date": "2025-10-30",
+    "Tags": [ "Apps", "Girls Who Connect" ],
+    "TopColour": "#de607d",
+    "BottomColour": "#efb2c4",
+    "DateTextColour": "#000000",
+    "Summary": "- Updated Bundle Name",
+    "IconUrl": "/images/Girls Who Connect/icons/GWW 1.0.1.png",
+    "ImageUrl": null
+  }
+]
+
+
