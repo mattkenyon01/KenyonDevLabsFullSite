@@ -52,6 +52,7 @@ namespace KenyonDevLabs.Services
 
             var files = new[]
             {
+                "SocialNews.json",
                 "CastleClimbersPatchNotes.json",
                 "GirlsWhoConnectPatchNotes.json",
                 "BucketConnectPatchNotes.json",

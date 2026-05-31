@@ -1,9 +1,16 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace KenyonDevLabs.Models
 {
+    public static class NewsCategories
+    {
+        public const string PatchNote = "Patch Note";
+        public const string Social = "Social";
+        public const string Other = "Other";
+
+        public static readonly IReadOnlyList<string> All = new[] { PatchNote, Social, Other };
+    }
+
     public class NewsItem
     {
         public string Id { get; set; } = "";
@@ -14,6 +21,7 @@ namespace KenyonDevLabs.Models
         public string DateTextColour { get; set; } = "";
         public string Summary { get; set; } = "";
         public string IconUrl { get; set; } = "";
+        public string Category { get; set; } = "";
         public List<string> Tags { get; set; } = new();
         public string ImageUrl { get; set; } = "#";
     }

@@ -2,375 +2,462 @@
 @using System.Globalization
 @using KenyonDevLabs.Models
 @using KenyonDevLabs.Services
-@inject HttpClient Http
 @inject NewsFileService NewsData
 
-<PageTitle>
-    Girls Who Connect
-</PageTitle>
+<PageTitle>Patch Notes - Girls Who Connect</PageTitle>
 
 <GirlsWhoWalkHeader />
 
-<!-- ===== HERO SECTION ===== -->
-<section class="hero-section">
-    <div class="hero-inner">
-        <div class="hero-content">
-            <div class="hero-image">
-                <img src="/images/Girls Who Connect/icons/1.0 GWW.png" alt="Girls Who Connect" />
-            </div>
+<div class="gwc-page">
 
-            <div class="hero-text">
-                <h1>Patch Notes</h1>
+    <section class="gwc-section gwc-hero gwc-hero-compact">
+        <div class="gwc-container gwc-hero-grid">
+            <div class="gwc-hero-copy">
+                <span class="gwc-eyebrow gwc-eyebrow-hero">Girls Who Connect</span>
+                <h1>Patch notes</h1>
                 <p>
-                    See the latest improvements, new features, and fixes for the
-                    Girls Who Connect app.
-                    <br /><br />
+                    Every release, improvement, and fix for the Girls Who Connect app -
+                    from the original launch through the latest update.
                 </p>
             </div>
+            <div class="gwc-hero-visual">
+                <img src="/images/Girls Who Connect/icons/1.0 GWW.png" alt="Girls Who Connect app icon" />
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="gwc-section gwc-section-white gwc-news-section" aria-labelledby="news-title">
+        <div class="gwc-container">
+            <header class="gwc-section-head">
+                <span class="gwc-eyebrow">Updates</span>
+                <h2 id="news-title">All patch notes</h2>
+                <p class="gwc-section-lead">@Items.Count release@(Items.Count == 1 ? "" : "s") published.</p>
+            </header>
+
+            @if (Items.Count == 0)
+            {
+                <p class="gwc-news-empty">No patch notes yet - check back soon.</p>
+            }
+            else
+            {
+                <div class="gwc-news-list">
+                    @{
+                        var lastYear = (int?)null;
+                    }
+                    @foreach (var item in Items)
+                    {
+                        var year = item.Date.Year;
+                        if (lastYear != year)
+                        {
+                            <div class="gwc-year-divider @(lastYear is null ? "gwc-year-divider-first" : "")">
+                                <span>@year</span>
+                            </div>
+                            lastYear = year;
+                        }
+
+                        <article class="gwc-news-card">
+                            <div class="gwc-news-date"
+                                 style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
+                                <span class="day">@item.Date.ToString("dd")</span>
+                                <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
+                                <span class="yr">@item.Date.ToString("yyyy")</span>
+                            </div>
+                            <div class="gwc-news-body">
+                                <div class="gwc-news-title-row">
+                                    @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                                    {
+                                        <img class="gwc-news-icon" src="@item.IconUrl" alt="" />
+                                    }
+                                    <h3>@item.Title</h3>
+                                </div>
+                                <p>@((MarkupString)item.Summary)</p>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+        </div>
+    </section>
+
+    <footer class="gwc-footer">
+        <div class="gwc-container gwc-footer-inner">
+            <nav aria-label="Legal">
+                <h3>Legal</h3>
+                <ul class="gwc-footer-links">
+                    <li><NavLink href="/GirlsWhoConnect/PrivacyPolicy">Privacy Policy</NavLink></li>
+                    <li><NavLink href="/GirlsWhoConnect/ChildSafetyStandards">Child Safety Standards</NavLink></li>
+                </ul>
+            </nav>
+            <p class="gwc-footer-copy">&copy; @DateTime.Now.Year Kenyon Dev Labs</p>
+        </div>
+    </footer>
+
+</div>
 
 <style>
     :root {
-        --brand: #efb2c4;
+        --gwc-brand: #efb2c4;
+        --gwc-brand-dark: #d495a8;
+        --gwc-brand-deep: #b14c66;
+        --gwc-muted: #fff5f8;
+        --gwc-text: #1a1a1a;
+        --gwc-text-soft: #4a4a4a;
+        --gwc-max: 1080px;
+        --gwc-radius: 1rem;
+        --gwc-shadow: 0 8px 28px rgba(212, 149, 168, 0.18);
     }
 
     html, body {
         overflow-x: clip;
-        background: #ffffff; /* ✅ no pink background */
+        font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
     }
 
-    /* ===== HERO SECTION ===== */
-    .hero-section {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        width: 200%;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 150%;
-        padding-top: calc((var(--hero-extra, 20%) / 2));
-        padding-bottom: 100px;
+    body {
+        background: #fff;
+        color: var(--gwc-text);
+    }
+
+    .gwc-page {
+        overflow-x: clip;
+    }
+
+    .gwc-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 4rem 1.5rem;
         box-sizing: border-box;
-        z-index: 1;
-        overflow: hidden;
-        background: var(--brand);
-        margin-top: -6rem;
+        border-top: 1px solid rgba(239, 178, 196, 0.35);
     }
 
-    .hero-inner {
-        padding-top: 5vh;
+    .gwc-section-white {
+        background: #fff;
+    }
+
+    .gwc-container {
+        max-width: var(--gwc-max);
         margin: 0 auto;
-        width: min(var(--page-max, 1100px), 50%);
-        box-sizing: border-box;
     }
 
-    /* Wave background */
-    .hero-section::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -20px;
-        height: 140px;
-        pointer-events: none;
-        z-index: 0;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        background-size: 100% 100%;
-        transform: translateY(-16px);
-        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,32 C240,96 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z" fill="%23ffffff"/></svg>');
+    .gwc-section-head {
+        max-width: 42rem;
+        margin: 0 auto 2.5rem;
+        text-align: center;
     }
 
-    .hero-content {
+    .gwc-eyebrow {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #c45f7a;
+    }
+
+    .gwc-section-head h2 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        color: var(--gwc-text);
+    }
+
+        .gwc-section-head h2::after {
+            content: "";
+            display: block;
+            width: 3rem;
+            height: 3px;
+            margin: 1rem auto 0;
+            background: var(--gwc-brand-dark);
+            border-radius: 999px;
+        }
+
+    .gwc-section-lead {
+        margin: 1.15rem 0 0;
+        color: var(--gwc-text-soft);
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+
+    .gwc-hero {
+        border-top: none;
+        padding: 3rem 1.5rem 5.5rem;
+        background: linear-gradient(160deg, var(--gwc-brand) 0%, var(--gwc-brand-dark) 100%);
         position: relative;
-        z-index: 1;
+    }
+
+        .gwc-hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 64px;
+            background: #fff;
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+    .gwc-hero-compact {
+        padding-bottom: 4.5rem;
+    }
+
+    .gwc-hero-grid {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 2.5rem;
         flex-wrap: wrap;
-        flex-direction: row;
+        position: relative;
+        z-index: 1;
     }
 
-    .hero-text {
-        flex: 1 1 400px;
-        color: #111;
-        text-align: left;
-        order: 1;
+    .gwc-hero-copy {
+        flex: 1 1 360px;
+        color: var(--gwc-text);
     }
 
-        .hero-text h1 {
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: #111;
-        }
+    .gwc-eyebrow-hero {
+        color: var(--gwc-brand-deep);
+    }
 
-        .hero-text p {
-            font-size: 1.05rem;
-            line-height: 1.5;
-            color: #333;
-            margin-bottom: 1.5rem;
-            max-width: 500px;
-        }
+    .gwc-hero-copy h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4.5vw, 2.75rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+    }
 
-    .hero-image {
-        flex: 1 1 400px;
+    .gwc-hero-copy p {
+        margin: 0 0 1.35rem;
+        max-width: 32rem;
+        font-size: 1.08rem;
+        line-height: 1.65;
+        color: var(--gwc-text-soft);
+    }
+
+    .gwc-hero-visual {
+        flex: 1 1 280px;
         display: flex;
         justify-content: center;
-        align-items: center;
-        order: 2;
     }
 
-        .hero-image img {
-            display: block;
+        .gwc-hero-visual img {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            object-fit: contain;
-            border-radius: 16px;
-            transition: transform 0.3s ease;
+            max-width: 220px;
+            border-radius: 22%;
+            filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.15));
         }
 
-    /* ===== Responsive ===== */
-    @@media (max-width: 800px) {
-        .hero-section {
-            flex-direction: column;
-            text-align: center;
-            padding-bottom: 95px;
-        }
-
-            .hero-section::after {
-                height: 120px;
-                transform: translateY(-12px);
-            }
-
-        .hero-image img {
-            max-width: 340px;
-            order: 1;
-        }
-
-        .hero-text {
-            text-align: center;
-            order: 2;
-        }
+    .gwc-news-empty {
+        text-align: center;
+        color: var(--gwc-text-soft);
+        margin: 0;
     }
 
-    @@media (max-width: 400px) {
-        .hero-content {
-            margin-top: 2rem;
-        }
-    }
-
-    /* ===== NEWS SECTION ===== */
-    .news-section {
-        width: 100%;
-        margin: 0rem 0 4rem 0;
-        color: #111;
-        background: #ffffff; /* ✅ white background */
-        margin-top: -35px;
-    }
-
-    .news-inner {
-        box-sizing: border-box; /* ✅ include padding in width */
-        width: min(var(--page-max, 1200px), 100%);
+    .gwc-news-list {
+        max-width: 52rem;
         margin: 0 auto;
-        padding: 0 clamp(16px, 3vw, 32px);
-    }
-
-    #news-title {
-        margin: 2rem 0 1rem 0;
-        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-        font-weight: 800;
-        color: black;
-    }
-
-    /* ===== Tag filter ===== */
-    .news-filter {
         display: flex;
-        flex-wrap: wrap;
-        gap: .5rem;
-        margin: 0 0 1rem 0;
+        flex-direction: column;
+        gap: 1rem;
     }
 
-        .news-filter .chip {
-            border: 1px solid rgba(239,178,196,0.6);
-            background: rgba(239,178,196,0.12);
+    .gwc-year-divider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0.75rem 0 0.25rem;
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+        .gwc-year-divider-first {
+            margin-top: 0;
+        }
+
+        .gwc-year-divider::before,
+        .gwc-year-divider::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: rgba(239, 178, 196, 0.65);
             border-radius: 999px;
-            padding: .35rem .75rem;
-            font-size: .9rem;
-            cursor: pointer;
         }
 
-            .news-filter .chip.active {
-                background: var(--brand, #efb2c4);
-                color: #1a1a1a;
-                border-color: transparent;
-            }
+        .gwc-year-divider span {
+            flex-shrink: 0;
+            padding: 0 0.25rem;
+            color: #c45f7a;
+        }
 
-    /* ===== Grid: one entry per row ===== */
-    .news-grid {
+    .gwc-news-card {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--gap, 1.25rem);
-    }
-
-    /* ===== Card ===== */
-    .news-card {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 0.9rem;
-        background: #fff;
-        border-radius: var(--radius, 12px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-        overflow: hidden;
-        transition: transform .18s ease, box-shadow .18s ease;
+        grid-template-columns: 5.5rem 1fr;
         align-items: stretch;
+        background: #fff;
+        border: 1px solid rgba(239, 178, 196, 0.35);
+        border-radius: var(--gwc-radius);
+        box-shadow: 0 4px 16px rgba(212, 149, 168, 0.1);
+        overflow: hidden;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-        .news-card:hover {
+        .gwc-news-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+            box-shadow: var(--gwc-shadow);
         }
 
-    /* ===== Date badge ===== */
-    .news-date {
-        display: grid;
-        align-content: center;
-        justify-items: center;
-        padding: 0.75rem 0.9rem;
+    .gwc-news-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 0.5rem;
         font-weight: 800;
-        min-width: 72px;
+        text-align: center;
     }
 
-        .news-date .day {
-            font-size: 1.4rem;
+        .gwc-news-date .day {
+            font-size: 1.5rem;
             line-height: 1;
         }
 
-        .news-date .mon, .news-date .yr {
-            font-size: 0.75rem;
-            opacity: 0.85;
-            letter-spacing: .03em;
+        .gwc-news-date .mon {
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-top: 0.15rem;
         }
 
-    /* ===== Body ===== */
-    .news-body {
-        padding: 0.9rem 1rem 1rem 0;
-        display: grid;
-        gap: .5rem;
-        align-content: start;
+        .gwc-news-date .yr {
+            font-size: 0.72rem;
+            opacity: 0.85;
+            margin-top: 0.15rem;
+        }
+
+    .gwc-news-body {
+        padding: 1rem 1.25rem 1.1rem 1.25rem;
     }
 
-    .title-row {
+    .gwc-news-title-row {
         display: flex;
         align-items: center;
-        gap: .6rem;
-        justify-content: flex-start;
+        gap: 0.65rem;
+        margin-bottom: 0.45rem;
     }
 
-    .news-tags {
+    .gwc-news-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        object-fit: contain;
+        flex-shrink: 0;
+        border-radius: 22%;
+    }
+
+    .gwc-news-title-row h3 {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 800;
+        line-height: 1.3;
+    }
+
+    .gwc-news-body p {
+        margin: 0;
+        color: var(--gwc-text-soft);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .gwc-footer {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 3rem 1.5rem;
+        background: var(--gwc-muted);
+        border-top: 1px solid rgba(239, 178, 196, 0.35);
+        text-align: center;
+    }
+
+    .gwc-footer-inner h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+    .gwc-footer-links {
+        list-style: none;
+        margin: 0 0 1.5rem;
+        padding: 0;
         display: flex;
         flex-wrap: wrap;
-        gap: 0.4rem;
-        margin-left: auto;
+        justify-content: center;
+        gap: 0.75rem 1.25rem;
     }
 
-    .title-icon {
-        width: 28px;
-        height: 28px;
-        object-fit: contain;
-        display: block;
-        border-radius: 20%;
-    }
-
-    .news-body h3 {
-        margin: 0;
-        font-size: 1.2rem;
-        font-weight: 900;
-    }
-
-    .news-body p {
-        margin: 0;
-        color: #333;
-        line-height: 1.35;
-    }
-
-    .news-tags .tag {
-        font-size: 0.75rem;
-        padding: 0.2rem 0.5rem;
-        border-radius: 999px;
-        background: rgba(239,178,196,0.18);
-        border: 1px solid rgba(239,178,196,0.6);
-        color: #444;
-    }
-
-    /* ===== Right media image ===== */
-    .news-media {
-        width: 220px;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        border-radius: var(--radius, 12px);
-    }
-
-    /* ===== Responsive ===== */
-    @@media (max-width: 880px) {
-        .news-card {
-            grid-template-columns: auto 1fr;
+        .gwc-footer-links a {
+            color: var(--gwc-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .news-media {
-            grid-column: 1 / -1;
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+            .gwc-footer-links a:hover {
+                color: var(--gwc-brand-deep);
+            }
+
+    .gwc-footer-copy {
+        margin: 0;
+        color: var(--gwc-text-soft);
+        font-size: 0.92rem;
+    }
+
+    @@media (max-width: 760px) {
+        .gwc-section {
+            padding: 3rem 1.25rem;
+        }
+
+        .gwc-hero {
+            padding-bottom: 4rem;
+        }
+
+        .gwc-hero-grid {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .gwc-hero-copy p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gwc-news-card {
+            grid-template-columns: 1fr;
+        }
+
+        .gwc-news-date {
+            flex-direction: row;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+
+            .gwc-news-date .mon,
+            .gwc-news-date .yr {
+                margin-top: 0;
+            }
+
+        .gwc-news-body {
+            padding: 0 1.1rem 1.1rem 1.1rem;
         }
     }
 </style>
 
-<!-- ===== News & Updates ===== -->
-<section class="news-section" aria-labelledby="news-title">
-    <div class="news-inner">
-        <h2 id="news-title">News &amp; Updates</h2>
-
-        <div class="news-grid">
-            @foreach (var item in FilteredNews)
-            {
-                <article class="news-card">
-                    <div class="news-date" style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
-                        <span class="day">@item.Date.ToString("dd")</span>
-                        <span class="mon">@item.Date.ToString("MMM")</span>
-                        <span class="yr">@item.Date.ToString("yyyy")</span>
-                    </div>
-
-                    <div class="news-body">
-                        <div class="title-row">
-                            @if (!string.IsNullOrWhiteSpace(item.IconUrl))
-                            {
-                                <img class="title-icon" src="@item.IconUrl" alt="" />
-                            }
-                            <h3>@item.Title</h3>
-                        </div>
-                        <p>@((MarkupString)item.Summary)</p>
-                    </div>
-
-                    @if (!string.IsNullOrWhiteSpace(item.ImageUrl))
-                    {
-                        <img class="news-media" src="@item.ImageUrl" alt="" />
-                    }
-                </article>
-            }
-        </div>
-    </div>
-</section>
-
 @code {
     private List<NewsItem> Items = new();
-    private string? ActiveTag { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -380,6 +467,7 @@
         {
             var items = await NewsData.GetNewsAsync(file);
             Items = (items ?? new List<NewsItem>())
+                .Where(n => n.Tags?.Contains("Girls Who Connect") == true)
                 .OrderByDescending(i => i.Date)
                 .ToList();
         }
@@ -390,25 +478,11 @@
         }
     }
 
-    private IEnumerable<string> AllTags =>
-        Items.SelectMany(i => i.Tags ?? Enumerable.Empty<string>())
-             .Distinct(StringComparer.OrdinalIgnoreCase)
-             .OrderBy(t => t);
-
-    private IEnumerable<NewsItem> FilteredNews =>
-        (ActiveTag is null
-            ? Items
-            : Items.Where(i => (i.Tags ?? Enumerable.Empty<string>())
-                .Contains(ActiveTag, StringComparer.OrdinalIgnoreCase)))
-        .OrderByDescending(i => i.Date);
-
-    private void SetTag(string? tag) => ActiveTag = tag;
-
     private static string GetTop(NewsItem n)
         => !string.IsNullOrWhiteSpace(n.TopColour) ? n.TopColour! : "#efb2c4";
 
     private static string GetBottom(NewsItem n)
-        => !string.IsNullOrWhiteSpace(n.BottomColour) ? n.BottomColour! : "color-mix(in oklab, #efb2c4 80%, white)";
+        => !string.IsNullOrWhiteSpace(n.BottomColour) ? n.BottomColour! : "#d495a8";
 
     private static string GetDateText(NewsItem n)
         => !string.IsNullOrWhiteSpace(n.DateTextColour) ? n.DateTextColour! : "#1a1a1a";

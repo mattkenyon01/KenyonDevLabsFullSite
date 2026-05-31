@@ -3,222 +3,458 @@
 @using KenyonDevLabs.Services
 @inject NewsFileService NewsData
 
-<PageTitle>Kenyon Dev Labs</PageTitle>
+<PageTitle>News & Updates - Kenyon Dev Labs</PageTitle>
 
+<HeadContent>
+    <meta name="description" content="Latest news, releases, and patch notes from Kenyon Dev Labs - updates across apps, games, and projects." />
+    <link rel="canonical" href="https://kenyondevlabs.com/news" />
+</HeadContent>
 
 <HomeHeader />
 
-<!-- ===== News & Updates ===== -->
-<section class="news-section" aria-labelledby="news-title">
-    <h2 id="news-title">News &amp; Updates</h2>
-
-    <div class="news-grid">
-        @foreach (var item in FilteredNews)
-        {
-            <article class="news-card">
-                <!-- Left colour block (date badge with gradient + custom text colour) -->
-                <div class="news-date" style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
-                    <span class="day">@item.Date.ToString("dd")</span>
-                    <span class="mon">@item.Date.ToString("MMM")</span>
-                    <span class="yr">@item.Date.ToString("yyyy")</span>
-                </div>
-
-                <!-- Text content -->
-                <div class="news-body">
-                    <div class="title-row">
-                        @if (!string.IsNullOrWhiteSpace(item.IconUrl))
-                        {
-                            <img class="title-icon" src="@item.IconUrl" alt="" />
-                        }
-                        <h3>@item.Title</h3>
-                      
-                    </div>
-
-                    <p>@((MarkupString)item.Summary)</p>
-
-                </div>
-
-                <!-- Right image (optional) -->
-                @if (!string.IsNullOrWhiteSpace(item.ImageUrl))
-                {
-                    <img class="news-media" src="@item.ImageUrl" alt="" />
-                }
-            </article>
-        }
-    </div>
+<section class="news-page-hero">
+    <span class="section-eyebrow">From the lab</span>
+    <h1>News &amp; Updates</h1>
+    <p>
+        Releases, patch notes, and progress across my apps and games - everything new in one place.
+    </p>
 </section>
 
-<style>
-    .news-section {
-        width: min(var(--page-max, 1200px), 95vw);
-        margin: 2rem auto 3rem;
-        color: #111;
-    }
-
-        .news-section #news-title {
-            margin: 0 0 1rem 0;
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-            font-weight: 800;
-            color: #fff;
-        }
-
-    /* ===== Tag filter ===== */
-    .news-filter {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .5rem;
-        margin: 0 0 1rem 0;
-    }
-
-        .news-filter .chip {
-            border: 1px solid rgba(239,178,196,0.6);
-            background: rgba(239,178,196,0.12);
-            border-radius: 999px;
-            padding: .35rem .75rem;
-            font-size: .9rem;
-            cursor: pointer;
-        }
-
-            .news-filter .chip.active {
-                background: var(--brand, #efb2c4);
-                color: #1a1a1a;
-                border-color: transparent;
+<section class="news-page-content">
+    @if (Items.Count > 0)
+    {
+        <div class="news-filter" role="group" aria-label="Filter by category">
+            <button type="button"
+                    class="news-filter-chip @(ActiveCategory is null ? "active" : "")"
+                    @onclick="() => SetCategory(null)">
+                All
+            </button>
+            @foreach (var category in NewsCategories.All)
+            {
+                <button type="button"
+                        class="news-filter-chip @(ActiveCategory == category ? "active" : "")"
+                        @onclick="() => SetCategory(category)">
+                    @category
+                </button>
             }
-
-    /* ===== Grid: one entry per row ===== */
-    .news-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--gap, 1.25rem);
+        </div>
     }
 
-    /* ===== Card ===== */
-    .news-card {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 0.9rem;
-        background: #fff;
-        border-radius: var(--radius, 12px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-        overflow: hidden;
-        transition: transform .18s ease, box-shadow .18s ease;
-        align-items: stretch;
+    @if (Items.Count == 0)
+    {
+        <p class="news-page-empty">No updates yet - check back soon.</p>
     }
-
-        .news-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.16);
-        }
-
-    /* ===== Date badge ===== */
-    .news-date {
-        display: grid;
-        align-content: center;
-        justify-items: center;
-        padding: 0.75rem 0.9rem;
-        font-weight: 800;
-        min-width: 72px;
+    else if (!FilteredItems.Any())
+    {
+        <p class="news-page-empty">No updates in this category yet.</p>
     }
+    else
+    {
+        <div class="news-page-grid">
+            @{
+                var lastYear = (int?)null;
+            }
+            @foreach (var item in FilteredItems)
+            {
+                var year = item.Date.Year;
+                if (lastYear != year)
+                {
+                    <div class="news-year-divider @(lastYear is null ? "news-year-divider-first" : "")">
+                        <span>@year</span>
+                    </div>
+                    lastYear = year;
+                }
 
-        .news-date .day {
-            font-size: 1.4rem;
-            line-height: 1;
-        }
+                <article class="news-page-card">
+                    <div class="news-page-date"
+                         style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
+                        <span class="day">@item.Date.ToString("dd")</span>
+                        <span class="mon">@item.Date.ToString("MMM")</span>
+                        <span class="yr">@item.Date.ToString("yyyy")</span>
+                    </div>
 
-        .news-date .mon, .news-date .yr {
-            font-size: 0.75rem;
-            opacity: 0.85;
-            letter-spacing: .03em;
-        }
+                    <div class="news-page-body">
+                        <div class="news-page-body-header">
+                            <div class="news-page-title-row">
+                                @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                                {
+                                    <img class="news-page-icon" src="@item.IconUrl" alt="" />
+                                }
+                                <h2>@item.Title</h2>
+                            </div>
+                            <span class="news-category-pill @GetCategoryClass(item)">@GetCategory(item)</span>
+                        </div>
 
-    /* ===== Body ===== */
-    .news-body {
-        padding: 0.9rem 1rem 1rem 0;
-        display: grid;
-        gap: .5rem;
-        align-content: start;
+                        <p>@((MarkupString)item.Summary)</p>
+                    </div>
+
+                    @if (!string.IsNullOrWhiteSpace(item.ImageUrl) && item.ImageUrl != "#")
+                    {
+                        <div class="news-page-media-wrap" aria-hidden="true">
+                            <img class="news-page-media" src="@item.ImageUrl" alt="" />
+                        </div>
+                    }
+                </article>
+            }
+        </div>
     }
+</section>
 
-    .title-row {
-        display: flex;
-        align-items: center;
-        gap: .6rem;
-        justify-content: flex-start; /* keep everything to the left */
-    }
+<footer class="kdl-footer">
+    <div class="kdl-footer-content">
+        <p>© 2025 Kenyon Dev Labs</p>
+        <a href="mailto:matt@kenyondevlabs.com">matt@kenyondevlabs.com</a>
+    </div>
+</footer>
 
-
-    .news-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        margin-left: auto;
-    }
-
-    .title-icon {
-        width: 28px;
-        height: 28px;
-        object-fit: contain;
-        display: block;
-        border-radius: 20%;
-    }
-
-    .news-body h3 {
-        margin: 0;
-        font-size: 1.2rem;
-        font-weight: 900;
-    }
-
-    .news-body p {
-        margin: 0;
-        color: #333;
-        line-height: 1.35;
-    }
-
-    .news-tags .tag {
-        font-size: 0.75rem;
-        padding: 0.2rem 0.5rem;
-        border-radius: 999px;
-        background: rgba(239,178,196,0.18);
-        border: 1px solid rgba(239,178,196,0.6);
-        color: #444;
-    }
-
-    /* ===== Right media image ===== */
-    .news-media {
-        width: 220px;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        border-radius: var(--radius, 12px);
-    }
-
-    /* ===== Responsive ===== */
-    @@media (max-width: 880px) {
-        .news-card {
-            grid-template-columns: auto 1fr;
-        }
-
-        .news-media {
-            grid-column: 1 / -1;
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
+<style>
+    :root {
+        --page-bg-a: #291824;
+        --page-bg-b: #280a16;
     }
 
     body {
-        background: #1b202c;
+        margin: 0;
+        background: var(--page-bg-a);
+        color: #fff;
+        font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+    }
+
+    .section-eyebrow {
+        display: inline-block;
+        margin-bottom: 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #e7571d;
+    }
+
+    .news-page-hero {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 4rem 2rem 3rem;
+        text-align: center;
+        background: var(--page-bg-b);
+        color: #fff;
+    }
+
+        .news-page-hero h1 {
+            margin: 0 0 1rem;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+            .news-page-hero h1::after {
+                content: "";
+                display: block;
+                width: 3.5rem;
+                height: 3px;
+                margin: 1rem auto 0;
+                background: #e7571d;
+                border-radius: 999px;
+            }
+
+        .news-page-hero p {
+            margin: 1.25rem auto 0;
+            max-width: 40rem;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+    .news-page-content {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 3rem 2rem 4rem;
+        background: var(--page-bg-a);
+    }
+
+    .news-filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        max-width: 960px;
+        margin: 0 auto 2rem;
+    }
+
+    .news-filter-chip {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        border-radius: 999px;
+        padding: 0.45rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        font-family: inherit;
+        color: rgba(255, 255, 255, 0.85);
+        cursor: pointer;
+        transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+        .news-filter-chip:hover {
+            border-color: rgba(231, 87, 29, 0.5);
+            color: #fff;
+        }
+
+        .news-filter-chip.active {
+            background: #e7571d;
+            border-color: #e7571d;
+            color: #fff;
+        }
+
+    .news-page-empty {
+        max-width: 960px;
+        margin: 0 auto;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.05rem;
+    }
+
+    .news-page-grid {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.25rem;
+    }
+
+    .news-year-divider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0.75rem 0 0.25rem;
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #fff;
+    }
+
+        .news-year-divider-first {
+            margin-top: 0;
+        }
+
+        .news-year-divider::before,
+        .news-year-divider::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: rgba(231, 87, 29, 0.45);
+            border-radius: 999px;
+        }
+
+        .news-year-divider span {
+            flex-shrink: 0;
+            padding: 0 0.25rem;
+            color: #e7571d;
+        }
+
+    .news-page-card {
+        display: grid;
+        grid-template-columns: 5.5rem 1fr auto;
+        gap: 0;
+        align-items: stretch;
+        background: var(--page-bg-b);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+        .news-page-card:hover {
+            border-color: rgba(231, 87, 29, 0.35);
+            transform: translateY(-2px);
+        }
+
+    .news-page-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0.75rem;
+        text-align: center;
+        font-weight: 700;
+    }
+
+        .news-page-date .day {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .news-page-date .mon {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+        }
+
+        .news-page-date .yr {
+            font-size: 0.72rem;
+            opacity: 0.85;
+            margin-top: 0.15rem;
+        }
+
+    .news-page-body {
+        padding: 1.25rem 1.5rem;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    .news-page-body-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .news-page-title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .news-page-icon {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        flex-shrink: 0;
+        border-radius: 22%;
+    }
+
+    .news-page-body h2 {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .news-page-body p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
+    .news-category-pill {
+        flex-shrink: 0;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid rgba(231, 87, 29, 0.35);
+        background: rgba(231, 87, 29, 0.15);
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+        .news-category-pill--patch-note {
+            border-color: rgba(231, 87, 29, 0.45);
+            background: rgba(231, 87, 29, 0.18);
+        }
+
+        .news-category-pill--social {
+            border-color: rgba(120, 180, 255, 0.45);
+            background: rgba(120, 180, 255, 0.15);
+        }
+
+        .news-category-pill--other {
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+    .news-page-media-wrap {
+        width: 11rem;
+        flex-shrink: 0;
+        background: #1f0812;
+    }
+
+    .news-page-media {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .kdl-footer {
+        width: 100%;
+        padding: 2.5rem 1rem;
+        text-align: center;
+        background: var(--page-bg-b);
+    }
+
+    .kdl-footer-content {
+        max-width: 900px;
+        margin: 0 auto;
+        color: #ddd;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+        .kdl-footer-content a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: opacity 0.15s ease;
+        }
+
+            .kdl-footer-content a:hover {
+                opacity: 0.8;
+            }
+
+    @@media (max-width: 768px) {
+        .news-page-hero,
+        .news-page-content {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .news-page-card {
+            grid-template-columns: 1fr;
+        }
+
+        .news-page-date {
+            flex-direction: row;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1rem;
+        }
+
+            .news-page-date .mon,
+            .news-page-date .yr {
+                margin-top: 0;
+            }
+
+        .news-page-body {
+            padding: 0 1.25rem 1.25rem 1.25rem;
+        }
+
+        .news-page-media-wrap {
+            width: 100%;
+            height: 12rem;
+        }
     }
 </style>
 
 @code {
     private List<NewsItem> Items = new();
-    private string? ActiveTag { get; set; }
+    private string? ActiveCategory { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         var files = new[]
         {
+            "SocialNews.json",
             "CastleClimbersPatchNotes.json",
             "BucketConnectPatchNotes.json",
             "GirlsWhoConnectPatchNotes.json",
@@ -232,11 +468,12 @@
             try
             {
                 var items = await NewsData.GetNewsAsync(f);
-                var count = items?.Count ?? 0;
-                Console.WriteLine($"[News] Loaded {count} items from {f}");
-
-                if (count > 0)
-                    merged.AddRange(items!);
+                if (items?.Count > 0)
+                {
+                    foreach (var item in items)
+                        EnsureCategory(item, f);
+                    merged.AddRange(items);
+                }
             }
             catch (Exception ex)
             {
@@ -244,43 +481,68 @@
             }
         }
 
-        if (merged.Count == 0)
-        {
-            Console.WriteLine("[News] No items loaded from any file. Check file names and output copy settings.");
-        }
-
-        // --- Safer de-dupe: only collapse literal duplicates across many fields ---
         Items = merged
-            .GroupBy(i => $"{i.Id}|{i.Title}|{i.Date:O}|{i.Summary}|{i.ImageUrl}|{i.IconUrl}|{(i.Tags is null ? "" : string.Join(",", i.Tags))}")
+            .GroupBy(i => $"{i.Id}|{i.Title}|{i.Date:O}|{i.Summary}|{i.ImageUrl}|{i.IconUrl}|{i.Category}")
             .Select(g => g.First())
             .OrderByDescending(i => i.Date)
             .ToList();
-
-        Console.WriteLine($"[News] Merged total after de-dupe: {Items.Count}");
-        var bcCount = Items.Count(x => (x.Tags ?? Enumerable.Empty<string>()).Any(t => t.Equals("Bucket Connect", StringComparison.OrdinalIgnoreCase)));
-        Console.WriteLine($"[News] Bucket Connect visible count: {bcCount}");
     }
 
-    private IEnumerable<string> AllTags =>
-        Items.SelectMany(i => i.Tags ?? Enumerable.Empty<string>())
-             .Distinct(StringComparer.OrdinalIgnoreCase)
-             .OrderBy(t => t);
-
-    private IEnumerable<NewsItem> FilteredNews =>
-        (ActiveTag is null
+    private IEnumerable<NewsItem> FilteredItems =>
+        (ActiveCategory is null
             ? Items
-            : Items.Where(i => (i.Tags ?? Enumerable.Empty<string>())
-                .Contains(ActiveTag, StringComparer.OrdinalIgnoreCase)))
+            : Items.Where(i => string.Equals(GetCategory(i), ActiveCategory, StringComparison.OrdinalIgnoreCase)))
         .OrderByDescending(i => i.Date);
 
-    private void SetTag(string? tag) => ActiveTag = tag;
+    private void SetCategory(string? category) => ActiveCategory = category;
 
-    // Helpers to tolerate missing colours and keep your gradient readable
+    private static void EnsureCategory(NewsItem item, string sourceFile)
+    {
+        var known = NewsCategories.All.FirstOrDefault(c =>
+            c.Equals(item.Category, StringComparison.OrdinalIgnoreCase));
+        if (known is not null)
+        {
+            item.Category = known;
+            return;
+        }
+
+        if (sourceFile.Contains("SocialNews", StringComparison.OrdinalIgnoreCase))
+        {
+            item.Category = NewsCategories.Social;
+            return;
+        }
+
+        if (sourceFile.Contains("PatchNotes", StringComparison.OrdinalIgnoreCase))
+        {
+            item.Category = NewsCategories.PatchNote;
+            return;
+        }
+
+        if ((item.Tags ?? new List<string>()).Any(t =>
+            t.Equals("Social", StringComparison.OrdinalIgnoreCase)))
+        {
+            item.Category = NewsCategories.Social;
+            return;
+        }
+
+        item.Category = NewsCategories.Other;
+    }
+
+    private static string GetCategory(NewsItem item) =>
+        string.IsNullOrWhiteSpace(item.Category) ? NewsCategories.Other : item.Category;
+
+    private static string GetCategoryClass(NewsItem item) => GetCategory(item) switch
+    {
+        NewsCategories.PatchNote => "news-category-pill--patch-note",
+        NewsCategories.Social => "news-category-pill--social",
+        _ => "news-category-pill--other"
+    };
+
     private static string GetTop(NewsItem n)
         => !string.IsNullOrWhiteSpace(n.TopColour) ? n.TopColour! : "#efb2c4";
 
     private static string GetBottom(NewsItem n)
-        => !string.IsNullOrWhiteSpace(n.BottomColour) ? n.BottomColour! : "color-mix(in oklab, #efb2c4 80%, white)";
+        => !string.IsNullOrWhiteSpace(n.BottomColour) ? n.BottomColour! : "#d495a8";
 
     private static string GetDateText(NewsItem n)
         => !string.IsNullOrWhiteSpace(n.DateTextColour) ? n.DateTextColour! : "#1a1a1a";

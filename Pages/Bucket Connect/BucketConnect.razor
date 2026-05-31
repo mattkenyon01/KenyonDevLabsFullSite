@@ -21,7 +21,7 @@
                 <h1>Track your dreams.<br />Tick them off.</h1>
                 <p>
                     Create bucket lists, share progress with friends, and discover what the
-                    community is planning — all in one beautifully simple app.
+                    community is planning - all in one beautifully simple app.
                 </p>
                 <a href="https://apps.apple.com/gb/app/bucket-connect/id6503246436"
                    target="_blank"
@@ -43,29 +43,10 @@
                 <span class="bc-eyebrow">About the app</span>
                 <h2 id="info-title">Dream big, tick things off</h2>
                 <p class="bc-section-lead">
-                    Bucket Connect helps you organise life's goals — from travel and adventures
-                    to personal milestones — and stay motivated every step of the way.
+                    Bucket Connect helps you organise life's goals - from travel and adventures
+                    to personal milestones - and stay motivated every step of the way.
                 </p>
             </header>
-
-            <div class="bc-split">
-                <div class="bc-split-text">
-                    <p>
-                        Make multiple lists, share progress with friends, and see what others in
-                        the community are working toward. Whether you're planning a trip of a lifetime
-                        or small everyday wins, everything stays in one place.
-                    </p>
-                    <p>
-                        Bucket Connect was built to make goal-setting feel exciting rather than overwhelming —
-                        with clear progress, social sharing, and achievements that keep you going.
-                    </p>
-                </div>
-                <div class="bc-split-media">
-                    <img src="images/Bucket Connect/Cover 2.png"
-                         alt="Bucket Connect app screens"
-                         loading="lazy" />
-                </div>
-            </div>
         </div>
     </section>
 
@@ -177,7 +158,7 @@
                 <span class="bc-eyebrow bc-eyebrow-light">Stay motivated</span>
                 <h2 id="achiever-title">Be a high achiever</h2>
                 <p class="bc-section-lead bc-section-lead-light">
-                    Bucket Connect rewards progress — not just the finish line.
+                    Bucket Connect rewards progress - not just the finish line.
                 </p>
             </header>
 
@@ -218,42 +199,47 @@
     </section>
 
     <!-- PATCH NOTES -->
-    <section class="bc-section bc-section-white" aria-labelledby="news-title">
+    <section class="bc-section bc-section-muted bc-news-section" aria-labelledby="news-title">
         <div class="bc-container">
-            <header class="bc-section-head bc-news-head">
+            <header class="bc-section-head">
                 <span class="bc-eyebrow">Updates</span>
-                <h2 id="news-title">
-                    Patch notes
-                    <NavLink href="/BucketConnect/PatchNotes" class="bc-news-link" aria-label="View all patch notes">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
-                             fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M8 5l8 7-8 7" />
-                        </svg>
-                    </NavLink>
-                </h2>
+                <h2 id="news-title">Patch notes</h2>
+                <p class="bc-section-lead">Recent releases and fixes for Bucket Connect.</p>
             </header>
 
-            <div class="bc-news-grid">
-                @foreach (var item in BucketConnectNotes.Take(3))
-                {
-                    <article class="bc-news-card">
-                        <div class="bc-news-date"
-                             style="background: linear-gradient(180deg, @item.TopColour, @item.BottomColour); color: @item.DateTextColour;">
-                            <span class="day">@item.Date.ToString("dd")</span>
-                            <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
-                            <span class="yr">@item.Date.ToString("yyyy")</span>
-                        </div>
-                        <div class="bc-news-body">
-                            <h3>@item.Title</h3>
-                            <p>@((MarkupString)item.Summary)</p>
-                            @if (!string.IsNullOrEmpty(item.Summary) && item.Summary.Length > 200)
-                            {
-                                <a class="bc-read-more" href="/BucketConnect/PatchNotes">Read more</a>
-                            }
-                        </div>
-                    </article>
-                }
-            </div>
+            @if (BucketConnectNotes.Count == 0)
+            {
+                <p class="bc-news-empty">No patch notes yet - check back soon.</p>
+            }
+            else
+            {
+                <div class="bc-news-list">
+                    @foreach (var item in BucketConnectNotes.Take(3))
+                    {
+                        <article class="bc-news-card">
+                            <div class="bc-news-date"
+                                 style="background: linear-gradient(180deg, @item.TopColour, @item.BottomColour); color: @item.DateTextColour;">
+                                <span class="day">@item.Date.ToString("dd")</span>
+                                <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
+                            </div>
+                            <div class="bc-news-body">
+                                <div class="bc-news-title-row">
+                                    @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                                    {
+                                        <img class="bc-news-icon" src="@item.IconUrl" alt="" />
+                                    }
+                                    <h3>@item.Title</h3>
+                                </div>
+                                <p>@TruncateSummary(item.Summary)</p>
+                            </div>
+                        </article>
+                    }
+                </div>
+
+                <div class="bc-news-actions">
+                    <NavLink href="/BucketConnect/PatchNotes" class="bc-news-button">View all patch notes</NavLink>
+                </div>
+            }
         </div>
     </section>
 
@@ -480,42 +466,6 @@
             filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
         }
 
-    /* About split */
-    .bc-split {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-        flex-wrap: wrap;
-    }
-
-    .bc-split-text {
-        flex: 1 1 420px;
-        color: var(--bc-text-soft);
-        font-size: 1.05rem;
-        line-height: 1.75;
-    }
-
-        .bc-split-text p {
-            margin: 0 0 1rem;
-        }
-
-            .bc-split-text p:last-child {
-                margin-bottom: 0;
-            }
-
-    .bc-split-media {
-        flex: 1 1 360px;
-        display: flex;
-        justify-content: center;
-    }
-
-        .bc-split-media img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: var(--bc-radius);
-            box-shadow: var(--bc-shadow);
-        }
-
     /* Feature cards stack */
     .bc-feature-stack {
         display: flex;
@@ -675,51 +625,49 @@
     }
 
     /* News */
-    .bc-news-head h2 {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
+    .bc-news-section .bc-section-head {
+        margin-bottom: 2rem;
     }
 
-    .bc-news-link {
-        color: var(--bc-brand);
-        display: inline-flex;
-        transition: opacity 0.15s ease;
+    .bc-news-empty {
+        text-align: center;
+        color: var(--bc-text-soft);
+        margin: 0;
     }
 
-        .bc-news-link:hover {
-            opacity: 0.65;
-        }
-
-    .bc-news-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.25rem;
+    .bc-news-list {
+        max-width: 52rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .bc-news-card {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 5.5rem 1fr;
+        align-items: stretch;
         background: #fff;
         border: 1px solid rgba(9, 121, 105, 0.12);
         border-radius: var(--bc-radius);
-        box-shadow: var(--bc-shadow);
+        box-shadow: 0 4px 16px rgba(9, 121, 105, 0.06);
         overflow: hidden;
-        transition: transform 0.18s ease;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
         .bc-news-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
+            box-shadow: var(--bc-shadow);
         }
 
     .bc-news-date {
-        display: grid;
-        align-content: center;
-        justify-items: center;
-        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 0.5rem;
         font-weight: 800;
-        min-width: 76px;
+        text-align: center;
     }
 
         .bc-news-date .day {
@@ -727,47 +675,69 @@
             line-height: 1;
         }
 
-        .bc-news-date .mon,
-        .bc-news-date .yr {
-            font-size: 0.72rem;
+        .bc-news-date .mon {
+            font-size: 0.8rem;
             opacity: 0.9;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
+            margin-top: 0.15rem;
         }
 
     .bc-news-body {
-        padding: 1rem 1.15rem 1.15rem 0;
+        padding: 1rem 1.25rem 1.1rem 1.25rem;
+        color: var(--bc-text);
     }
 
-        .bc-news-body h3 {
-            margin: 0 0 0.4rem;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--bc-text);
-        }
+    .bc-news-title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin-bottom: 0.45rem;
+    }
 
-        .bc-news-body p {
-            margin: 0;
-            color: var(--bc-text-soft);
-            font-size: 0.92rem;
-            line-height: 1.55;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+    .bc-news-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
 
-    .bc-read-more {
-        display: inline-block;
-        margin-top: 0.65rem;
+    .bc-news-title-row h3 {
+        margin: 0;
+        font-size: 1.05rem;
         font-weight: 700;
-        font-size: 0.9rem;
-        color: var(--bc-brand);
-        text-decoration: none;
+        line-height: 1.3;
+        color: var(--bc-text);
     }
 
-        .bc-read-more:hover {
-            color: var(--bc-brand-dark);
+    .bc-news-body p {
+        margin: 0;
+        color: var(--bc-text-soft);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .bc-news-actions {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .bc-news-button {
+        display: inline-block;
+        padding: 0.85rem 1.5rem;
+        border-radius: 999px;
+        border: 1px solid var(--bc-brand);
+        background: transparent;
+        color: var(--bc-brand-dark);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: background 0.15s ease, color 0.15s ease;
+    }
+
+        .bc-news-button:hover {
+            background: var(--bc-brand);
+            color: #fff;
         }
 
     /* Footer */
@@ -814,8 +784,7 @@
 
     @@media (max-width: 900px) {
         .bc-icon-grid,
-        .bc-achiever-grid,
-        .bc-news-grid {
+        .bc-achiever-grid {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -829,8 +798,7 @@
             padding-bottom: 4.5rem;
         }
 
-        .bc-hero-grid,
-        .bc-split {
+        .bc-hero-grid {
             flex-direction: column;
             text-align: center;
         }
@@ -855,9 +823,22 @@
         }
 
         .bc-icon-grid,
-        .bc-achiever-grid,
-        .bc-news-grid {
+        .bc-achiever-grid {
             grid-template-columns: 1fr;
+        }
+
+        .bc-news-card {
+            grid-template-columns: 1fr;
+        }
+
+        .bc-news-date {
+            flex-direction: row;
+            gap: 0.5rem;
+            padding: 0.85rem 1rem;
+        }
+
+        .bc-news-body {
+            padding: 0 1.1rem 1.1rem 1.1rem;
         }
     }
 </style>
@@ -874,5 +855,14 @@
         BucketConnectNotes = items
             .OrderByDescending(n => n.Date)
             .ToList();
+    }
+
+    private static string TruncateSummary(string? summary, int maxLength = 140)
+    {
+        if (string.IsNullOrWhiteSpace(summary))
+            return string.Empty;
+
+        var plain = System.Text.RegularExpressions.Regex.Replace(summary, "<.*?>", string.Empty);
+        return plain.Length <= maxLength ? plain : $"{plain[..maxLength].TrimEnd()}…";
     }
 }

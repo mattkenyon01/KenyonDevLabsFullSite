@@ -5,15 +5,13 @@
 </HeadContent>
 
 <header class="site-header" role="banner">
-    <!-- Left side: Logo + App name -->
     <div class="logo">
         <img src="images/Kenyon Dev Labs NB.png"
-             alt="Girls Who Connect Logo"
+             alt="Kenyon Dev Labs logo"
              class="logo-img" />
         <span class="app-name">Kenyon Dev Labs</span>
     </div>
 
-    <!-- Mobile menu toggle -->
     <button class="nav-toggle"
             @onclick="ToggleMenu"
             aria-label="Toggle menu"
@@ -21,21 +19,18 @@
             aria-expanded="@menuOpen.ToString().ToLower()">
         @if (!menuOpen)
         {
-            <!-- hamburger -->
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         }
         else
         {
-            <!-- minus -->
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                 <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
             </svg>
         }
     </button>
 
-    <!-- Right side: Nav links -->
     <nav id="primary-nav" class=@($"nav-links {(menuOpen ? "open" : "")}") aria-label="Primary">
         <ul>
             <li><a href="">Home</a></li>
@@ -45,6 +40,7 @@
         </ul>
     </nav>
 </header>
+<div class="site-header-spacer" aria-hidden="true"></div>
 
 @code {
     private bool menuOpen = false;
@@ -53,19 +49,27 @@
 
 <style>
     .site-header {
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        max-width: 100vw;
-        margin: 0;
         padding: 1rem 1.5rem;
         background: #280a16;
         font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
         box-sizing: border-box;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .site-header-spacer {
+        height: 4.25rem;
+        pointer-events: none;
+        background: #280a16;
     }
 
     .logo {
@@ -90,7 +94,7 @@
         display: none;
         background: none;
         border: 0;
-        padding: .25rem;
+        padding: 0.25rem;
         cursor: pointer;
         line-height: 0;
         color: #fff;
@@ -113,7 +117,7 @@
     .nav-links {
         display: flex;
         align-items: center;
-        background: #280a16; /* updated */
+        background: #280a16;
     }
 
         .nav-links > ul {
@@ -131,54 +135,49 @@
             font-size: 0.95rem;
             letter-spacing: 0.01em;
             color: #fff;
-            padding: .45rem .75rem;
+            padding: 0.45rem 0.75rem;
             border-radius: 6px;
-            transition: color .2s ease, background .2s ease;
+            transition: color 0.2s ease, background 0.2s ease;
         }
 
             .nav-links a:hover {
-                background: rgba(255,255,255,0.12);
+                background: rgba(255, 255, 255, 0.12);
             }
 
     @@media (max-width: 900px) {
-        .nav-toggle
-
-    {
-        display: inline-block;
-        position: relative;
-        z-index: 1200;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 0;
-        right: 2rem;
-        width: min(280px, 90vw);
-        background: #280a16 !important; /* updated */
-        border-radius: 12px;
-        box-shadow: 0 10px 28px rgba(0,0,0,.14);
-        overflow: hidden;
-        display: none;
-        animation: slidePanel .18s ease;
-        z-index: 1100;
-    }
-
-        .nav-links.open {
-            display: block;
+        .nav-toggle {
+            display: inline-block;
+            position: relative;
+            z-index: 1200;
         }
 
-        .nav-links > ul {
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0.8rem;
-            padding: .75rem;
+        .nav-links {
+            position: absolute;
+            top: 100%;
+            right: 1.5rem;
+            width: min(280px, 90vw);
+            background: #280a16 !important;
+            border-radius: 12px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+            overflow: hidden;
+            display: none;
+            z-index: 1100;
         }
 
-        .nav-links a {
-            padding: .75rem .75rem;
-            border-radius: 8px;
-            color: #fff;
-        }
+            .nav-links.open {
+                display: block;
+            }
 
+            .nav-links > ul {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.8rem;
+                padding: 0.75rem;
+            }
+
+            .nav-links a {
+                padding: 0.75rem;
+                border-radius: 8px;
+            }
     }
 </style>

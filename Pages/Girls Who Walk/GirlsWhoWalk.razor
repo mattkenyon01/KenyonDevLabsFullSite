@@ -5,1059 +5,882 @@
 @inject HttpClient Http
 @inject NewsFileService NewsData
 @inject NavigationManager Nav
+
 <PageTitle>Girls Who Connect</PageTitle>
 
 <GirlsWhoWalkHeader />
-<section class="hero-section">
-    <div class="hero-inner">
-        <div class="hero-content">
-            <div class="hero-image">
-                <img src="images/Girls Who Connect/3 phones graphic.png" alt="Girls Who Connect" />
-            </div>
 
-            <div class="hero-text">
+<div class="gwc-page">
+
+    <!-- HERO -->
+    <section class="gwc-section gwc-hero">
+        <div class="gwc-container gwc-hero-grid">
+            <div class="gwc-hero-copy">
+                <span class="gwc-eyebrow gwc-eyebrow-hero">Community walks app</span>
                 <h1>Welcome to Girls Who Connect</h1>
                 <p>
-                    Stay up to date with Girls Who Connect in your area - discover upcoming walks, 
+                    Stay up to date with walking groups in your area - discover upcoming walks,
                     connect with local members, and see everything happening in your community.
                 </p>
-
-                <!-- ✅ App Store Button -->
                 <a href="https://apps.apple.com/gb/app/girls-who-walk/id6477972997"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="appstore-btn">
+                   class="gwc-appstore-btn">
                     <img src="images/App Store Button.png" alt="Download on the App Store" />
                 </a>
             </div>
+            <div class="gwc-hero-visual">
+                <img src="images/Girls Who Connect/3 phones graphic.png" alt="Girls Who Connect app preview" />
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- MISSION -->
+    <section class="gwc-section gwc-section-white" aria-labelledby="info-title">
+        <div class="gwc-container">
+            <header class="gwc-section-head">
+                <span class="gwc-eyebrow">Our mission</span>
+                <h2 id="info-title">Built for community walks</h2>
+                <p class="gwc-section-lead">
+                    A supportive space for women to organise walks, plan routes, and stay connected locally.
+                </p>
+            </header>
+
+            <div class="gwc-split">
+                <div class="gwc-split-body">
+                    <p>
+                        Girls Who Connect helps women discover local walking groups, make new friends,
+                        and explore their area safely. The app was created to give communities their
+                        space to organise walks, plan routes, and stay in touch within a supportive
+                        environment designed just for them.
+                    </p>
+                    <p>
+                        It's not only a way to get active and meet people, but also a platform shaped by its users.
+                        Feedback goes directly to the developer, helping the app evolve into the kind
+                        of social, stylish experience the community wants it to be.
+                    </p>
+                </div>
+                <div class="gwc-split-media">
+                    <img src="images/Girls Who Connect/Connect Graphic.png"
+                         alt="Girls Who Connect community group"
+                         loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="gwc-section gwc-section-muted" aria-labelledby="features-title">
+        <div class="gwc-container">
+            <header class="gwc-section-head">
+                <span class="gwc-eyebrow">At a glance</span>
+                <h2 id="features-title">App functionality</h2>
+            </header>
+
+            <div class="gwc-icon-grid">
+                <article class="gwc-icon-card">
+                    <div class="gwc-icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3>Find local walks</h3>
+                    <p>Discover nearby walking groups and events - complete with time, location, capacity, and walk leaders at a glance.</p>
+                </article>
+
+                <article class="gwc-icon-card">
+                    <div class="gwc-icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-8.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
+                        </svg>
+                    </div>
+                    <h3>Meet new people</h3>
+                    <p>Connect with friendly walkers, grow your social circle, and chat with new friends right in the app.</p>
+                </article>
+
+                <article class="gwc-icon-card">
+                    <div class="gwc-icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+                        </svg>
+                    </div>
+                    <h3>Personalise your space</h3>
+                    <p>Customise your profile, adjust preferences, and create a space that reflects your personality.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF / SIGN UP -->
+    <section class="gwc-section gwc-section-white" aria-labelledby="pdf-title">
+        <div class="gwc-container">
+            <header class="gwc-section-head">
+                <span class="gwc-eyebrow">Get started</span>
+                <h2 id="pdf-title">Want to sign up?</h2>
+                <p class="gwc-section-lead">
+                    Everything your group needs to get set up on Girls Who Connect - in one pitch deck.
+                </p>
+            </header>
+
+            <article class="gwc-split-card">
+                <div class="gwc-split-card-media">
+                    <img src="images/Girls Who Connect/PDF_Cover.png"
+                         alt="Girls Who Connect overview preview"
+                         loading="lazy" />
+                    <span class="gwc-pdf-badge">PDF</span>
+                </div>
+                <div class="gwc-split-card-body">
+                    <h3>Pitch deck</h3>
+                    <p>
+                        It's easy to become a part of the Girls Who Connect app. To get your group involved,
+                        encourage the admin to view the website or get in contact with matt@kenyondevlabs.com.
+                        All the details of the app are presented in this document, along with how to get
+                        set up and how to get the most out of the app.
+                    </p>
+                    <div class="gwc-split-card-actions">
+                        <a class="gwc-btn"
+                           href="Files/Girls_Who_Connect_Details.pdf"
+                           target="_blank"
+                           rel="noopener">
+                            View PDF
+                        </a>
+                        <a class="gwc-btn gwc-btn-outline"
+                           href="Files/Girls_Who_Connect_Details.pdf"
+                           download>
+                            Download
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- POLICIES -->
+    <section class="gwc-section gwc-section-muted gwc-policies-section" aria-labelledby="policy-cta-title">
+        <div class="gwc-container">
+            <header class="gwc-section-head">
+                <span class="gwc-eyebrow">Legal</span>
+                <h2 id="policy-cta-title">Important policies</h2>
+                <p class="gwc-section-lead">
+                    We're committed to privacy and safety across the Girls Who Connect community.
+                    Read how we protect your data and the standards we follow to keep young users safe.
+                </p>
+            </header>
+
+            <div class="gwc-policy-grid">
+                <article class="gwc-policy-card">
+                    <span class="gwc-policy-label">Privacy</span>
+                    <h3>Privacy Policy</h3>
+                    <p>
+                        See what data we collect, how we use it, and the controls you have to manage your privacy.
+                    </p>
+                    <NavLink class="gwc-btn" href="/girlswhoconnect/PrivacyPolicy" aria-label="Read our Privacy Policy">
+                        Read Privacy Policy
+                    </NavLink>
+                </article>
+
+                <article class="gwc-policy-card">
+                    <span class="gwc-policy-label">Safety</span>
+                    <h3>Child Safety Standards</h3>
+                    <p>
+                        Review our safety-by-design standards, moderation practices, and reporting tools for young users.
+                    </p>
+                    <NavLink class="gwc-btn" href="/girlswhoconnect/ChildSafetyStandards" aria-label="Read our Child Safety Standards">
+                        View Safety Standards
+                    </NavLink>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PATCH NOTES -->
+    <section class="gwc-section gwc-section-white gwc-news-section" aria-labelledby="news-title">
+        <div class="gwc-container">
+            <header class="gwc-section-head">
+                <span class="gwc-eyebrow">Updates</span>
+                <h2 id="news-title">Patch notes</h2>
+                <p class="gwc-section-lead">Recent releases and fixes for Girls Who Connect.</p>
+            </header>
+
+            @if (GirlsWhoConnectNotes.Count == 0)
+            {
+                <p class="gwc-news-empty">No patch notes yet - check back soon.</p>
+            }
+            else
+            {
+                <div class="gwc-news-list">
+                    @foreach (var item in GirlsWhoConnectNotes)
+                    {
+                        <article class="gwc-news-card">
+                            <div class="gwc-news-date"
+                                 style="background: linear-gradient(180deg, @GetNewsTop(item), @GetNewsBottom(item)); color: @GetNewsDateText(item);">
+                                <span class="day">@item.Date.ToString("dd")</span>
+                                <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
+                            </div>
+                            <div class="gwc-news-body">
+                                <div class="gwc-news-title-row">
+                                    @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                                    {
+                                        <img class="gwc-news-icon" src="@item.IconUrl" alt="" />
+                                    }
+                                    <h3>@item.Title</h3>
+                                </div>
+                                <p>@((MarkupString)TruncateSummary(item.Summary))</p>
+                            </div>
+                        </article>
+                    }
+                </div>
+
+                <div class="gwc-news-actions">
+                    <NavLink href="/GirlsWhoConnect/PatchNotes" class="gwc-btn gwc-btn-outline">View all patch notes</NavLink>
+                </div>
+            }
+        </div>
+    </section>
+
+    <footer class="gwc-footer">
+        <div class="gwc-container gwc-footer-inner">
+            <nav aria-label="Legal">
+                <h3>Legal</h3>
+                <ul class="gwc-footer-links">
+                    <li><NavLink href="/GirlsWhoConnect/PrivacyPolicy">Privacy Policy</NavLink></li>
+                    <li><NavLink href="/GirlsWhoConnect/ChildSafetyStandards">Child Safety Standards</NavLink></li>
+                </ul>
+            </nav>
+            <p class="gwc-footer-copy">&copy; @DateTime.Now.Year Kenyon Dev Labs</p>
+        </div>
+    </footer>
+
+</div>
 
 <style>
     :root {
-        --brand: #efb2c4;
+        --gwc-brand: #efb2c4;
+        --gwc-brand-dark: #d495a8;
+        --gwc-brand-deep: #b14c66;
+        --gwc-muted: #fff5f8;
+        --gwc-text: #1a1a1a;
+        --gwc-text-soft: #4a4a4a;
+        --gwc-max: 1080px;
+        --gwc-radius: 1rem;
+        --gwc-shadow: 0 8px 28px rgba(212, 149, 168, 0.18);
     }
 
     html, body {
         overflow-x: clip;
+        font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
     }
 
-    .hero-section {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        width: 200%;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 150%;
-        padding-top: calc((var(--hero-extra, 20%) / 2));
-        padding-bottom: 100px;
+    body {
+        background: #fff;
+        color: var(--gwc-text);
+    }
+
+    .gwc-page {
+        overflow-x: clip;
+    }
+
+    .gwc-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 4rem 1.5rem;
         box-sizing: border-box;
-        z-index: 1;
-        overflow: hidden;
-        background: var(--brand);
-        margin-top: -6rem;
+        border-top: 1px solid rgba(239, 178, 196, 0.35);
     }
 
-    .hero-inner {
-        padding-top: 5vh;
+    .gwc-section-white {
+        background: #fff;
+    }
+
+    .gwc-section-muted {
+        background: var(--gwc-muted);
+    }
+
+    .gwc-container {
+        max-width: var(--gwc-max);
         margin: 0 auto;
-        width: min(var(--page-max, 1100px), 50%);
     }
 
-    .hero-section::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -65px;
-        height: 140px;
-        pointer-events: none;
-        z-index: 0;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        background-size: 100% 100%;
-        transform: translateY(-16px);
-        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,32 C240,96 480,0 720,48 C960,96 1200,32 1440,64 L1440,120 L0,120 Z" fill="%23ffffff"/></svg>');
+    .gwc-section-head {
+        max-width: 42rem;
+        margin: 0 auto 2.5rem;
+        text-align: center;
     }
 
-    .hero-content {
+    .gwc-eyebrow {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #c45f7a;
+    }
+
+    .gwc-section-head h2 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        color: var(--gwc-text);
+    }
+
+        .gwc-section-head h2::after {
+            content: "";
+            display: block;
+            width: 3rem;
+            height: 3px;
+            margin: 1rem auto 0;
+            background: var(--gwc-brand-dark);
+            border-radius: 999px;
+        }
+
+    .gwc-section-lead {
+        margin: 1.15rem 0 0;
+        color: var(--gwc-text-soft);
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+
+    /* Hero */
+    .gwc-hero {
+        border-top: none;
+        padding: 3rem 1.5rem 5.5rem;
+        background: linear-gradient(160deg, var(--gwc-brand) 0%, var(--gwc-brand-dark) 100%);
         position: relative;
-        z-index: 1;
+    }
+
+        .gwc-hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 64px;
+            background: #fff;
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+    .gwc-hero-grid {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 2.5rem;
         flex-wrap: wrap;
-        flex-direction: row;
+        position: relative;
+        z-index: 1;
     }
 
-    .hero-text {
-        flex: 1 1 400px;
-        color: #111;
-        text-align: left;
-        order: 1;
+    .gwc-hero-copy {
+        flex: 1 1 360px;
+        color: var(--gwc-text);
     }
 
-        .hero-text h1 {
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: #111;
-        }
+    .gwc-eyebrow-hero {
+        color: var(--gwc-brand-deep);
+    }
 
-        .hero-text p {
-            font-size: 1.05rem;
-            line-height: 1.5;
-            color: #333;
-            margin-bottom: 1.5rem;
-            max-width: 500px;
-        }
+    .gwc-hero-copy h1 {
+        margin: 0 0 1.15rem;
+        font-size: clamp(2rem, 4.5vw, 2.85rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+    }
 
-    /* ✅ App Store Button */
-    .appstore-btn img {
-        width: 120px;
-        height: auto;
+    .gwc-hero-copy p {
+        margin: 0 0 1.5rem;
+        max-width: 32rem;
+        font-size: 1.08rem;
+        line-height: 1.65;
+        color: var(--gwc-text-soft);
+    }
+
+    .gwc-appstore-btn {
+        display: inline-block;
         transition: transform 0.2s ease;
     }
 
-    .appstore-btn:hover img {
-        transform: scale(1.05);
-    }
+        .gwc-appstore-btn:hover {
+            transform: translateY(-2px);
+        }
 
-    .hero-image {
-        flex: 1 1 400px;
+        .gwc-appstore-btn img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+
+    .gwc-hero-visual {
+        flex: 1 1 360px;
         display: flex;
         justify-content: center;
-        align-items: center;
-        order: 2;
     }
 
-        .hero-image img {
-            display: block;
+        .gwc-hero-visual img {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            object-fit: contain;
-            border-radius: 16px;
-            transition: transform 0.3s ease;
+            max-width: 440px;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
         }
 
-    /* ===== Responsive ===== */
-    @@media (max-width: 800px) {
-        .hero-section {
-            flex-direction: column;
-            text-align: center;
-            padding-bottom: 95px;
-        }
-
-            .hero-section::after {
-                height: 120px;
-                transform: translateY(-12px);
-            }
-
-        .hero-text {
-            text-align: center;
-            order: 2;
-        }
-
-        .appstore-btn img {
-            width: 160px;
-        }
-
-        .hero-image img {
-            max-width: 340px;
-            order: 1;
-        }
-    }
-
-    @@media (max-width: 400px) {
-        .hero-content {
-            margin-top: 2rem;
-        }
-    }
-</style>
-
-
-
-<!-- ===== About / Info Section ===== -->
-<section class="info-section" aria-labelledby="info-title">
-    <div class="info-inner">
-        <h2 id="info-title">Our Mission</h2>
-
-        <div class="info-content">
-            <div class="info-text">
-                <p>
-                    Girls Who Connect helps women discover local walking groups, make new friends,
-                    and explore their area safely. The app was created to give communities their
-                    space to organise walks, plan routes, and stay in touch within a supportive
-                    environment designed just for them. 
-                </p>
-                <p>
-                    It’s not only a way to get active and meet people, 
-                    but also a platform shaped by its users. Feedback goes 
-                    directly to the developer, helping the app evolve into the kind 
-                    of social, stylish experience the community wants it to be.
-                </p>
-            </div>
-
-            <div class="info-image">
-                <img src="images/Girls Who Connect/Connect Graphic.png"
-                     alt="Girls Who Connect community group"
-                     loading="lazy" />
-            </div>
-        </div>
-    </div>
-</section>
-<hr class="section-divider" />
-<style>
-    /* ===== Info Section (Text + Image) ===== */
-    .info-section {
-        color: #111;
-        padding: 3rem 1rem; /* padding stays */
-        box-sizing: border-box;
-    }
-
-    .info-inner {
-        width: min(var(--page-max, 1100px), 100%); /* ✅ no overflow in padded parent */
-        margin: 0 auto;
-    }
-
-    .info-section h2 {
-        text-align: center;
-        font-size: clamp(1.4rem, 3vw, 2rem);
-        font-weight: 800;
-        margin: 0 0 1.5rem 0;
-    }
-
-    .info-content {
+    /* Split content (mission) */
+    .gwc-split {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
+        gap: 2.5rem;
         flex-wrap: wrap;
     }
 
-    .info-text {
-        flex: 1 1 480px;
-        color: #333;
-        line-height: 1.6;
-        font-size: 1.05rem;
-        min-width: 0;
-    }
-
-        .info-text p {
-            margin-bottom: 1rem;
-        }
-
-    .info-image {
+    .gwc-split-body {
         flex: 1 1 420px;
+        min-width: 0;
+        color: var(--gwc-text-soft);
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+        .gwc-split-body p {
+            margin: 0 0 1rem;
+        }
+
+            .gwc-split-body p:last-child {
+                margin-bottom: 0;
+            }
+
+    .gwc-split-media {
+        flex: 1 1 380px;
         display: flex;
         justify-content: center;
         min-width: 0;
     }
 
-        .info-image img {
-            display: block;
+        .gwc-split-media img {
             width: 100%;
-            max-width: 480px;
-            height: auto;
-            margin: 0 auto;
-            border-radius: var(--radius, 16px);
-            box-shadow: 0 10px 24px rgba(0,0,0,.1);
+            max-width: 440px;
+            border-radius: var(--gwc-radius);
+            box-shadow: var(--gwc-shadow);
         }
 
-    /* ===== Responsive Stack ===== */
-    @@media (max-width: 800px) {
-        .info-inner
-
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .info-content {
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    .info-text,
-    .info-image {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 480px;
-        margin: 0 auto;
-    }
-
-        .info-image img {
-            width: 100%;
-            max-width: 360px;
-            height: auto;
-        }
-
-    }
-</style>
-
-
-
-<!-- ===== Feature Icons ===== -->
-<section class="features-section" aria-labelledby="features-title">
-    <div class="features-inner">
-        <h2 id="features-title">App Functionality</h2>
-
-        <div class="feature-grid">
-            <!-- 1) Find Local Walks -->
-            <article class="feature-card">
-                <div class="icon-circle" aria-hidden="true">
-                    <!-- Map Pin -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         aria-hidden="true">
-                        <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" />
-                        <circle cx="12" cy="10" r="3" />
-                    </svg>
-                </div>
-                <h3>Find Local Walks</h3>
-                <p>Easily discover nearby walking groups and events - complete with time, location, capacity, and walk leaders at a glance.</p>
-            </article>
-
-            <!-- 2) Meet New People -->
-            <article class="feature-card">
-                <div class="icon-circle" aria-hidden="true">
-                    <!-- Heart -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         aria-hidden="true">
-                        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-8.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
-                    </svg>
-                </div>
-                <h3>Meet New People</h3>
-                <p>Connect with friendly walkers, grow your social circle, and chat with new friends right in the app.</p>
-            </article>
-
-            <!-- 3) Personalise Your Space -->
-            <article class="feature-card">
-                <div class="icon-circle" aria-hidden="true">
-                    <!-- User / Customisation Icon -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         aria-hidden="true">
-                        <circle cx="12" cy="8" r="4" />
-                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
-                    </svg>
-                </div>
-                <h3>Personalise Your Space</h3>
-                <p>
-                    Make the app your own by customising your profile, adjusting preferences,
-                    and creating a space that reflects your personality.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<hr class="section-divider" />
-
-<style>
-    /* ===== Feature Icons ===== */
-    :root {
-        --brand-dark: #b14c66; /* darker accent for icons */
-        --circle-bg: rgba(239,178,196,.22); /* soft brand tint */
-        --circle-border: rgba(239,178,196,.55);
-    }
-
-    .features-section {
-        color: #111;
-        padding: 2.75rem 1rem;
-        box-sizing: border-box;
-    }
-
-    .features-inner {
-        width: min(var(--page-max, 1100px), 100%); /* ✅ prevent overflow in padded parent */
-        margin: 0 auto; /* ✅ keep perfectly centered */
-    }
-
-    .features-section h2 {
-        margin: 0 0 1.25rem 0;
-        text-align: center;
-        font-size: clamp(1.4rem, 3vw, 2rem);
-        font-weight: 800;
-    }
-
-    .feature-grid {
+    /* Icon feature grid */
+    .gwc-icon-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--gap, 1.25rem);
-        align-items: stretch;
-        justify-items: stretch;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
     }
 
-    .feature-card {
+    .gwc-icon-card {
         text-align: center;
-        padding: 1.25rem 1rem 1.4rem;
-        border-radius: var(--radius, 12px);
+        padding: 1.5rem 1.25rem;
         background: #fff;
-        box-shadow: 0 6px 16px rgba(0,0,0,.08);
-        transition: transform .18s ease, box-shadow .18s ease;
+        border: 1px solid rgba(239, 178, 196, 0.4);
+        border-radius: var(--gwc-radius);
+        box-shadow: 0 4px 16px rgba(212, 149, 168, 0.1);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-        .feature-card:hover {
+        .gwc-icon-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 22px rgba(0,0,0,.12);
+            box-shadow: var(--gwc-shadow);
         }
 
-    .icon-circle {
-        width: 84px;
-        height: 84px;
-        margin: 0 auto .75rem;
+    .gwc-icon-circle {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 0.85rem;
         border-radius: 50%;
-        background: var(--circle-bg);
-        border: 2px solid var(--circle-border);
+        background: rgba(239, 178, 196, 0.25);
+        border: 2px solid rgba(239, 178, 196, 0.55);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--brand-dark);
+        color: var(--gwc-brand-deep);
     }
 
-        .icon-circle svg {
-            width: 36px;
-            height: 36px;
-            display: block;
+        .gwc-icon-circle svg {
+            width: 32px;
+            height: 32px;
         }
 
-    .feature-card h3 {
-        margin: .25rem 0 .35rem 0;
+    .gwc-icon-card h3 {
+        margin: 0 0 0.45rem;
         font-size: 1.05rem;
         font-weight: 800;
     }
 
-    .feature-card p {
+    .gwc-icon-card p {
         margin: 0;
-        color: #333;
-        line-height: 1.45;
-        max-width: 28ch;
-        display: inline-block;
-    }
-
-    /* Responsive stack */
-    @@media (max-width: 900px) {
-        .feature-grid {
-            grid-template-columns: repeat(2, 1fr);
-            justify-items: stretch;
-        }
-    }
-
-    @@media (max-width: 620px) {
-        .feature-grid {
-            grid-template-columns: 1fr; /* single column */
-            justify-items: center; /* ✅ center cards in the column */
-        }
-
-        .feature-card {
-            width: 100%;
-            max-width: 520px; /* ✅ avoid edge-to-edge look on tiny screens */
-        }
-
-        .icon-circle {
-            width: 78px;
-            height: 78px;
-        }
-
-            .icon-circle svg {
-                width: 32px;
-                height: 32px;
-            }
-    }
-
-    /* Divider between sections */
-    hr.section-divider {
-        border: none;
-        height: 4px;
-        width: 100%;
-        max-width: 1000px;
-        margin: 10px auto;
-        background: #efb2c4;
-        border-radius: 0;
-        padding-inline: 10px;
-        box-sizing: border-box;
-    }
-</style>
-
-<!-- ===== PDF Overview ===== -->
-<section class="pdf-section" aria-labelledby="pdf-title">
-    <div class="pdf-inner">
-        <h2 id="pdf-title">Want to sign up?</h2>
-
-        <article class="pdf-card landscape">
-            <!-- Left side: PDF image preview -->
-            <div class="pdf-preview-landscape" aria-hidden="true">
-                <div class="pdf-page-landscape">
-                    <img src="/images/Girls Who Connect/PDF_Cover.png"
-                         alt="Girls Who Connect Overview Preview"
-                         class="pdf-image" />
-                </div>
-                <div class="pdf-ribbon">PDF</div>
-            </div>
-
-            <!-- Right side: PDF description and actions -->
-            <div class="pdf-content">
-                <h3>Pitch Deck</h3>
-                <p>
-                    It's easy to become a part of the Girls Who Connect App. To get your group involved,
-                    encourage the admin to view the website or get in contact with matt@kenyondevlabs.com.
-                    All the details of the app are presented in this document, along with how to get
-                    set up and how to get the most out of the app.
-                </p>
-
-                <div class="pdf-actions">
-
-                    <a class="btn view"
-                       href="Files/Girls_Who_Connect_Details.pdf"
-                       target="_blank" rel="noopener">
-                        View PDF
-                    </a>
-                    <a class="btn ghost"
-                       href="Files/Girls_Who_Connect_Details.pdf"
-                       download>
-                        Download
-                    </a>
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
-
-<hr class="section-divider" />
-
-<style>
-    /* ===== PDF Overview Section ===== */
-    .pdf-section {
-        background: #ffffff;
-        color: #111;
-        padding: 3rem 1rem;
-        box-sizing: border-box;
-    }
-
-    .pdf-inner {
-        width: min(var(--page-max, 1100px), 100%);
-        margin: 0 auto;
-    }
-
-    .pdf-section h2 {
-        margin: 0 0 1.5rem 0;
-        text-align: center;
-        font-size: clamp(1.4rem, 3vw, 2rem);
-        font-weight: 800;
-    }
-
-    /* ===== Card Layout ===== */
-    .pdf-card.landscape {
-        display: flex;
-        flex-direction: row; /* ✅ side-by-side layout */
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-        gap: 2rem;
-        background: #fff;
-        border-radius: var(--radius, 16px);
-        box-shadow: 0 12px 28px rgba(0,0,0,.12);
-        padding: 2rem;
-        overflow: hidden;
-    }
-
-    /* ===== Landscape Preview (Left) ===== */
-    .pdf-preview-landscape {
-        position: relative;
-        flex: 0 0 50%;
-        background: linear-gradient(145deg, rgba(239,178,196,.25), rgba(239,178,196,.1));
-        border: 1px solid rgba(239,178,196,.5);
-        border-radius: 14px;
-        box-shadow: 0 8px 22px rgba(0,0,0,.08);
-        overflow: hidden;
-        aspect-ratio: 16 / 9;
-        transform-origin: center;
-        transition: transform 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 600px;
-    }
-
-    .pdf-page-landscape {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .pdf-image {
-        display: block;
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        border-radius: 10px;
-        object-fit: contain;
-    }
-
-    .pdf-ribbon {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        background: #111;
-        color: #fff;
-        font-weight: 800;
-        font-size: .8rem;
-        letter-spacing: .06em;
-        padding: .25rem .5rem;
-        border-radius: 8px;
-    }
-
-    /* ===== Content (Right) ===== */
-    .pdf-content {
-        flex: 1;
-        text-align: left;
-    }
-
-        .pdf-content h3 {
-            margin: 0 0 .5rem 0;
-            font-size: 1.15rem;
-            font-weight: 800;
-        }
-
-        .pdf-content p {
-            margin: 0 0 1rem 0;
-            color: #333;
-            line-height: 1.5;
-            max-width: 52ch;
-        }
-
-    .pdf-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .75rem 1.25rem;
-        padding: 0;
-        margin: 0 0 1.2rem 0;
-        list-style: none;
-        color: #444;
-    }
-
-        .pdf-meta li {
-            background: rgba(239,178,196,.18);
-            border: 1px solid rgba(239,178,196,.45);
-            border-radius: 999px;
-            padding: .35rem .7rem;
-            font-size: .9rem;
-        }
-
-    .pdf-actions {
-        display: flex;
-        gap: .75rem;
-        align-items: center;
-    }
-
-        .pdf-actions .btn.view {
-            background: #111;
-            color: #fff;
-        }
-
-            .pdf-actions .btn.view:hover {
-                background: #333;
-            }
-
-    /* ===== Responsive Stack ===== */
-    @@media (max-width: 950px) {
-        .pdf-card.landscape
-
-    {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .pdf-preview-landscape,
-    .pdf-content {
-        flex: none;
-        width: 100%;
-        max-width: 580px;
-        margin: 0 auto;
-    }
-
-    .pdf-image {
-        width: 100%;
-        max-width: 520px;
-        height: auto;
-    }
-
-    .pdf-content {
-        text-align: center;
-    }
-
-    .pdf-actions {
-        justify-content: center;
-    }
-
-    }
-</style>
-
-
-<!-- ===== Policies ===== -->
-<section class="policy-cta" aria-labelledby="policy-cta-title">
-    <div class="policy-cta-inner">
-        <h2 id="policy-cta-title">Important Policies</h2>
-        <p class="policy-cta-desc">
-            We’re committed to privacy and safety across the Girls Who Connect community.
-            Learn how we protect your data and the standards we follow to keep young users safe.
-        </p>
-
-        <div class="policy-card-grid">
-            <!-- Privacy Policy -->
-            <article class="policy-card">
-                <h3>Privacy Policy</h3>
-                <p>
-                    See what data we collect, how we use it, and the controls you have to manage your privacy.
-                </p>
-                <NavLink class="btn" href="/girlswhoconnect/PrivacyPolicy" aria-label="Read our Privacy Policy">
-                    Read Privacy Policy
-                </NavLink>
-            </article>
-
-            <!-- Child Safety Standards -->
-            <article class="policy-card">
-                <h3>Child Safety Standards</h3>
-                <p>
-                    Review our safety-by-design standards, moderation practices, and reporting tools for young users.
-                </p>
-                <NavLink class="btn" href="/girlswhoconnect/ChildSafetyStandards" aria-label="Read our Child Safety Standards">
-                    View Safety Standards
-                </NavLink>
-            </article>
-        </div>
-    </div>
-</section>
-
-<hr class="section-divider" />
-
-<style>
-    .policy-cta {
-        background: #ffffff;
-        color: #111;
-        padding: 2.75rem 1rem 2rem;
-        box-sizing: border-box;
-    }
-
-    .policy-cta-inner {
-        width: min(var(--page-max, 1100px), 100%); /* ✅ prevent overflow in padded parent */
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .policy-cta h2 {
-        margin: 0 0 .6rem 0;
-        font-size: clamp(1.3rem, 3vw, 1.8rem);
-        font-weight: 800;
-    }
-
-    .policy-cta-desc {
-        margin: 0 auto 1.5rem;
-        max-width: 60ch;
-        color: #333;
+        color: var(--gwc-text-soft);
+        font-size: 0.95rem;
         line-height: 1.55;
     }
 
-    /* Layout */
-    .policy-card-grid {
+    /* PDF split card */
+    .gwc-split-card {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--gap, 1.25rem);
+        grid-template-columns: 1fr 1fr;
         align-items: stretch;
-        justify-items: stretch;
-    }
-
-    .policy-card {
-        text-align: left;
         background: #fff;
-        border-radius: var(--radius, 16px);
-        border: 1px solid rgba(239,178,196,.45);
-        box-shadow: 0 10px 24px rgba(0,0,0,.08);
-        padding: 1.25rem 1.25rem 1.35rem;
-        display: grid;
-        align-content: start;
-        gap: .65rem;
-        transition: transform .18s ease, box-shadow .18s ease;
+        border: 1px solid rgba(239, 178, 196, 0.45);
+        border-radius: var(--gwc-radius);
+        box-shadow: var(--gwc-shadow);
+        overflow: hidden;
     }
 
-        .policy-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 28px rgba(0,0,0,.12);
-        }
-
-        .policy-card h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            font-weight: 800;
-        }
-
-        .policy-card p {
-            margin: 0;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        /* Buttons (pink background, black text) */
-        .policy-card .btn {
-            margin-top: .6rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #efb2c4;
-            color: #000;
-            border: none;
-            border-radius: 999px;
-            padding: 0.65rem 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background 0.2s ease, transform 0.15s ease;
-        }
-
-            .policy-card .btn:hover {
-                background: #d495a8;
-                transform: translateY(-2px);
-            }
-
-    /* Mobile */
-    @@media (max-width: 760px) {
-        .policy-card-grid {
-            grid-template-columns: 1fr; /* stack */
-            justify-items: center; /* ✅ center the cards themselves */
-        }
-
-        .policy-card {
-            text-align: center; /* ✅ center text */
-            width: 100%;
-            max-width: 520px; /* ✅ avoid edge-to-edge look */
-        }
-
-            .policy-card .btn {
-                width: 100%; /* ✅ full-width button centered */
-                justify-content: center;
-            }
-    }
-</style>
-
-
-
-<!-- ===== News & Updates ===== -->
-<section class="news-section" aria-labelledby="news-title">
-    <div class="news-header">
-        <h2 id="news-title">
-            Patch Notes
-            <NavLink href="/GirlsWhoConnect/PatchNotes">
-                <svg class="news-arrow" xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24" width="18" height="18"
-                     fill="none" stroke="black" stroke-width="4"
-                     stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 5l8 7-8 7" />
-                </svg>
-            </NavLink>
-        </h2>
-    </div>
-
-    <div class="news-grid">
-        @foreach (var item in GirlsWhoConnectNotes)
-        {
-            <article class="news-card">
-                <!-- Gradient header with title -->
-                <div class="news-header-bar"
-                     style="background: linear-gradient(180deg, @item.TopColour, @item.BottomColour);">
-                    <h3>@item.Title</h3>
-                </div>
-
-                <!-- Body content -->
-                <div class="news-body">
-                    <p>@((MarkupString)item.Summary)</p>
-
-                    @if (!string.IsNullOrEmpty(item.Summary) && item.Summary.Length > 200)
-                    {
-                        <a class="news-link" href="/GirlsWhoConnect/PatchNotes">Read more</a>
-                    }
-                </div>
-
-                <!-- Date badge -->
-                <div class="news-date"
-                     style="background: linear-gradient(180deg, @item.TopColour, @item.BottomColour); color: @item.DateTextColour;">
-                    <span class="day">@item.Date.ToString("dd")</span>
-                    <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
-                    <span class="yr">@item.Date.ToString("yyyy")</span>
-                </div>
-            </article>
-        }
-    </div>
-</section>
-
-<style>
-    .news-section {
-        width: min(var(--page-max, 1125px), 100%); /* ✅ no overflow in padded parent */
-        margin: 0 auto;
-        padding: 2.75rem 1rem;
-        color: #111;
-        box-sizing: border-box;
-        text-align: left;
-    }
-
-        .news-section #news-title {
-            margin: 0 0 1.25rem 0;
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-            font-weight: 800;
-            color: black;
-            text-align: left;
-        }
-
-    .news-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--gap, 1.25rem);
-        justify-items: stretch; /* default: stretch on wide screens */
-    }
-
-    @@media (max-width: 1000px) {
-        .news-grid {
-            grid-template-columns: repeat(2, 1fr);
-            justify-items: stretch;
-        }
-    }
-
-    @@media (max-width: 680px) {
-        .news-grid {
-            grid-template-columns: 1fr; /* stack */
-            justify-items: center; /* ✅ center cards themselves */
-        }
-
-        .news-section #news-title {
-            text-align: center; /* ✅ center title on phones */
-        }
-    }
-
-    /* ===== Card layout ===== */
-    .news-card {
+    .gwc-split-card-media {
         position: relative;
+        background: linear-gradient(145deg, rgba(239, 178, 196, 0.3), rgba(239, 178, 196, 0.12));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        min-height: 16rem;
+    }
+
+        .gwc-split-card-media img {
+            width: 100%;
+            max-width: 360px;
+            border-radius: 0.65rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+    .gwc-pdf-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.25rem 0.55rem;
+        border-radius: 0.45rem;
+        background: var(--gwc-text);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+    }
+
+    .gwc-split-card-body {
         display: flex;
         flex-direction: column;
-        background: #fff;
-        border-radius: var(--radius, 12px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-        overflow: hidden;
-        transition: transform .18s ease, box-shadow .18s ease;
-        width: 100%;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 2rem;
     }
 
-    /* Nice centered width on small screens */
-    @@media (max-width: 680px) {
-        .news-card {
-            max-width: 520px; /* ✅ avoid edge-to-edge look */
-        }
-    }
-
-    .news-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 18px rgba(0,0,0,0.16);
-    }
-
-    /* ===== Gradient header bar ===== */
-    .news-header-bar {
-        padding: 0.9rem 1rem;
-        color: black;
-    }
-
-        .news-header-bar h3 {
+        .gwc-split-card-body h3 {
             margin: 0;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: black;
+            font-size: 1.2rem;
+            font-weight: 800;
         }
 
-    .news-body {
-        padding: 1rem 1rem 2.75rem 1rem; /* space for date badge */
+        .gwc-split-card-body p {
+            margin: 0;
+            color: var(--gwc-text-soft);
+            line-height: 1.65;
+            font-size: 0.98rem;
+        }
+
+    .gwc-split-card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-top: 0.35rem;
     }
 
-        .news-body p {
-            margin: 0 0 0.6rem 0;
-            color: #333;
-            line-height: 1.35;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
+    /* Shared buttons */
+    .gwc-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 1.25rem;
+        border-radius: 999px;
+        background: var(--gwc-brand);
+        color: #111;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: background 0.18s ease, transform 0.15s ease;
+    }
+
+        .gwc-btn:hover {
+            background: var(--gwc-brand-dark);
+            transform: translateY(-1px);
         }
 
-    /* ===== Curved date badge (bottom-right) ===== */
-    .news-date {
-        position: absolute;
-        right: 0.75rem;
-        bottom: 0.75rem;
-        display: inline-flex;
-        align-items: baseline;
-        gap: 0.35rem;
-        padding: 0.45rem 0.7rem;
-        background: linear-gradient(180deg, #efb2c4, #e38faa);
-        color: #111;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    .gwc-btn-outline {
+        background: transparent;
+        border-color: var(--gwc-brand-dark);
+        color: var(--gwc-text);
+    }
+
+        .gwc-btn-outline:hover {
+            background: var(--gwc-brand);
+            border-color: var(--gwc-brand);
+        }
+
+    .gwc-policy-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
+    .gwc-policy-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: 1px solid rgba(239, 178, 196, 0.45);
+        border-radius: var(--gwc-radius);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+        .gwc-policy-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--gwc-shadow);
+        }
+
+    .gwc-policy-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #c45f7a;
+    }
+
+    .gwc-policy-card h3 {
+        margin: 0;
+        font-size: 1.2rem;
         font-weight: 800;
     }
 
-        .news-date .day {
-            font-size: 1rem;
+    .gwc-policy-card p {
+        margin: 0;
+        flex: 1;
+        color: var(--gwc-text-soft);
+        line-height: 1.6;
+        font-size: 0.98rem;
+    }
+
+    .gwc-policy-card .gwc-btn {
+        margin-top: 0.35rem;
+    }
+
+    .gwc-news-empty {
+        text-align: center;
+        color: var(--gwc-text-soft);
+        margin: 0;
+    }
+
+    .gwc-news-list {
+        max-width: 52rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .gwc-news-card {
+        display: grid;
+        grid-template-columns: 5.5rem 1fr;
+        align-items: stretch;
+        background: #fff;
+        border: 1px solid rgba(239, 178, 196, 0.35);
+        border-radius: var(--gwc-radius);
+        box-shadow: 0 4px 16px rgba(212, 149, 168, 0.1);
+        overflow: hidden;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+        .gwc-news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--gwc-shadow);
+        }
+
+    .gwc-news-date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 0.5rem;
+        font-weight: 800;
+        text-align: center;
+    }
+
+        .gwc-news-date .day {
+            font-size: 1.5rem;
             line-height: 1;
         }
 
-        .news-date .mon,
-        .news-date .yr {
-            font-size: 0.75rem;
-            opacity: 0.9;
-            letter-spacing: .03em;
+        .gwc-news-date .mon {
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
+            margin-top: 0.15rem;
         }
 
-    @@media (max-width: 420px) {
-        .news-date {
-            padding: 0.35rem 0.55rem;
-            border-radius: 12px;
-        }
-
-            .news-date .day {
-                font-size: 0.95rem;
-            }
-
-            .news-date .mon, .news-date .yr {
-                font-size: 0.7rem;
-            }
+    .gwc-news-body {
+        padding: 1rem 1.25rem 1.1rem 1.25rem;
     }
 
-    .news-link {
-        display: inline-block;
-        font-weight: 700;
-        text-decoration: none;
-        border-bottom: 2px solid currentColor;
-        line-height: 1.2;
-        color: #111;
+    .gwc-news-title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin-bottom: 0.45rem;
     }
 
-        .news-link:hover {
-            color: var(--brand, #efb2c4);
+    .gwc-news-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        object-fit: contain;
+        flex-shrink: 0;
+        border-radius: 22%;
+    }
+
+    .gwc-news-title-row h3 {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 800;
+        line-height: 1.3;
+    }
+
+    .gwc-news-body p {
+        margin: 0;
+        color: var(--gwc-text-soft);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .gwc-news-actions {
+        margin-top: 1.75rem;
+        text-align: center;
+    }
+
+    /* Footer */
+    .gwc-footer {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 3rem 1.5rem;
+        background: var(--gwc-muted);
+        border-top: 1px solid rgba(239, 178, 196, 0.35);
+        text-align: center;
+    }
+
+    .gwc-footer-inner h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+    .gwc-footer-links {
+        list-style: none;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1.25rem;
+    }
+
+        .gwc-footer-links a {
+            color: var(--gwc-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
+
+            .gwc-footer-links a:hover {
+                color: var(--gwc-brand-deep);
+            }
+
+    .gwc-footer-copy {
+        margin: 0;
+        color: var(--gwc-text-soft);
+        font-size: 0.92rem;
+    }
+
+    @@media (max-width: 900px) {
+        .gwc-icon-grid {
+            grid-template-columns: 1fr;
+            max-width: 28rem;
+            margin: 0 auto;
+        }
+
+        .gwc-split-card {
+            grid-template-columns: 1fr;
+        }
+
+        .gwc-split-card-body {
+            padding: 1.5rem;
+        }
+    }
+
+    @@media (max-width: 760px) {
+        .gwc-section {
+            padding: 3rem 1.25rem;
+        }
+
+        .gwc-hero {
+            padding-bottom: 4.5rem;
+        }
+
+        .gwc-hero-grid {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .gwc-hero-copy p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gwc-split {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+
+        .gwc-policy-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gwc-policy-card {
+            align-items: stretch;
+            text-align: center;
+        }
+
+            .gwc-policy-card .gwc-btn {
+                align-self: center;
+            }
+
+        .gwc-news-card {
+            grid-template-columns: 1fr;
+        }
+
+        .gwc-news-date {
+            flex-direction: row;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .gwc-news-body {
+            padding: 0 1.1rem 1.1rem;
+        }
+
+        .gwc-split-card-actions {
+            justify-content: center;
+        }
+    }
 </style>
-
-
-<hr class="section-divider" />
 
 @code {
     private List<NewsItem> GirlsWhoConnectNotes = new();
@@ -1069,146 +892,27 @@
 
         var items = await NewsData.GetNewsAsync("GirlsWhoConnectPatchNotes.json");
         GirlsWhoConnectNotes = items
-    .Where(n => n.Tags?.Contains("Girls Who Connect") == true)
-    .OrderByDescending(n => n.Date)
-    .Take(3) // ✅ only the 3 most recent
-    .ToList();
+            .Where(n => n.Tags?.Contains("Girls Who Connect") == true)
+            .OrderByDescending(n => n.Date)
+            .Take(3)
+            .ToList();
     }
+
+    private static string TruncateSummary(string? summary, int maxLength = 220)
+    {
+        if (string.IsNullOrWhiteSpace(summary))
+            return string.Empty;
+
+        var plain = System.Text.RegularExpressions.Regex.Replace(summary, "<.*?>", string.Empty);
+        return plain.Length <= maxLength ? summary! : $"{plain[..maxLength].TrimEnd()}…";
+    }
+
+    private static string GetNewsTop(NewsItem item)
+        => !string.IsNullOrWhiteSpace(item.TopColour) ? item.TopColour : "#efb2c4";
+
+    private static string GetNewsBottom(NewsItem item)
+        => !string.IsNullOrWhiteSpace(item.BottomColour) ? item.BottomColour : "#d495a8";
+
+    private static string GetNewsDateText(NewsItem item)
+        => !string.IsNullOrWhiteSpace(item.DateTextColour) ? item.DateTextColour : "#1a1a1a";
 }
-
-<!-- ===== Site Footer ===== -->
-<footer class="site-footer" aria-labelledby="footer-title">
-    <div class="footer-inner">
-        <div class="footer-grid">
-
-
-            
-
-            <!-- Legal -->
-            <nav class="footer-block" aria-label="Legal">
-                <h3>Legal</h3>
-                <ul class="footer-list">
-                    <li><NavLink href="/GirlsWhoConnect/PrivacyPolicy">Privacy Policy</NavLink></li>
-                    <li><NavLink href="/GirlsWhoConnect/ChildSafetyStandards">Child Safety Standards</NavLink></li>
-                </ul>
-            </nav>
-
-           
-        </div>
-
-
-    </div>
-</footer>
-
-<style>
-    .site-footer {
-        margin-top: 3rem;
-        color: #111;
-        text-align: center; /* Center everything */
-    }
-
-        .site-footer .footer-inner {
-            width: min(var(--page-max, 900px), 100%); /* ✅ prevent overflow in parent */
-            margin: 0 auto;
-            padding: 0 1rem 2.5rem; /* ✅ small gutters on mobile */
-            box-sizing: border-box; /* ✅ sizing safety */
-        }
-
-    /* Stack vertically instead of grid */
-    .footer-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .footer-block {
-        max-width: 500px;
-        width: 100%; /* ✅ let it center and shrink gracefully */
-    }
-
-        .footer-block h3 {
-            margin: 0 0 .5rem 0;
-            font-size: 1rem;
-            font-weight: 800;
-        }
-
-        .footer-block p,
-        .footer-address,
-        .footer-list,
-        .footer-actions,
-        .footer-bottom {
-            margin: 0.25rem 0;
-            color: #333;
-        }
-
-    .footer-address {
-        font-style: normal;
-    }
-
-    .footer-list {
-        list-style: none;
-        padding: 0;
-        margin: 0.25rem 0;
-        display: flex;
-        gap: .75rem 1rem;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center; /* center them */
-    }
-
-        .footer-list li {
-            margin: .35rem 0;
-        }
-
-        .footer-list a {
-            text-decoration: none;
-            color: #111;
-            border-bottom: 1px solid transparent;
-        }
-
-            .footer-list a:hover {
-                color: var(--brand, #efb2c4);
-                border-bottom-color: currentColor;
-            }
-
-    /* Buttons */
-    .footer-actions {
-        display: flex;
-        justify-content: center;
-        gap: .75rem;
-        margin: .5rem 0;
-        width: 100%;
-        max-width: 520px; /* ✅ nice width on small screens */
-    }
-
-    .btn-footer {
-        padding: .5rem .9rem;
-        border-radius: 999px;
-        font-weight: 600;
-        text-decoration: none;
-        background: none;
-        border: 1px solid #efb2c4;
-        color: #111;
-        transition: color .12s ease, border-color .12s ease;
-    }
-
-        .btn-footer:hover {
-            color: var(--brand, #efb2c4);
-            border-color: var(--brand, #efb2c4);
-        }
-
-        .btn-footer.ghost {
-            opacity: 0.75;
-        }
-
-            .btn-footer.ghost:hover {
-                opacity: 1;
-            }
-
-    .footer-bottom {
-        margin-top: 2rem;
-        font-size: .9rem;
-        color: #444;
-    }
-</style>

@@ -1,51 +1,44 @@
 ﻿@* Shared/Header.razor *@
 
 <HeadContent>
-    <link rel="icon" href="Girls Who Connect Logo NB.png" />
+    <link rel="icon" href="/images/Girls Who Connect/icons/Girls Who Connect Logo NB.png" />
 </HeadContent>
 
 <header class="site-header" role="banner">
-    <div class="header-inner">
-        <!-- Left side: Logo + App name -->
-        <div class="logo">
-            <img src="/images/Girls Who Connect/icons/Girls Who Connect Logo NB.png"
-                 alt="Girls Who Connect Logo"
-                 class="logo-img" />
-            <span class="app-name">Girls Who Connect</span>
-        </div>
-
-        <!-- Mobile menu toggle -->
-        <button class="nav-toggle"
-                @onclick="ToggleMenu"
-                aria-label="Toggle menu"
-                aria-controls="primary-nav"
-                aria-expanded="@menuOpen.ToString().ToLower()">
-            @if (!menuOpen)
-            {
-                <!-- hamburger -->
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            }
-            else
-            {
-                <!-- minus -->
-                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                    <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
-                </svg>
-            }
-        </button>
-
-        <!-- Right side: Nav links -->
-        <nav id="primary-nav" class=@($"nav-links {(menuOpen ? "open" : "")}") aria-label="Primary">
-            <ul>
-                <li><a href="/girlswhoconnect">Home</a></li>
-                <li><a href="/girlswhoconnect/PatchNotes">Patch Notes</a></li>
-                <li><a href="/girlswhoconnect/PrivacyPolicy">Privacy Policy</a></li>
-                <li><a href="/girlswhoconnect/ChildSafetyStandards">Child Safety Standards</a></li>
-            </ul>
-        </nav>
+    <div class="logo">
+        <img src="/images/Girls Who Connect/icons/Girls Who Connect Logo NB.png"
+             alt="Girls Who Connect logo"
+             class="logo-img" />
+        <span class="app-name">Girls Who Connect</span>
     </div>
+
+    <button class="nav-toggle"
+            @onclick="ToggleMenu"
+            aria-label="Toggle menu"
+            aria-controls="primary-nav"
+            aria-expanded="@menuOpen.ToString().ToLower()">
+        @if (!menuOpen)
+        {
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        }
+        else
+        {
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+            </svg>
+        }
+    </button>
+
+    <nav id="primary-nav" class=@($"nav-links {(menuOpen ? "open" : "")}") aria-label="Primary">
+        <ul>
+            <li><a href="/GirlsWhoConnect">Home</a></li>
+            <li><a href="/GirlsWhoConnect/PatchNotes">Patch Notes</a></li>
+            <li><a href="/GirlsWhoConnect/PrivacyPolicy">Privacy Policy</a></li>
+            <li><a href="/GirlsWhoConnect/ChildSafetyStandards">Child Safety Standards</a></li>
+        </ul>
+    </nav>
 </header>
 
 @code {
@@ -58,25 +51,17 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: #efb2c4;
-        /* stretch background 35px past container on both sides */
-        margin-left: -35px;
-        margin-right: -35px;
-    }
-
-    /* Inner wrapper keeps content aligned with page */
-    .header-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: min(var(--page-max, 1200px), 100%);
-        margin: 0 auto;
-        padding: 1rem 2rem; /* your original content padding */
+        padding: 1rem 1.5rem;
+        background: #d495a8;
+        font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
         box-sizing: border-box;
-        position: relative; /* anchor absolute mobile panel */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
     }
 
-    /* Logo */
     .logo {
         display: flex;
         align-items: center;
@@ -91,10 +76,9 @@
     .app-name {
         font-size: 1.25rem;
         font-weight: 700;
-        color: #111;
+        color: #fff;
     }
 
-    /* Toggle */
     .nav-toggle {
         display: none;
         background: none;
@@ -102,14 +86,14 @@
         padding: .25rem;
         cursor: pointer;
         line-height: 0;
-        color: #111; /* SVG minus color */
+        color: #fff;
     }
 
         .nav-toggle .bar {
             display: block;
             width: 22px;
             height: 2px;
-            background: #111;
+            background: #fff;
             margin: 4px 0;
             border-radius: 2px;
         }
@@ -118,7 +102,6 @@
             display: block;
         }
 
-    /* Nav links (desktop) */
     .nav-links {
         display: flex;
         align-items: center;
@@ -136,52 +119,15 @@
         .nav-links a {
             text-decoration: none;
             font-weight: 600;
-            color: #333;
+            color: #fff;
             padding: .4rem .6rem;
             border-radius: 6px;
             transition: color .2s ease, background .2s ease;
         }
 
-    /* (Unused) dropdown stubs */
-    .has-dropdown {
-        position: relative;
-    }
-
-    .dropdown {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: none;
-        min-width: 200px;
-        background: #fff;
-        border-radius: 10px;
-        padding: .5rem 0;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        animation: fadeDown .15s ease;
-    }
-
-        .dropdown li {
-            list-style: none;
-        }
-
-        .dropdown a {
-            display: block;
-            padding: .6rem 1rem;
-            color: #333;
-        }
-
-    /* Razor-safe keyframes */
-    @@keyframes fadeDown {
-        from {
-            opacity: 0;
-            transform: translateY(-5px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+            .nav-links a:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
 
     @@keyframes slidePanel {
         from {
@@ -195,24 +141,23 @@
         }
     }
 
-    /* Mobile */
     @@media (max-width: 900px) {
         .nav-toggle {
             display: inline-block;
             position: relative;
-            z-index: 1200; /* keeps minus above the panel */
+            z-index: 1200;
         }
 
         .nav-links {
             position: absolute;
             top: 0;
-            right: 2rem; /* aligns with .header-inner padding */
+            right: 2rem;
             left: auto;
             width: min(280px, 90vw);
             background: #fff;
-            border: 1px solid #eee;
+            border: 1px solid rgba(239, 178, 196, 0.45);
             border-radius: 12px;
-            box-shadow: 0 10px 28px rgba(0,0,0,.14);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
             overflow: hidden;
             display: none;
             animation: slidePanel .18s ease;
@@ -222,7 +167,7 @@
             .nav-links.open {
                 display: block;
             }
-            /* Vertical list inside panel */
+
             .nav-links > ul {
                 flex-direction: column;
                 align-items: stretch;
@@ -234,9 +179,13 @@
             .nav-links a {
                 padding: .75rem .75rem;
                 border-radius: 8px;
-                color: #111;
+                color: #1a1a1a;
                 background: transparent;
             }
+
+                .nav-links a:hover {
+                    background: rgba(239, 178, 196, 0.25);
+                }
 
             .nav-links li + li a {
                 margin-top: .3rem;

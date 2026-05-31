@@ -16,7 +16,7 @@
 <HomeHeader />
 
 <!-- Welcome section: text left, hero image right -->
-<section class="welcome-section">
+<section class="welcome-section section-bg-a">
     <div class="welcome-content">
         <span class="welcome-eyebrow">About the studio</span>
         <h2 class="welcome-title">Welcome to my site</h2>
@@ -30,20 +30,33 @@
 </section>
 
 <style>
+:root {
+    --page-bg-a: #291824;
+    --page-bg-b: #280a16;
+}
+
+.section-bg-a {
+    background: var(--page-bg-a);
+}
+
+.section-bg-b {
+    background: var(--page-bg-b);
+}
+
 html, body {
     margin: 0;
     padding: 0;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
     body {
-        background: #291824;
+        background: var(--page-bg-a);
         color: #fff;
         font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
     }
 
-    /* Welcome section — full-width split layout */
+    /* Welcome section - full-width split layout */
     .welcome-section {
         width: 100vw;
         min-height: 32vh;
@@ -54,8 +67,6 @@ html, body {
         flex-direction: row;
         align-items: stretch;
         overflow: hidden;
-        background: #280a16;
-        border-bottom: 1px solid rgba(231, 87, 29, 0.12);
     }
 
     .welcome-content {
@@ -64,7 +75,6 @@ html, body {
         flex-direction: column;
         justify-content: center;
         padding: 3.5rem 4rem;
-        background: #280a16;
         color: #fff;
     }
 
@@ -141,7 +151,7 @@ html, body {
     }
 </style>
 
-<section class="dev-section">
+<section class="dev-section section-bg-b">
     <div class="dev-header">
         <span class="section-eyebrow">What I've built</span>
         <h2 class="section-title">My Apps & Games</h2>
@@ -150,7 +160,7 @@ html, body {
         </p>
     </div>
 
-    <div class="dev-grid">
+    <div class="dev-grid dev-grid-centered">
         <article class="dev-card">
             <div class="dev-card-visual bucket-connect-visual" aria-hidden="true"></div>
             <div class="dev-card-body">
@@ -183,14 +193,53 @@ html, body {
                     <h3>Castle Climbers</h3>
                 </div>
                 <p>A vertical 2D adventure with procedural environments, custom characters, and competitive challenges.</p>
-                <a class="secondary-button dev-card-button" href="/Games/CastleClimbers">View Project</a>
+                <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Removed from App Store</span>
             </div>
         </article>
     </div>
 </section>
 
+<!-- OTHER PROJECTS -->
+<section class="dev-section section-bg-a other-projects-home">
+    <div class="dev-header">
+        <span class="section-eyebrow">The wider portfolio</span>
+        <h2 class="section-title">Other Projects</h2>
+        <p>
+            Not everything I've shipped lives on the App Store - explore the rest of my work below.
+        </p>
+    </div>
+
+    <div class="dev-grid other-projects-grid">
+        <article class="dev-card other-projects-card">
+            <div class="dev-card-body">
+                <span class="section-eyebrow">Archive</span>
+                <h3 class="other-projects-card-title">Past work & prototypes</h3>
+                <p>
+                    A broader look at everything I've built - released apps, shipped games, prototypes,
+                    and university projects that show the range of my work.
+                </p>
+                <a class="secondary-button dev-card-button" href="/OtherProjects">Browse other projects</a>
+            </div>
+            <div class="dev-card-visual other-projects-visual" aria-hidden="true"></div>
+        </article>
+
+        <article class="dev-card other-projects-card">
+            <div class="dev-card-body">
+                <span class="section-eyebrow">Research</span>
+                <h3 class="other-projects-card-title">Papers written</h3>
+                <p>
+                    Academic dissertations and papers on procedural generation, accessibility in game design,
+                    and rehabilitation technology - available to read and download.
+                </p>
+                <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Coming soon…</span>
+            </div>
+            <div class="dev-card-visual papers-visual" aria-hidden="true"></div>
+        </article>
+    </div>
+</section>
+
 <!-- LATEST UPDATES -->
-<section class="news-home-section">
+<section class="news-home-section section-bg-b">
     <div class="news-home-header">
         <span class="section-eyebrow">From the lab</span>
         <h2 class="section-title">Latest Updates</h2>
@@ -199,7 +248,7 @@ html, body {
 
     @if (latestNews.Count == 0)
     {
-        <p class="news-home-empty">No updates yet — check back soon.</p>
+        <p class="news-home-empty">No updates yet - check back soon.</p>
     }
     else
     {
@@ -232,54 +281,6 @@ html, body {
     </div>
 </section>
 
-<!-- IN DEVELOPMENT -->
-<section class="dev-section">
-    <div class="dev-header">
-        <span class="section-eyebrow">Coming soon</span>
-        <h2 class="section-title">In Development</h2>
-        <p>Games and experiments I'm actively building between app releases.</p>
-    </div>
-
-    <div class="dev-grid">
-        <article class="dev-card">
-            <div class="dev-card-visual isles-apart-dev-visual" aria-hidden="true"></div>
-            <div class="dev-card-body">
-                <h3>Isles Apart</h3>
-                <p>An island adventure game in early development. Follow along on the news page for the latest milestones and previews.</p>
-                <a class="secondary-button dev-card-button" href="/News">Follow updates</a>
-            </div>
-        </article>
-    </div>
-</section>
-
-<!-- OTHER PROJECTS -->
-<section class="other-projects-section">
-    <div class="other-projects-visual" aria-hidden="true"></div>
-    <div class="other-projects-content">
-        <span class="section-eyebrow">Archive</span>
-        <h2 class="other-projects-title">Other Projects</h2>
-        <p>
-            A broader look at everything I've built — released apps, shipped games, prototypes,
-            and university projects that show the range of my work.
-        </p>
-
-        <a class="secondary-button other-projects-button" href="/OtherProjects">Browse other projects</a>
-    </div>
-</section>
-
-<!-- GET IN TOUCH -->
-<section class="contact-section">
-    <div class="contact-inner">
-        <span class="section-eyebrow">Get in touch</span>
-        <h2 class="section-title">Want to work together?</h2>
-        <p>
-            Whether it's feedback, a collaboration, or a question about my apps —
-            I'm always happy to hear from you.
-        </p>
-        <a class="contact-button" href="mailto:matt@kenyondevlabs.com">matt@kenyondevlabs.com</a>
-    </div>
-</section>
-
 <style>
 
     /* Button reused */
@@ -298,6 +299,17 @@ html, body {
         .secondary-button:hover {
             background: #fff;
             color: #000;
+        }
+
+    .dev-card-button-muted {
+        opacity: 0.72;
+        cursor: default;
+        pointer-events: none;
+    }
+
+        .dev-card-button-muted:hover {
+            background: transparent;
+            color: #fff;
         }
 
     /* Shared section headers */
@@ -336,9 +348,7 @@ html, body {
         width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
-        background: #280a16;
         padding: 4rem 2rem;
-        border-top: 1px solid rgba(231, 87, 29, 0.12);
     }
 
     .news-home-header,
@@ -375,10 +385,17 @@ html, body {
         grid-template-columns: 5.5rem 1fr;
         gap: 1rem;
         align-items: stretch;
-        background: rgba(41, 24, 36, 0.55);
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 0.85rem;
         overflow: hidden;
+    }
+
+    .section-bg-a .news-home-card {
+        background: rgba(40, 10, 22, 0.75);
+    }
+
+    .section-bg-b .news-home-card {
+        background: rgba(41, 24, 36, 0.75);
     }
 
     .news-home-date {
@@ -454,7 +471,6 @@ html, body {
         width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
-        background: #291824;
         padding: 4rem 2rem;
     }
 
@@ -466,13 +482,27 @@ html, body {
         gap: 1.25rem;
     }
 
+    .dev-grid:not(.other-projects-grid) .dev-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: calc((100% - 1.25rem) / 2);
+        justify-self: center;
+    }
+
     .dev-card {
         display: flex;
         flex-direction: column;
-        background: #280a16;
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 1rem;
         overflow: hidden;
+    }
+
+    .section-bg-a .dev-card {
+        background: var(--page-bg-b);
+    }
+
+    .section-bg-b .dev-card {
+        background: var(--page-bg-a);
     }
 
     .dev-card-visual {
@@ -494,10 +524,6 @@ html, body {
 
     .girls-who-connect-visual {
         background-image: url("images/Girls Who Connect/Connect Graphic.png");
-    }
-
-    .isles-apart-dev-visual {
-        background-image: url("images/isles_apart/Cover.png");
     }
 
     .dev-card-title-row {
@@ -522,6 +548,15 @@ html, body {
         color: #fff;
     }
 
+    .dev-grid-centered .dev-card-body {
+        align-items: center;
+        text-align: center;
+    }
+
+        .dev-grid-centered .dev-card-title-row {
+            justify-content: center;
+        }
+
         .dev-card-body h3 {
             margin: 0;
             font-size: 1.35rem;
@@ -538,110 +573,73 @@ html, body {
         margin-top: 0.25rem;
     }
 
-    /* Other projects */
-    .other-projects-section {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        overflow: hidden;
-        background: #280a16;
-        border-top: 1px solid rgba(231, 87, 29, 0.12);
+    /* Other projects - horizontal cards, equal height */
+    .other-projects-home {
+        padding-top: 0;
     }
+
+    .other-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .other-projects-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) min(360px, 44%);
+        align-items: center;
+    }
+
+        .other-projects-card .dev-card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 0;
+            padding: 1.5rem 2rem;
+        }
+
+            .other-projects-card .dev-card-body .section-eyebrow {
+                margin-bottom: 0.45rem;
+            }
+
+            .other-projects-card-title {
+                margin: 0;
+                font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+                font-weight: 700;
+                letter-spacing: -0.03em;
+                line-height: 1.1;
+            }
+
+                .other-projects-card-title::after {
+                    content: "";
+                    display: block;
+                    width: 3rem;
+                    height: 3px;
+                    margin-top: 0.5rem;
+                    background: #e7571d;
+                    border-radius: 999px;
+                }
+
+            .other-projects-card .dev-card-body p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+        .other-projects-card .dev-card-visual {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            min-height: 0;
+            height: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
     .other-projects-visual {
-        flex: 1 1 50%;
-        min-height: 28rem;
         background-image: url("images/portfolio/Cover.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
     }
 
-    .other-projects-content {
-        flex: 1 1 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 3.5rem 4rem;
-        color: #fff;
+    .papers-visual {
+        background-image: url("images/portfolio/Paper 1.png");
+        background-position: center top;
     }
-
-    .other-projects-title {
-        margin: 0 0 1.25rem;
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-    }
-
-    .other-projects-title::after {
-        content: "";
-        display: block;
-        width: 3.5rem;
-        height: 3px;
-        margin-top: 1rem;
-        background: #e7571d;
-        border-radius: 999px;
-    }
-
-    .other-projects-content > p {
-        margin: 0;
-        max-width: 34rem;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 1.05rem;
-        line-height: 1.75;
-    }
-
-    .other-projects-button {
-        align-self: flex-start;
-        margin-top: 1.75rem;
-    }
-
-    /* Contact */
-    .contact-section {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-        background: #291824;
-        padding: 4rem 2rem;
-        border-top: 1px solid rgba(231, 87, 29, 0.12);
-    }
-
-    .contact-inner {
-        max-width: 42rem;
-        margin: 0 auto;
-        text-align: center;
-        color: #fff;
-    }
-
-        .contact-inner p {
-            margin: 1.25rem auto 0;
-            max-width: 34rem;
-            color: rgba(255, 255, 255, 0.82);
-            font-size: 1.1rem;
-            line-height: 1.75;
-        }
-
-    .contact-button {
-        display: inline-block;
-        margin-top: 1.75rem;
-        padding: 0.9rem 1.6rem;
-        border-radius: 999px;
-        background: #fff;
-        color: #280a16;
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 600;
-        transition: background 0.15s ease, color 0.15s ease;
-    }
-
-        .contact-button:hover {
-            background: #e7571d;
-            color: #fff;
-        }
 
     @@media (max-width: 768px) {
         .news-home-card {
@@ -662,21 +660,30 @@ html, body {
             grid-template-columns: 1fr;
         }
 
-        .other-projects-section {
-            flex-direction: column;
+            .dev-grid:not(.other-projects-grid) .dev-card:last-child:nth-child(odd) {
+                max-width: 100%;
+            }
+
+        .other-projects-card {
+            grid-template-columns: 1fr;
         }
 
-        .other-projects-visual {
-            min-height: 16rem;
-        }
+            .other-projects-card .dev-card-visual {
+                order: 1;
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                height: auto;
+                min-height: 0;
+            }
 
-        .other-projects-content {
-            padding: 2.5rem 1.5rem 3rem;
-        }
+            .other-projects-card .dev-card-body {
+                order: 2;
+                min-height: auto;
+                padding: 1.15rem 1.25rem;
+            }
 
         .news-home-section,
-        .dev-section,
-        .contact-section {
+        .dev-section {
             padding: 3rem 1.5rem;
         }
     }
@@ -686,9 +693,7 @@ html, body {
         width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
-        background: #1f0812;
         padding: 4rem 2rem;
-        border-top: 1px solid rgba(231, 87, 29, 0.12);
     }
 
     .social-inner {
@@ -786,7 +791,7 @@ html, body {
 </style>
 
 <!-- SOCIAL SECTION -->
-<section class="social-section">
+<section class="social-section section-bg-a">
     <div class="social-inner">
         <span class="social-eyebrow">Stay connected</span>
         <h2 class="social-title">Find me on my Socials</h2>
@@ -804,10 +809,7 @@ html, body {
                 <a href="https://www.youtube.com/@@KenyonGameLabs">
                     <img src="images/Youtube Icon.png" alt="YouTube" />
                 </a>
-                <a href="https://x.com/KenyonDevLabs">
-                    <img src="images/X Icon.png" alt="X" />
-                </a>
-                <a href="#">
+                <a href="https://www.tiktok.com/@@kenyondevlabs">
                     <img src="images/Tiktok Icon.png" alt="TikTok" />
                 </a>
                 <a href="#">
@@ -818,7 +820,7 @@ html, body {
     </div>
 </section>
 
-<footer class="kdl-footer">
+<footer class="kdl-footer section-bg-b">
     <div class="kdl-footer-content">
         <p>© 2025 Kenyon Dev Labs</p>
         <a href="mailto:matt@kenyondevlabs.com">matt@kenyondevlabs.com</a>
@@ -831,7 +833,6 @@ html, body {
         width: 100%;
         padding: 2.5rem 1rem;
         text-align: center;
-        background: #291824;
     }
 
     .kdl-footer-content {
