@@ -15,391 +15,283 @@
 
 <HomeHeader />
 
-<!-- HERO: Background Image with Overlay Text -->
-<div class="project-hero-bg">
-    <div class="project-hero-overlay">
-        <h1>Kenyon Dev Labs</h1>
-        <p class="subtext">
-            An indie lab brewing games, apps, and bold ideas.
-        </p>
-
-
-    </div>
-</div>
-<style>
-    /* PREVENT HORIZONTAL SCROLL */
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* GLOBAL BACKGROUND COLOR */
-    body {
-        background: #291824;
-        color: #fff;
-    }
-
-    .project-hero-bg {
-        width: 100vw;
-        aspect-ratio: 32 / 9;
-        background-image: url("images/Middle.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-    }
-
-    @@media (max-width: 1920px) {
-        .project-hero-bg {
-            aspect-ratio: 16 / 9;
-        }
-    }
-
-        /* Dark gradient overlay */
-        .project-hero-bg::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-    .project-hero-overlay {
-        position: relative;
-        z-index: 1;
-        text-align: left;
-        padding-top: 0;
-        padding-left: 8vw;
-        padding-right: 5vw;
-        padding-bottom: 0;
-        width: auto;
-        transform: translate(-275px, -225px);
-    }
-
-        /* Heading size scales with viewport height too */
-        .project-hero-overlay h1 {
-            margin: 0 0 0.5rem;
-            font-size: 6vh; /* tied to viewport height */
-            line-height: 1.05;
-            color: white;
-            white-space: nowrap;
-        }
-
-        /* Subtext scales from the same unit */
-        .project-hero-overlay .subtext {
-            margin: 0 0 1.5rem;
-            color: white;
-            font-size: 2.4vh; /* 6vh : 2.4vh ≈ 2.5:1 ratio */
-            line-height: 1.7;
-        }
-
-
-
-    .hero-button {
-        display: inline-block;
-        padding: 0.9rem 1.8rem;
-        border-radius: 999px;
-        border: 1px solid #fff;
-        background: #fff;
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 1.1rem;
-    }
-
-        .hero-button:hover {
-            opacity: 0.9;
-        }
-    /* ========================= */
-    /* 📱 MOBILE RESPONSIVE TEXT */
-    /* ========================= */
-    @@media (max-width: 700px) {
-        .project-hero-overlay h1
-
-    {
-        font-size: 4vh; /* smaller heading on phones */
-    }
-
-    .project-hero-overlay .subtext {
-        font-size: 1.8vh; /* smaller supporting text */
-    }
-
-    .project-hero-overlay {
-        padding-bottom: 14vh; /* prevents text rising too high */
-    }
-
-    }
-
-    .hero-button {
-        display: inline-block;
-        padding: 0.9rem 1.8rem;
-        border-radius: 999px;
-        border: 1px solid #fff;
-        background: #fff;
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 1.1rem;
-    }
-
-        .hero-button:hover {
-            opacity: 0.9;
-        }
-</style>
-
-
-<!-- CUSTOM SECTION: Title + Text Left → Image Right -->
-<div class="custom-section">
-    <div class="custom-left">
-        <h2 class="custom-section-title">Welcome to my site</h2>
-
+<!-- Welcome section: text left, hero image right -->
+<section class="welcome-section">
+    <div class="welcome-content">
+        <span class="welcome-eyebrow">About the studio</span>
+        <h2 class="welcome-title">Welcome to my site</h2>
         <p>
             Kenyon Dev Labs is my personal indie studio, where I create unique games and apps with heart and enthusiasm.
             As a solo developer, I pour myself into every detail to craft experiences that feel thoughtful, polished, and fun.
         </p>
     </div>
 
-    <div class="custom-image">
-        <img src="images/portfolio/Games Cover.png" alt="Example Project Image" />
-    </div>
-</div>
-
-<div class="kd-separator diamond">
-    <span class="line"></span>
-    <span class="diamond"></span>
-    <span class="line"></span>
-</div>
+    <div class="welcome-visual" aria-hidden="true"></div>
+</section>
 
 <style>
-    /* CLEAN LEFT-TEXT / RIGHT-IMAGE SECTION */
-    .custom-section {
-        max-width: 1100px;
-        margin: 3rem auto;
-        padding: 1.5rem 2rem;
-        background: #280a16;
-        border-radius: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+    body {
+        background: #291824;
+        color: #fff;
+        font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
     }
 
-    .custom-left {
-        flex: 1;
+    /* Welcome section — full-width split layout */
+    .welcome-section {
+        width: 100vw;
+        min-height: 32vh;
+        margin: 0;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        overflow: hidden;
+        background: #280a16;
+        border-bottom: 1px solid rgba(231, 87, 29, 0.12);
+    }
+
+    .welcome-content {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3.5rem 4rem;
+        background: #280a16;
         color: #fff;
     }
 
-    .custom-section-title {
+    .welcome-eyebrow {
+        display: inline-block;
+        margin-bottom: 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #e7571d;
+    }
+
+    .welcome-title {
         margin: 0 0 1.25rem;
-        font-size: 3rem; /* was 2.5rem */
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
     }
 
-    .custom-left p {
-        margin: 0 0 1.5rem;
-        color: #ddd;
-        font-size: 1.3rem; /* was 1.1rem */
-        line-height: 1.6;
-        max-width: 32rem;
+    .welcome-title::after {
+        content: "";
+        display: block;
+        width: 3.5rem;
+        height: 3px;
+        margin-top: 1rem;
+        background: #e7571d;
+        border-radius: 999px;
     }
 
-    .custom-image {
-        flex: 0 0 45%;
-        aspect-ratio: 16 / 9;
-        border-radius: 1rem;
-        overflow: hidden;
+    .welcome-content p {
+        margin: 0;
+        max-width: 34rem;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 1.15rem;
+        line-height: 1.75;
     }
 
-        .custom-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .welcome-visual {
+        flex: 1 1 50%;
+        min-height: 32vh;
+        background-image: url("images/Middle.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 
-    /* MOBILE */
     @@media (max-width: 768px) {
-        .custom-section {
+        .welcome-section {
             flex-direction: column;
-            align-items: center; /* center the whole stack */
-            text-align: center; /* center text inside */
         }
 
-        .custom-left {
-            text-align: center; /* center title + paragraph */
+        .welcome-content {
+            order: 2;
+            padding: 2.5rem 1.75rem;
+            text-align: center;
+            align-items: center;
         }
 
-            .custom-left p {
-                margin-left: auto; /* keep nice readable width */
-                margin-right: auto;
-            }
+        .welcome-visual {
+            order: 1;
+            min-height: 24vh;
+        }
 
-        .custom-image {
-            width: 100%;
+        .welcome-title::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .welcome-content p {
+            max-width: none;
         }
     }
-
 </style>
 
-<div class="apps-header">
-    <h2>My Apps & Games</h2>
-    <p>
-        I’ve launched two fully polished apps on the App Store. Discover them below and try them out.
-    </p>
-</div>
-
-<div class="project-grid">
-
-    <!-- CARD 1 -->
-    <div class="project-card blue-border">
-        <div class="project-title-row">
-            <img class="project-title-icon" src="images/Bucket Connect/icons/The Bucket List Icon NB.png" alt="Bucket Icon">
-            <h2>Bucket Connect</h2>
-        </div>
-
-        <div class="project-card-image">
-            <img src="images/Bucket Connect/Cover 2.png" alt="Bucket Connect Screenshot" />
-        </div>
-
-        <div class="project-card-text">
-            <p>
-                Bucket Connect is the best way for you to track and chase your dreams.
-            </p>
-            <a class="secondary-button" href="/BucketConnect">View Project</a>
-        </div>
+<section class="dev-section">
+    <div class="dev-header">
+        <span class="section-eyebrow">What I've built</span>
+        <h2 class="section-title">My Apps & Games</h2>
+        <p>
+            Apps and games I've shipped on the App Store. Discover them below and try them out.
+        </p>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="project-card purple-border">
-        <div class="project-title-row">
-            <img class="project-title-icon" src="images/Girls Who Connect/icons/Girls Who Connect Logo NB.png" alt="Bucket Icon">
-            <h2>Girls Who Connect</h2>
-        </div>
+    <div class="dev-grid">
+        <article class="dev-card">
+            <div class="dev-card-visual bucket-connect-visual" aria-hidden="true"></div>
+            <div class="dev-card-body">
+                <div class="dev-card-title-row">
+                    <img class="dev-card-icon" src="images/Bucket Connect/icons/The Bucket List Icon NB.png" alt="" />
+                    <h3>Bucket Connect</h3>
+                </div>
+                <p>Bucket Connect is the best way for you to track and chase your dreams.</p>
+                <a class="secondary-button dev-card-button" href="/BucketConnect">View Project</a>
+            </div>
+        </article>
 
-        <div class="project-card-image">
-            <img src="images/Girls Who Connect/Connect Graphic.png" alt="Girls Who Connect Screenshot" />
-        </div>
+        <article class="dev-card">
+            <div class="dev-card-visual girls-who-connect-visual" aria-hidden="true"></div>
+            <div class="dev-card-body">
+                <div class="dev-card-title-row">
+                    <img class="dev-card-icon" src="images/Girls Who Connect/icons/Girls Who Connect Logo NB.png" alt="" />
+                    <h3>Girls Who Connect</h3>
+                </div>
+                <p>Stay up to date with community walks in your area.</p>
+                <a class="secondary-button dev-card-button" href="/GirlsWhoConnect">View Project</a>
+            </div>
+        </article>
 
-        <div class="project-card-text">
-            <p>Stay up to date with community walks in your area.</p>
-            <a class="secondary-button" href="/GirlsWhoConnect">View Project</a>
-        </div>
+        <article class="dev-card">
+            <div class="dev-card-visual castle-climbers-dev-visual" aria-hidden="true"></div>
+            <div class="dev-card-body">
+                <div class="dev-card-title-row">
+                    <img class="dev-card-icon" src="images/castle_climbers/icons/3.0 CC.png" alt="" />
+                    <h3>Castle Climbers</h3>
+                </div>
+                <p>A vertical 2D adventure with procedural environments, custom characters, and competitive challenges.</p>
+                <a class="secondary-button dev-card-button" href="/Games/CastleClimbers">View Project</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- LATEST UPDATES -->
+<section class="news-home-section">
+    <div class="news-home-header">
+        <span class="section-eyebrow">From the lab</span>
+        <h2 class="section-title">Latest Updates</h2>
+        <p>Recent news, releases, and progress across my projects.</p>
     </div>
 
-   
+    @if (latestNews.Count == 0)
+    {
+        <p class="news-home-empty">No updates yet — check back soon.</p>
+    }
+    else
+    {
+        <div class="news-home-grid">
+            @foreach (var item in latestNews)
+            {
+                <article class="news-home-card">
+                    <div class="news-home-date"
+                         style="background: linear-gradient(180deg, @GetNewsTop(item), @GetNewsBottom(item)); color: @GetNewsDateText(item);">
+                        <span class="day">@item.Date.ToString("dd")</span>
+                        <span class="mon">@item.Date.ToString("MMM")</span>
+                    </div>
+                    <div class="news-home-body">
+                        <div class="news-home-title-row">
+                            @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                            {
+                                <img class="news-home-icon" src="@item.IconUrl" alt="" />
+                            }
+                            <h3>@item.Title</h3>
+                        </div>
+                        <p>@TruncateSummary(item.Summary)</p>
+                    </div>
+                </article>
+            }
+        </div>
+    }
 
-</div>
+    <div class="news-home-actions">
+        <a class="secondary-button news-home-button" href="/News">View all news</a>
+    </div>
+</section>
+
+<!-- IN DEVELOPMENT -->
+<section class="dev-section">
+    <div class="dev-header">
+        <span class="section-eyebrow">Coming soon</span>
+        <h2 class="section-title">In Development</h2>
+        <p>Games and experiments I'm actively building between app releases.</p>
+    </div>
+
+    <div class="dev-grid">
+        <article class="dev-card">
+            <div class="dev-card-visual isles-apart-dev-visual" aria-hidden="true"></div>
+            <div class="dev-card-body">
+                <h3>Isles Apart</h3>
+                <p>An island adventure game in early development. Follow along on the news page for the latest milestones and previews.</p>
+                <a class="secondary-button dev-card-button" href="/News">Follow updates</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- OTHER PROJECTS -->
+<section class="other-projects-section">
+    <div class="other-projects-visual" aria-hidden="true"></div>
+    <div class="other-projects-content">
+        <span class="section-eyebrow">Archive</span>
+        <h2 class="other-projects-title">Other Projects</h2>
+        <p>
+            A broader look at everything I've built — released apps, shipped games, prototypes,
+            and university projects that show the range of my work.
+        </p>
+
+        <a class="secondary-button other-projects-button" href="/OtherProjects">Browse other projects</a>
+    </div>
+</section>
+
+<!-- GET IN TOUCH -->
+<section class="contact-section">
+    <div class="contact-inner">
+        <span class="section-eyebrow">Get in touch</span>
+        <h2 class="section-title">Want to work together?</h2>
+        <p>
+            Whether it's feedback, a collaboration, or a question about my apps —
+            I'm always happy to hear from you.
+        </p>
+        <a class="contact-button" href="mailto:matt@kenyondevlabs.com">matt@kenyondevlabs.com</a>
+    </div>
+</section>
 
 <style>
-
-    .apps-header {
-        max-width: 900px;
-        margin: 3rem auto 2rem;
-        text-align: center;
-        padding: 0 1rem;
-    }
-
-        .apps-header h2 {
-            font-size: 3.2rem; /* large and consistent with section titles */
-            margin-bottom: 1rem;
-        }
-
-        .apps-header p {
-            font-size: 1.35rem; /* matches your upgraded paragraph size */
-            color: #ddd;
-            line-height: 1.6;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-    .project-grid {
-        max-width: 1100px;
-        margin: 2.5rem auto 0;
-        display: grid;
-        gap: 1.75rem;
-        justify-content: center; /* allows centering */
-        grid-auto-columns: 350px; /* lock card width */
-        grid-template-columns: repeat(auto-fit, 350px);
-    }
-
-      
-
-    /* Individual card */
-    .project-card {
-        background: #280a16;
-        border-radius: 0.75rem; /* less curved */
-        padding: 1.5rem 1.5rem 1.75rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* center content */
-        text-align: center; /* center text */
-        color: #f5f5f5;
-    }
-
-    /* Title row */
-    .project-title-row {
-        display: flex;
-        align-items: center;
-        justify-content: center; /* center title + icon */
-        gap: 0.75rem;
-        margin-bottom: 0.9rem;
-    }
-
-    .project-title-icon {
-        width: 32px;
-        height: 32px;
-        object-fit: contain;
-    }
-
-    .project-title-row h2 {
-        margin: 0;
-        font-size: 1.8rem; /* was 1.4rem */
-    }
-
-    /* Card image */
-    .project-card-image {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border-radius: 0.5rem; /* tighter corners */
-        overflow: hidden;
-        margin-bottom: 1.1rem;
-    }
-
-        .project-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    /* Text + button under image */
-    .project-card-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* center button */
-        text-align: center;
-        width: 100%;
-    }
-
-        .project-card-text p {
-            margin: 0 0 1.1rem;
-            color: #ddd;
-            font-size: 1.15rem; /* was 0.98rem */
-            line-height: 1.6;
-            max-width: 22rem; /* cleaner centered width */
-        }
 
     /* Button reused */
     .secondary-button {
         display: inline-block;
-        padding: 0.9rem 1.6rem; /* bigger */
+        padding: 0.9rem 1.6rem;
         border-radius: 999px;
         border: 1px solid #fff;
         background: transparent;
         color: #fff;
         text-decoration: none;
-        font-size: 1.1rem; /* bigger */
+        font-size: 1.1rem;
         transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
     }
 
@@ -408,101 +300,462 @@
             color: #000;
         }
 
-    /* Border/glow colours */
-    .blue-border {
-        border: 2px solid #097969;
-        box-shadow: 0 0 12px rgba(9, 121, 105, 0.35);
+    /* Shared section headers */
+    .section-eyebrow,
+    .social-eyebrow {
+        display: inline-block;
+        margin-bottom: 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #e7571d;
     }
 
-    .purple-border {
-        border: 2px solid #efb3c4;
-        box-shadow: 0 0 14px rgba(239, 179, 196, 0.45);
-    }
-
-    .yellow-border {
-        border: 2px solid #40b5e0;
-        box-shadow: 0 0 14px rgba(64, 181, 224, 0.45);
-    }
-
-    /* Card-specific button hover colours: match outline colours */
-    .project-card.blue-border .secondary-button:hover {
-        background: #097969;
-        border-color: #097969;
+    .section-title {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
         color: #fff;
     }
 
-    .project-card.purple-border .secondary-button:hover {
-        background: #efb3c4;
-        border-color: #efb3c4;
-        color: #000;
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 3.5rem;
+        height: 3px;
+        margin: 1rem auto 0;
+        background: #e7571d;
+        border-radius: 999px;
     }
 
-    .project-card.yellow-border .secondary-button:hover {
-        background: #40b5e0;
-        border-color: #40b5e0;
-        color: #000;
+    /* Latest updates */
+    .news-home-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        background: #280a16;
+        padding: 4rem 2rem;
+        border-top: 1px solid rgba(231, 87, 29, 0.12);
     }
 
-    /* RESPONSIVE: 2 per row on tablet */
-    @@media (max-width: 1024px) {
-        .project-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+    .news-home-header,
+    .dev-header {
+        max-width: 42rem;
+        margin: 0 auto 2.5rem;
+        text-align: center;
+    }
+
+        .news-home-header p,
+        .dev-header p {
+            margin: 1.25rem auto 0;
+            max-width: 36rem;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1.1rem;
+            line-height: 1.75;
         }
 
-            .project-grid.center-two {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+    .news-home-empty {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0 auto 1.5rem;
     }
 
-    /* RESPONSIVE: 1 per row on mobile */
-    @@media (max-width: 768px) {
-        .project-grid {
-            grid-template-columns: 1fr;
-            margin-left: 0;
-            margin-right: 0;
-            padding: 0 1.25rem;
-        }
-
-            .project-grid.center-two {
-                grid-template-columns: 1fr;
-            }
+    .news-home-grid {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1rem;
     }
 
-    .kd-separator.diamond {
+    .news-home-card {
+        display: grid;
+        grid-template-columns: 5.5rem 1fr;
+        gap: 1rem;
+        align-items: stretch;
+        background: rgba(41, 24, 36, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 0.85rem;
+        overflow: hidden;
+    }
+
+    .news-home-date {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 0.75rem;
-        margin: 3rem 0;
+        padding: 0.75rem;
+        text-align: center;
+        font-weight: 700;
     }
 
-        .kd-separator.diamond .line {
-            flex: 1;
-            height: 2px;
-            background: #e7571d;
+        .news-home-date .day {
+            font-size: 1.5rem;
+            line-height: 1;
         }
 
-        .kd-separator.diamond .diamond {
-            width: 12px;
-            height: 12px;
-            background: #e7571d;
-            transform: rotate(45deg);
+        .news-home-date .mon {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
-    /* SOCIAL ICON STRIP (centered + slightly smaller) */
-    .social-icons {
-        margin-top: 1.5rem;
+    .news-home-body {
+        padding: 1rem 1.1rem 1rem 0;
+        color: #fff;
+    }
+
+    .news-home-title-row {
         display: flex;
-        gap: 1rem;
-        justify-content: center; /* CENTER icons */
+        align-items: center;
+        gap: 0.65rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .news-home-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .news-home-title-row h3 {
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.3;
+    }
+
+    .news-home-body p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .news-home-actions {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .news-home-button {
+        border-color: #fff;
+        color: #fff;
+    }
+
+        .news-home-button:hover {
+            background: #fff;
+            color: #280a16;
+        }
+
+    /* In development */
+    .dev-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        background: #291824;
+        padding: 4rem 2rem;
+    }
+
+    .dev-grid {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
+    .dev-card {
+        display: flex;
+        flex-direction: column;
+        background: #280a16;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .dev-card-visual {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #1f0812;
+    }
+
+    .castle-climbers-dev-visual {
+        background-image: url("images/portfolio/Castle Climbers Background.png");
+    }
+
+    .bucket-connect-visual {
+        background-image: url("images/Bucket Connect/Cover 2.png");
+    }
+
+    .girls-who-connect-visual {
+        background-image: url("images/Girls Who Connect/Connect Graphic.png");
+    }
+
+    .isles-apart-dev-visual {
+        background-image: url("images/isles_apart/Cover.png");
+    }
+
+    .dev-card-title-row {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+    }
+
+    .dev-card-icon {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .dev-card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+        padding: 1.5rem;
+        color: #fff;
+    }
+
+        .dev-card-body h3 {
+            margin: 0;
+            font-size: 1.35rem;
+        }
+
+        .dev-card-body p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+    .dev-card-button {
+        margin-top: 0.25rem;
+    }
+
+    /* Other projects */
+    .other-projects-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        overflow: hidden;
+        background: #280a16;
+        border-top: 1px solid rgba(231, 87, 29, 0.12);
+    }
+
+    .other-projects-visual {
+        flex: 1 1 50%;
+        min-height: 28rem;
+        background-image: url("images/portfolio/Cover.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .other-projects-content {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3.5rem 4rem;
+        color: #fff;
+    }
+
+    .other-projects-title {
+        margin: 0 0 1.25rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+    }
+
+    .other-projects-title::after {
+        content: "";
+        display: block;
+        width: 3.5rem;
+        height: 3px;
+        margin-top: 1rem;
+        background: #e7571d;
+        border-radius: 999px;
+    }
+
+    .other-projects-content > p {
+        margin: 0;
+        max-width: 34rem;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+
+    .other-projects-button {
+        align-self: flex-start;
+        margin-top: 1.75rem;
+    }
+
+    /* Contact */
+    .contact-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        background: #291824;
+        padding: 4rem 2rem;
+        border-top: 1px solid rgba(231, 87, 29, 0.12);
+    }
+
+    .contact-inner {
+        max-width: 42rem;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+    }
+
+        .contact-inner p {
+            margin: 1.25rem auto 0;
+            max-width: 34rem;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+    .contact-button {
+        display: inline-block;
+        margin-top: 1.75rem;
+        padding: 0.9rem 1.6rem;
+        border-radius: 999px;
+        background: #fff;
+        color: #280a16;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: background 0.15s ease, color 0.15s ease;
+    }
+
+        .contact-button:hover {
+            background: #e7571d;
+            color: #fff;
+        }
+
+    @@media (max-width: 768px) {
+        .news-home-card {
+            grid-template-columns: 1fr;
+        }
+
+        .news-home-date {
+            flex-direction: row;
+            gap: 0.5rem;
+            padding: 0.85rem 1rem;
+        }
+
+        .news-home-body {
+            padding: 0 1rem 1rem;
+        }
+
+        .dev-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .other-projects-section {
+            flex-direction: column;
+        }
+
+        .other-projects-visual {
+            min-height: 16rem;
+        }
+
+        .other-projects-content {
+            padding: 2.5rem 1.5rem 3rem;
+        }
+
+        .news-home-section,
+        .dev-section,
+        .contact-section {
+            padding: 3rem 1.5rem;
+        }
+    }
+
+    /* Social section */
+    .social-section {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        background: #1f0812;
+        padding: 4rem 2rem;
+        border-top: 1px solid rgba(231, 87, 29, 0.12);
+    }
+
+    .social-inner {
+        max-width: 42rem;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+    }
+
+    .social-eyebrow {
+        display: inline-block;
+        margin-bottom: 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #e7571d;
+    }
+
+    .social-title {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+    }
+
+    .social-title::after {
+        content: "";
+        display: block;
+        width: 3.5rem;
+        height: 3px;
+        margin: 1rem auto 0;
+        background: #e7571d;
+        border-radius: 999px;
+    }
+
+    .social-inner p {
+        margin: 1.25rem auto 0;
+        max-width: 36rem;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 1.1rem;
+        line-height: 1.75;
+    }
+
+    .social-icons-row {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        padding: 0 0.5rem;
+    }
+
+    .social-icons {
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1.35rem;
+        max-width: 100%;
     }
 
         .social-icons a {
             display: block;
-            width: 55px; /* was 70px */
-            height: 55px; /* was 70px */
-            border-radius: 10px; /* slightly smaller radius to match size */
+            flex: 0 0 55px;
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
             overflow: hidden;
             transition: transform 0.15s ease, opacity 0.15s ease;
         }
@@ -518,72 +771,52 @@
             object-fit: cover;
         }
 
-    /* MOBILE — stays centered */
     @@media (max-width: 768px) {
         .social-icons {
-            justify-content: center;
+            gap: 1rem;
         }
     }
 
-    /* Centered Social Section */
-    .social-center {
-        flex-direction: column !important;
-        text-align: center;
-    }
-
-    .social-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-        .social-content p {
-            max-width: 600px;
+    @@media (min-width: 769px) {
+        .social-icons {
+            flex-wrap: nowrap;
         }
+    }
 
 </style>
 
-<div class="kd-separator diamond">
-    <span class="line"></span>
-    <span class="diamond"></span>
-    <span class="line"></span>
-</div>
-
-<!-- SOCIAL SECTION (Centered, No Image) -->
-<div class="custom-section social-center">
-    <div class="custom-left social-content">
-        <h2 class="custom-section-title">Find me on my Socials</h2>
+<!-- SOCIAL SECTION -->
+<section class="social-section">
+    <div class="social-inner">
+        <span class="social-eyebrow">Stay connected</span>
+        <h2 class="social-title">Find me on my Socials</h2>
 
         <p>
-            Follow me on social media for project updates,  
+            Follow me on social media for project updates,
             new app releases, and progress on my games.
         </p>
 
-        <div class="social-icons">
-            <a href="https://www.instagram.com/kenyondevlabs/">
-                <img src="images/Instagram Logo.png" alt="Instagram" />
-            </a>
-            <a href="https://www.youtube.com/@@KenyonGameLabs">
-                <img src="images/Youtube Icon.png" alt="YouTube" />
-            </a>
-            <a href="https://x.com/KenyonDevLabs">
-                <img src="images/X Icon.png" alt="X" />
-            </a>
-            <a href="#">
-                <img src="images/Tiktok Icon.png" alt="TikTok" />
-            </a>
-            <a href="#">
-                <img src="images/Discord Icon.png" alt="Discord" />
-            </a>
+        <div class="social-icons-row">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/kenyondevlabs/">
+                    <img src="images/Instagram Logo.png" alt="Instagram" />
+                </a>
+                <a href="https://www.youtube.com/@@KenyonGameLabs">
+                    <img src="images/Youtube Icon.png" alt="YouTube" />
+                </a>
+                <a href="https://x.com/KenyonDevLabs">
+                    <img src="images/X Icon.png" alt="X" />
+                </a>
+                <a href="#">
+                    <img src="images/Tiktok Icon.png" alt="TikTok" />
+                </a>
+                <a href="#">
+                    <img src="images/Discord Icon.png" alt="Discord" />
+                </a>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="kd-separator diamond">
-    <span class="line"></span>
-    <span class="diamond"></span>
-    <span class="line"></span>
-</div>
+</section>
 
 <footer class="kdl-footer">
     <div class="kdl-footer-content">
@@ -593,17 +826,12 @@
 </footer>
 
 <style>
-    /* Remove extra space above footer */
-    .kd-separator.diamond:last-of-type,
-    .custom-section:last-of-type {
-        margin-bottom: 0.5rem; /* reduce or change to 0rem if needed */
-    }
-
     /* FOOTER */
     .kdl-footer {
         width: 100%;
-        padding: 2rem 1rem;
+        padding: 2.5rem 1rem;
         text-align: center;
+        background: #291824;
     }
 
     .kdl-footer-content {
@@ -628,3 +856,34 @@
                 opacity: 0.8;
             }
 </style>
+
+@code {
+    private List<NewsItem> latestNews = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var all = await NewsData.GetAllAsync();
+        latestNews = all
+            .OrderByDescending(n => n.Date)
+            .Take(3)
+            .ToList();
+    }
+
+    private static string TruncateSummary(string? summary, int maxLength = 140)
+    {
+        if (string.IsNullOrWhiteSpace(summary))
+            return string.Empty;
+
+        var plain = System.Text.RegularExpressions.Regex.Replace(summary, "<.*?>", string.Empty);
+        return plain.Length <= maxLength ? plain : $"{plain[..maxLength].TrimEnd()}…";
+    }
+
+    private static string GetNewsTop(NewsItem item)
+        => !string.IsNullOrWhiteSpace(item.TopColour) ? item.TopColour : "#efb3c4";
+
+    private static string GetNewsBottom(NewsItem item)
+        => !string.IsNullOrWhiteSpace(item.BottomColour) ? item.BottomColour : "#d495a8";
+
+    private static string GetNewsDateText(NewsItem item)
+        => !string.IsNullOrWhiteSpace(item.DateTextColour) ? item.DateTextColour : "#1a1a1a";
+}

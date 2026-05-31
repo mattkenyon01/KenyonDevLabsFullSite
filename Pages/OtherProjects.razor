@@ -1,0 +1,324 @@
+@page "/OtherProjects"
+
+<PageTitle>Other Projects — Kenyon Dev Labs</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="Apps, games, and university projects from Kenyon Dev Labs — from released App Store titles to prototypes and experiments." />
+    <link rel="canonical" href="https://kenyondevlabs.com/OtherProjects" />
+</HeadContent>
+
+<HomeHeader />
+
+<section class="other-page-hero">
+    <span class="section-eyebrow">Archive</span>
+    <h1>Other Projects</h1>
+    <p>
+        A full look at the apps and games I've built — from released App Store titles and shipped games
+        to prototypes, university work, and experiments along the way.
+    </p>
+</section>
+
+<section class="other-page-list">
+    @foreach (var project in projects)
+    {
+        <article class="other-page-row">
+            <div class="other-page-row-content">
+                <h2>@project.Title</h2>
+                <p>@project.Summary</p>
+
+                <div class="other-page-features">
+                    <span class="other-page-features-label">Highlights</span>
+                    <ul class="other-page-feature-tags">
+                        @foreach (var feature in project.Features)
+                        {
+                            <li>@feature</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="other-page-row-visual" style="background-image: url('@project.ImageUrl');" aria-hidden="true"></div>
+        </article>
+    }
+</section>
+
+<footer class="kdl-footer">
+    <div class="kdl-footer-content">
+        <p>© 2025 Kenyon Dev Labs</p>
+        <a href="mailto:matt@kenyondevlabs.com">matt@kenyondevlabs.com</a>
+    </div>
+</footer>
+
+<style>
+    .other-page-hero {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 4rem 2rem 3rem;
+        text-align: center;
+        background: #280a16;
+        color: #fff;
+        border-bottom: 1px solid rgba(231, 87, 29, 0.12);
+    }
+
+    .section-eyebrow {
+        display: inline-block;
+        margin-bottom: 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #e7571d;
+    }
+
+    .other-page-hero h1 {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+    }
+
+        .other-page-hero h1::after {
+            content: "";
+            display: block;
+            width: 3.5rem;
+            height: 3px;
+            margin: 1rem auto 0;
+            background: #e7571d;
+            border-radius: 999px;
+        }
+
+    .other-page-hero p {
+        margin: 1.25rem auto 0;
+        max-width: 40rem;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 1.1rem;
+        line-height: 1.75;
+    }
+
+    .other-page-list {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 4rem 2rem;
+        background: #291824;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .other-page-row {
+        max-width: 1100px;
+        width: 100%;
+        min-height: 18rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        overflow: hidden;
+        background: #280a16;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+    }
+
+    .other-page-row-visual {
+        flex: 1 1 50%;
+        align-self: stretch;
+        min-height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #1f0812;
+    }
+
+    .other-page-row-content {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2.5rem;
+        color: #fff;
+    }
+
+        .other-page-row-content h2 {
+            margin: 0;
+            font-size: clamp(1.5rem, 3vw, 1.85rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .other-page-row-content h2::after {
+            content: "";
+            display: block;
+            width: 2.5rem;
+            height: 3px;
+            margin-top: 0.85rem;
+            background: #e7571d;
+            border-radius: 999px;
+        }
+
+        .other-page-row-content > p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+    .other-page-features {
+        margin-top: 0.5rem;
+    }
+
+    .other-page-features-label {
+        display: block;
+        margin-bottom: 0.65rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #e7571d;
+    }
+
+    .other-page-feature-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        .other-page-feature-tags li {
+            padding: 0.4rem 0.85rem;
+            border: 1px solid rgba(231, 87, 29, 0.35);
+            border-radius: 999px;
+            background: rgba(231, 87, 29, 0.1);
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 0.85rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+    .kdl-footer {
+        width: 100%;
+        padding: 2.5rem 1rem;
+        text-align: center;
+        background: #280a16;
+    }
+
+    .kdl-footer-content {
+        max-width: 900px;
+        margin: 0 auto;
+        color: #ddd;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+        .kdl-footer-content a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: opacity 0.15s ease;
+        }
+
+            .kdl-footer-content a:hover {
+                opacity: 0.8;
+            }
+
+    @@media (max-width: 768px) {
+        .other-page-row {
+            flex-direction: column;
+        }
+
+        .other-page-row-visual {
+            order: 2;
+            min-height: 14rem;
+            width: 100%;
+        }
+
+        .other-page-row-content {
+            order: 1;
+            padding: 1.75rem 1.5rem 2rem;
+        }
+
+        .other-page-hero,
+        .other-page-list {
+            padding: 3rem 1.5rem;
+        }
+    }
+</style>
+
+@code {
+    private readonly List<OtherProject> projects =
+    [
+        // Apps
+        new(
+            "Interactive World Map",
+            "images/portfolio/World 1.png",
+            "An interactive world map highlighting the main contributors of pollution, as well as the species that are endangered as a result.",
+            ["Unity", "Data Visualisation", "Interactivity", "Environmental Data"]),
+        new(
+            "Crafting Recipies Graph",
+            "images/portfolio/Scene.png",
+            "An app that allows users to create their own unique crafting recipes for their own survival video games.",
+            ["React", "JavaScript", "Supabase", "Graph Data"]),
+
+        // Games
+        new(
+            "Game for Recovery of Stroke",
+            "images/portfolio/Blue 2.jpeg",
+            "An interactive minigame experience built to assist people affected by stroke, praised by health professionals for its background research.",
+            ["Computer Vision", "OpenCV", "Health Tech", "Accessibility", "Voice Controls", "Unity"]),
+        new(
+            "Procedurally Generated 2D Worlds",
+            "images/portfolio/Cover.png",
+            "A procedurally generated underwater world with cave systems, ore and flora generation, lightmaps, and impressive tilemapping.",
+            ["Procedural Generation", "Cave Systems", "Biomes", "Lightmapping", "Tilemapping"]),
+        new(
+            "Car Arcade Game",
+            "images/portfolio/Car Game.png",
+            "A simple arcade game with cars and increasing difficulty, based on popular road-trip games such as cheese car or slug bug.",
+            ["Arcade Design", "Difficulty Scaling", "Game Feel", "Unity"]),
+        new(
+            "Top Down Shooter",
+            "images/portfolio/Uni Game 1.png",
+            "A top down shooter with advanced AI enemies, increasing difficulty levels, and an infinitely generated map.",
+            ["Procedural Generation", "AI Enemies", "Infinite Maps", "Level Design", "Unity"]),
+        new(
+            "2D Platformer",
+            "images/portfolio/A Level Game 1.png",
+            "A 2D platformer built as part of my A Level coursework.",
+            ["2D Platforming", "Physics", "Level Design", "Unity"]),
+        new(
+            "Unity World",
+            "images/portfolio/Uni Unity Scene.png",
+            "An immersive 3D Unity world with custom assets, advanced lighting, moving parts, and particle systems.",
+            ["3D Environments", "Particle Systems", "Advanced Lighting", "Custom Assets"]),
+        new(
+            "Cmake World",
+            "images/portfolio/Scene.png",
+            "An immersive 3D CMake world with custom assets, heightmaps, lighting systems, and advanced shaders.",
+            ["3D Graphics", "Heightmaps", "Shaders", "C++", "CMake"]),
+        new(
+            "Uni Cmake Project",
+            "images/portfolio/Scene 2.png",
+            "A university CMake project exploring 3D world building, custom tooling, and C++ game engineering.",
+            ["CMake", "C++", "3D Graphics", "University Project"]),
+        new(
+            "Uni Cmake Group Project",
+            "images/portfolio/Scene 2.png",
+            "A collaborative university CMake project built with a team using GitHub and Epic Games tooling.",
+            ["CMake", "C++", "Collaboration", "GitHub", "Group Project"]),
+        new(
+            "Conway's Game of Life",
+            "images/portfolio/Conways Game Of Life.png",
+            "A simple representation of Conway's Game of Life in C++, demonstrating how the main structures are generated.",
+            ["C++", "Cellular Automata", "Simulation", "Algorithms"]),
+    ];
+
+    private sealed record OtherProject(string Title, string ImageUrl, string Summary, string[] Features);
+}

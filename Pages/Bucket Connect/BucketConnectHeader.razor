@@ -1,15 +1,13 @@
 ﻿@* Shared/Header.razor *@
 
 <HeadContent>
-    <link rel="icon" href="Slime 1.png" />
+    <link rel="icon" href="/images/Bucket Connect/icons/The Bucket List Icon NB.png" />
 </HeadContent>
 
 <header class="site-header" role="banner">
-    <!-- Left side: Logo + App name -->
     <div class="logo">
         <img src="/images/Bucket Connect/icons/The Bucket List Icon NB.png"
-             alt="
-Logo"
+             alt="Bucket Connect logo"
              class="logo-img" />
         <span class="app-name">Bucket Connect</span>
     </div>
@@ -54,14 +52,18 @@ Logo"
 
 <style>
     .site-header {
-        position: sticky; /* positioned ancestor for absolute nav */
+        position: sticky;
         top: 0;
         z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 2rem;
-        background: #097969;
+        padding: 1rem 1.5rem;
+        background: #065f54;
+        font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
     }
 
     /* Logo */

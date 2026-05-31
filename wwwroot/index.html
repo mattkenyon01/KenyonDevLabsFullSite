@@ -23,6 +23,9 @@
 
     <!-- ===== Icons & Styles ===== -->
     <link rel="icon" type="image/png" href="Kenyon Dev Labs NB.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link href="KenyonDevLabs.styles.css" rel="stylesheet" />
@@ -32,6 +35,11 @@
     <script src="js/chart.js"></script>
 
     <style>
+        html, body, #app {
+            margin: 0;
+            padding: 0;
+        }
+
         #blazor-error-ui {
             display: none;
             position: fixed;
@@ -90,7 +98,7 @@
         height: 100vh;
         background: #280a16;
         color: #fff;
-        font-family: 'Segoe UI', sans-serif;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
         text-align: center;
     }
 
