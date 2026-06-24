@@ -200,7 +200,7 @@ html, body {
 </section>
 
 <!-- OTHER PROJECTS -->
-<section class="dev-section section-bg-a other-projects-home">
+<section class="dev-section section-bg-a">
     <div class="dev-header">
         <span class="section-eyebrow">The wider portfolio</span>
         <h2 class="section-title">Other Projects</h2>
@@ -209,31 +209,29 @@ html, body {
         </p>
     </div>
 
-    <div class="dev-grid other-projects-grid">
-        <article class="dev-card other-projects-card">
+    <div class="dev-grid dev-grid-centered">
+        <article class="dev-card">
+            <div class="dev-card-visual other-projects-visual" aria-hidden="true"></div>
             <div class="dev-card-body">
-                <span class="section-eyebrow">Archive</span>
-                <h3 class="other-projects-card-title">Past work & prototypes</h3>
+                <h3>Past work & prototypes</h3>
                 <p>
                     A broader look at everything I've built - released apps, shipped games, prototypes,
                     and university projects that show the range of my work.
                 </p>
-                <a class="secondary-button dev-card-button" href="/OtherProjects">Browse other projects</a>
+                <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Coming soon…</span>
             </div>
-            <div class="dev-card-visual other-projects-visual" aria-hidden="true"></div>
         </article>
 
-        <article class="dev-card other-projects-card">
+        <article class="dev-card">
+            <div class="dev-card-visual papers-visual" aria-hidden="true"></div>
             <div class="dev-card-body">
-                <span class="section-eyebrow">Research</span>
-                <h3 class="other-projects-card-title">Papers written</h3>
+                <h3>Papers written</h3>
                 <p>
                     Academic dissertations and papers on procedural generation, accessibility in game design,
                     and rehabilitation technology - available to read and download.
                 </p>
                 <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Coming soon…</span>
             </div>
-            <div class="dev-card-visual papers-visual" aria-hidden="true"></div>
         </article>
     </div>
 </section>
@@ -482,7 +480,7 @@ html, body {
         gap: 1.25rem;
     }
 
-    .dev-grid:not(.other-projects-grid) .dev-card:last-child:nth-child(odd) {
+    .dev-grid .dev-card:last-child:nth-child(odd) {
         grid-column: 1 / -1;
         width: 100%;
         max-width: calc((100% - 1.25rem) / 2);
@@ -573,73 +571,14 @@ html, body {
         margin-top: 0.25rem;
     }
 
-    /* Other projects - horizontal cards, equal height */
-    .dev-section.other-projects-home {
-        padding-top: 0;
-    }
-
-    .other-projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .other-projects-card {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) min(360px, 44%);
-        align-items: stretch;
-    }
-
-        .other-projects-card .dev-card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 0;
-            padding: 1.5rem 2rem;
-        }
-
-            .other-projects-card .dev-card-body .section-eyebrow {
-                margin-bottom: 0.45rem;
-            }
-
-            .other-projects-card-title {
-                margin: 0;
-                font-size: clamp(1.25rem, 2.5vw, 1.65rem);
-                font-weight: 700;
-                letter-spacing: -0.03em;
-                line-height: 1.1;
-            }
-
-                .other-projects-card-title::after {
-                    content: "";
-                    display: block;
-                    width: 3rem;
-                    height: 3px;
-                    margin-top: 0.5rem;
-                    background: #e7571d;
-                    border-radius: 999px;
-                }
-
-            .other-projects-card .dev-card-body p {
-                font-size: 0.95rem;
-                line-height: 1.6;
-            }
-
-        .other-projects-card .dev-card-visual {
-            width: 100%;
-            height: 100%;
-            min-height: 100%;
-            aspect-ratio: unset;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
     .other-projects-visual {
         background-image: url("images/portfolio/Cover.png");
+        background-size: cover;
     }
 
     .papers-visual {
         background-image: url("images/portfolio/Paper 1.png");
-        background-position: center;
+        background-size: cover;
     }
 
     @@media (max-width: 768px) {
@@ -661,35 +600,13 @@ html, body {
             grid-template-columns: 1fr;
         }
 
-            .dev-grid:not(.other-projects-grid) .dev-card:last-child:nth-child(odd) {
+            .dev-grid .dev-card:last-child:nth-child(odd) {
                 max-width: 100%;
             }
 
-        .other-projects-card {
-            grid-template-columns: 1fr;
-        }
-
-            .other-projects-card .dev-card-visual {
-                order: 1;
-                width: 100%;
-                aspect-ratio: 16 / 9;
-                height: auto;
-                min-height: 0;
-            }
-
-            .other-projects-card .dev-card-body {
-                order: 2;
-                min-height: auto;
-                padding: 1.15rem 1.25rem;
-            }
-
         .news-home-section,
-        .dev-section:not(.other-projects-home) {
+        .dev-section {
             padding: 3rem 1.5rem;
-        }
-
-        .dev-section.other-projects-home {
-            padding: 0 1.5rem 3rem;
         }
     }
 
