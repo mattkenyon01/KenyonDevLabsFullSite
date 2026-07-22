@@ -68,11 +68,12 @@ html, body {
         font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
     }
 
-    /* Welcome section - full-width hero image (1080-friendly default) */
+    /* Welcome section - full-width hero image (height follows width) */
     .welcome-section {
         position: relative;
         width: 100vw;
-        min-height: 36vh;
+        aspect-ratio: 2.5 / 1;
+        min-height: unset;
         margin: 0;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
@@ -122,7 +123,8 @@ html, body {
         .welcome-section--wide {
             display: flex;
             align-items: flex-start;
-            min-height: 52vh;
+            aspect-ratio: 2.2 / 1;
+            min-height: unset;
             padding: 2.25rem 4rem 3.5rem;
             background-position: 15% center;
         }
@@ -193,7 +195,8 @@ html, body {
 
     @@media (max-width: 768px) {
         .welcome-section {
-            min-height: 20vh;
+            aspect-ratio: 2.2 / 1;
+            min-height: unset;
             padding: 0.3rem 1.25rem 1.5rem;
             align-items: flex-start;
             background-size: cover;
