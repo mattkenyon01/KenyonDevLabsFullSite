@@ -19,7 +19,7 @@
 <section class="welcome-section welcome-section--default">
     <div class="welcome-inner">
         <div class="welcome-content">
-            <h2 class="welcome-title">Welcome to my site</h2>
+            <h2 class="welcome-title">Welcome to <br class="welcome-title-break" />my site</h2>
             <p>
                 Kenyon Dev Labs is my personal indie studio, where I create unique games and apps with heart and enthusiasm.
                 As a solo developer, I pour myself into every detail to craft experiences that feel thoughtful, polished, and fun.
@@ -32,7 +32,7 @@
 <section class="welcome-section welcome-section--wide">
     <div class="welcome-inner">
         <div class="welcome-content">
-            <h2 class="welcome-title">Welcome to my site</h2>
+            <h2 class="welcome-title">Welcome to<br class="welcome-title-break" />my site</h2>
             <p>
                 Kenyon Dev Labs is my personal indie studio, where I create unique games and apps with heart and enthusiasm.
                 As a solo developer, I pour myself into every detail to craft experiences that feel thoughtful, polished, and fun.
@@ -105,6 +105,10 @@ html, body {
         color: #fff;
     }
 
+    .welcome-section--default .welcome-content {
+        transform: translateY(1.5rem);
+    }
+
     /*
      * Ultra-wide (1800+) - separate layout slot.
      * Currently a placeholder that mirrors the default welcome section.
@@ -165,6 +169,10 @@ html, body {
         text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
     }
 
+    .welcome-title-break {
+        display: none;
+    }
+
     .welcome-title::after {
         content: "";
         display: block;
@@ -185,21 +193,35 @@ html, body {
 
     @@media (max-width: 768px) {
         .welcome-section {
-            min-height: 28vh;
-            padding: 2.5rem 1.75rem;
-            align-items: flex-end;
+            min-height: 20vh;
+            padding: 0.3rem 1.25rem 1.5rem;
+            align-items: flex-start;
+            background-size: cover;
             background-position: center;
         }
 
         .welcome-content {
             max-width: none;
-            text-align: center;
-            align-items: center;
+            text-align: left;
+            align-items: flex-start;
+            transform: none;
+        }
+
+        .welcome-title {
+            margin-bottom: 0;
+            line-height: 1.15;
+        }
+
+        .welcome-title-break {
+            display: inline;
         }
 
         .welcome-title::after {
-            margin-left: auto;
-            margin-right: auto;
+            display: none;
+        }
+
+        .welcome-content p {
+            display: none;
         }
     }
 </style>

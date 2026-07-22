@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "KenyonDevLabs",
   "resources": {
-    "hash": "sha256-KltToMjs0blLvO/Ysno77crrT0RnzCb4DLgcJbI13KU=",
+    "hash": "sha256-2nwN/Vk6xiitZGTrSnzEjjjQ3KhU4UqKMhu6PEhZzYE=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-sn/g61GjVPhViOYQDkq1OMlk0eyS9r2Hi0qgU2o0HIU="
     },
@@ -218,10 +218,10 @@
       "mscorlib.wasm": "sha256-YI5F+NHcYCSuCGvvp5vyTL2orAoMlXo4ep5foTyMfeg=",
       "netstandard.wasm": "sha256-jVzOxH5q4FYYDM01Qwoa/2MjK7CwbDVo6rPFjrBorII=",
       "System.Private.CoreLib.wasm": "sha256-d+N5gZbidgB9OgmPuYn1T6BQWHjajGzz+AvKnZJ+zmA=",
-      "KenyonDevLabs.wasm": "sha256-DwhA0mr2cFSaVw9gJtXBETYwZtjTvoKvkSZBLiXpKjE="
+      "KenyonDevLabs.wasm": "sha256-fCph/yw3qnZULrYLO+/fFxcQJxYtFnQGQ9gjmTTDbFU="
     },
     "pdb": {
-      "KenyonDevLabs.pdb": "sha256-ncDW4Ph6q//h7rAdOgsnmtVWGh59d2OxhEJuF4DPUgw="
+      "KenyonDevLabs.pdb": "sha256-BZUYdLb9YIMOeG/COQcGddMmOKwBlv04bpcwKgmflh0="
     }
   },
   "cacheBootResources": true,

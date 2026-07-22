@@ -58,5 +58,17 @@
     "Summary": "The Kenyon Dev Labs TikTok page reached 1,000 followers - thank you to everyone following along!",
     "IconUrl": "images/Tiktok Icon.png",
     "ImageUrl": null
+  },
+  {
+    "Id": "tiktok-100k-views",
+    "Title": "100,000 TikTok views",
+    "Date": "2026-06-30",
+    "Category": "Social",
+    "TopColour": "#010101",
+    "BottomColour": "#010101",
+    "DateTextColour": "#FFFFFF",
+    "Summary": "Hit 100,000 views on TikTok - thank you to everyone watching and supporting Kenyon Dev Labs!",
+    "IconUrl": "images/Tiktok Icon.png",
+    "ImageUrl": null
   }
 ]
