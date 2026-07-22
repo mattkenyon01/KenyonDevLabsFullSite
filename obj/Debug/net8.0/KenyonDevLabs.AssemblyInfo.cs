@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KenyonDevLabs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+732e44fb3923fcc58bca2d7b7f4ec075ea1ab7fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+016faec2664cc4381b41b912a5cab8830a01393b")]
 [assembly: System.Reflection.AssemblyProductAttribute("KenyonDevLabs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KenyonDevLabs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

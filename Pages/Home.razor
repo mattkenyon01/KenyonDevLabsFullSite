@@ -15,8 +15,8 @@
 
 <HomeHeader />
 
-<!-- Welcome section: text left, hero image right -->
-<section class="welcome-section section-bg-a">
+<!-- Welcome section: full-width hero image with overlaid text -->
+<section class="welcome-section">
     <div class="welcome-content">
         <span class="welcome-eyebrow">About the studio</span>
         <h2 class="welcome-title">Welcome to my site</h2>
@@ -25,8 +25,6 @@
             As a solo developer, I pour myself into every detail to craft experiences that feel thoughtful, polished, and fun.
         </p>
     </div>
-
-    <div class="welcome-visual" aria-hidden="true"></div>
 </section>
 
 <style>
@@ -56,25 +54,31 @@ html, body {
         font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
     }
 
-    /* Welcome section - full-width split layout */
+    /* Welcome section - full-width hero image */
     .welcome-section {
+        position: relative;
         width: 100vw;
-        min-height: 32vh;
+        min-height: 36vh;
         margin: 0;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
         display: flex;
-        flex-direction: row;
-        align-items: stretch;
+        align-items: flex-start;
+        padding: 2.25rem 4rem 3.5rem;
         overflow: hidden;
+        background-image: url("images/New Website Image.png");
+        background-size: cover;
+        background-position: 15% center;
+        background-repeat: no-repeat;
     }
 
     .welcome-content {
-        flex: 1 1 50%;
+        position: relative;
+        z-index: 1;
+        max-width: 34rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 3.5rem 4rem;
         color: #fff;
     }
 
@@ -85,7 +89,8 @@ html, body {
         font-weight: 600;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #e7571d;
+        color: #280a16;
+        text-shadow: 0 1px 6px rgba(255, 255, 255, 0.35);
     }
 
     .welcome-title {
@@ -94,6 +99,7 @@ html, body {
         font-weight: 700;
         letter-spacing: -0.03em;
         line-height: 1.1;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
     }
 
     .welcome-title::after {
@@ -108,45 +114,28 @@ html, body {
 
     .welcome-content p {
         margin: 0;
-        max-width: 34rem;
-        color: rgba(255, 255, 255, 0.82);
+        color: rgba(255, 255, 255, 0.92);
         font-size: 1.15rem;
         line-height: 1.75;
-    }
-
-    .welcome-visual {
-        flex: 1 1 50%;
-        min-height: 32vh;
-        background-image: url("images/Middle.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
     }
 
     @@media (max-width: 768px) {
         .welcome-section {
-            flex-direction: column;
+            min-height: 28vh;
+            padding: 2.5rem 1.75rem;
+            align-items: flex-end;
         }
 
         .welcome-content {
-            order: 2;
-            padding: 2.5rem 1.75rem;
+            max-width: none;
             text-align: center;
             align-items: center;
-        }
-
-        .welcome-visual {
-            order: 1;
-            min-height: 24vh;
         }
 
         .welcome-title::after {
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .welcome-content p {
-            max-width: none;
         }
     }
 </style>
