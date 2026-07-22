@@ -17,13 +17,15 @@
 
 <!-- Welcome section: full-width hero image with overlaid text -->
 <section class="welcome-section">
-    <div class="welcome-content">
-        <span class="welcome-eyebrow">About the studio</span>
-        <h2 class="welcome-title">Welcome to my site</h2>
-        <p>
-            Kenyon Dev Labs is my personal indie studio, where I create unique games and apps with heart and enthusiasm.
-            As a solo developer, I pour myself into every detail to craft experiences that feel thoughtful, polished, and fun.
-        </p>
+    <div class="welcome-inner">
+        <div class="welcome-content">
+            <span class="welcome-eyebrow">About the studio</span>
+            <h2 class="welcome-title">Welcome to my site</h2>
+            <p>
+                Kenyon Dev Labs is my personal indie studio, where I create unique games and apps with heart and enthusiasm.
+                As a solo developer, I pour myself into every detail to craft experiences that feel thoughtful, polished, and fun.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -54,7 +56,7 @@ html, body {
         font-family: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
     }
 
-    /* Welcome section - full-width hero image */
+    /* Welcome section - full-width hero image (1080-friendly default) */
     .welcome-section {
         position: relative;
         width: 100vw;
@@ -70,16 +72,36 @@ html, body {
         background-size: cover;
         background-position: 15% center;
         background-repeat: no-repeat;
+        box-sizing: border-box;
+    }
+
+    .welcome-inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
     }
 
     .welcome-content {
-        position: relative;
-        z-index: 1;
         max-width: 34rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         color: #fff;
+    }
+
+    /* Ultra-wide only (~2160) - taller hero, image shifted right, text in middle column */
+    @@media (min-width: 1800px) {
+        .welcome-section {
+            display: block;
+            min-height: 52vh;
+            padding: 2.25rem 2rem 3.5rem;
+            background-position: 0% center;
+        }
+
+        .welcome-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
     }
 
     .welcome-eyebrow {
@@ -125,6 +147,7 @@ html, body {
             min-height: 28vh;
             padding: 2.5rem 1.75rem;
             align-items: flex-end;
+            background-position: center;
         }
 
         .welcome-content {
