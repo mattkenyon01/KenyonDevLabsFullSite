@@ -422,11 +422,14 @@
         flex: 1 1 360px;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
         .gwc-hero-visual img {
             width: 100%;
             max-width: 440px;
+            height: auto;
+            object-fit: contain;
             filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
         }
 
@@ -458,12 +461,15 @@
         flex: 1 1 380px;
         display: flex;
         justify-content: center;
+        align-items: center;
         min-width: 0;
     }
 
         .gwc-split-media img {
             width: 100%;
             max-width: 440px;
+            height: auto;
+            object-fit: contain;
             border-radius: var(--gwc-radius);
             box-shadow: var(--gwc-shadow);
         }
@@ -546,6 +552,8 @@
         .gwc-split-card-media img {
             width: 100%;
             max-width: 360px;
+            height: auto;
+            object-fit: contain;
             border-radius: 0.65rem;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
