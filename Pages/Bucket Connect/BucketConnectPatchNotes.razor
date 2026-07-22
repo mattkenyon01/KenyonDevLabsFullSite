@@ -205,8 +205,12 @@
             clip-path: ellipse(55% 100% at 50% 100%);
         }
 
-    .bc-hero-compact {
-        padding-bottom: 4.5rem;
+    .bc-section.bc-hero.bc-hero-compact {
+        padding-bottom: 1.25rem;
+    }
+
+    .bc-hero + .bc-section {
+        padding-top: 1.75rem;
     }
 
     .bc-hero-grid {
@@ -433,14 +437,23 @@
             padding: 3rem 1.25rem;
         }
 
-        .bc-hero {
-            padding-bottom: 4.5rem;
+        /* Beat .bc-section padding shorthand so the green band isn't tall under the copy */
+        .bc-section.bc-hero {
+            padding: 1.75rem 1.25rem 0;
+        }
+
+            .bc-section.bc-hero::after {
+                height: 10px;
+            }
+
+        .bc-hero + .bc-section {
+            padding-top: 1rem;
         }
 
         .bc-hero-grid {
             flex-direction: column-reverse;
             text-align: center;
-            gap: 3rem; /* match hero padding-top (space below header) */
+            gap: 0.5rem;
         }
 
         .bc-hero-visual {
