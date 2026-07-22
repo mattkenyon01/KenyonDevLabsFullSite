@@ -1082,6 +1082,6 @@ C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\obj\Debug\net8.0\swae.bu
 C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\bin\Debug\net8.0\publish\web.config
 C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\bin\Debug\net8.0\publish\emcc-props.json
 C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\bin\Debug\net8.0\publish\KenyonDevLabs.staticwebassets.endpoints.json
-C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\obj\Debug\net8.0\compressed\e8506tgmqf-{0}-2pwh1bjsms-2pwh1bjsms.gz
-C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\obj\Debug\net8.0\compressed\749crw16ej-{0}-zv56f87aga-zv56f87aga.gz
-C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\obj\Debug\net8.0\compressed\kxizkhpxgb-{0}-uckqigmvih-uckqigmvih.gz
+C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\obj\Debug\net8.0\compressed\e8506tgmqf-{0}-fvd715zr02-fvd715zr02.gz
+C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\obj\Debug\net8.0\compressed\749crw16ej-{0}-470ul9r1rl-470ul9r1rl.gz
+C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\obj\Debug\net8.0\compressed\kxizkhpxgb-{0}-o9gtwxji5o-o9gtwxji5o.gz

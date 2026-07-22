@@ -16,109 +16,109 @@ build_property.EntryPointFilePath =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = KenyonDevLabs
 build_property.RootNamespace = KenyonDevLabs
-build_property.ProjectDir = C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\
+build_property.ProjectDir = C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs
+build_property.MSBuildProjectDirectory = C:\Users\theke\source\repos\KenyonDevLabs\kenyondevlabs
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/App.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnect.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Bucket Connect/BucketConnect.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnectHeader.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Bucket Connect/BucketConnectHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdEhlYWRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnectPatchNotes.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Bucket Connect/BucketConnectPatchNotes.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdFBhdGNoTm90ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Bucket Connect/BucketConnectPrivacyPolicy.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Bucket Connect/BucketConnectPrivacyPolicy.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVja2V0IENvbm5lY3RcQnVja2V0Q29ubmVjdFByaXZhY3lQb2xpY3kucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Counter.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk - Copy/Bille.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk - Copy/Bille.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGsgLSBDb3B5XEJpbGxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk - Copy/BilleHeader.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk - Copy/BilleHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGsgLSBDb3B5XEJpbGxlSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk - Copy/BillePatchNotes.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk - Copy/BillePatchNotes.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGsgLSBDb3B5XEJpbGxlUGF0Y2hOb3Rlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk - Copy/BillePrivacyPolicy.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk - Copy/BillePrivacyPolicy.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGsgLSBDb3B5XEJpbGxlUHJpdmFjeVBvbGljeS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk - Copy/GirlsWhoWalkChildSafetyStandards.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk - Copy/GirlsWhoWalkChildSafetyStandards.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGsgLSBDb3B5XEdpcmxzV2hvV2Fsa0NoaWxkU2FmZXR5U3RhbmRhcmRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalk.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk/GirlsWhoWalk.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkChildSafetyStandards.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk/GirlsWhoWalkChildSafetyStandards.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrQ2hpbGRTYWZldHlTdGFuZGFyZHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkHeader.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk/GirlsWhoWalkHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrSGVhZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkPatchNotes.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk/GirlsWhoWalkPatchNotes.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrUGF0Y2hOb3Rlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Girls Who Walk/GirlsWhoWalkPrivacyPolicy.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Girls Who Walk/GirlsWhoWalkPrivacyPolicy.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2lybHMgV2hvIFdhbGtcR2lybHNXaG9XYWxrUHJpdmFjeVBvbGljeS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Home.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/HomeHeader.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/HomeHeader.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZUhlYWRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/News.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/News.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/OtherProjects.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/OtherProjects.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQcm9qZWN0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Pages/Weather.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/_Imports.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Layout/MainLayout.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-eyxzkz3hn2
 
-[C:/Users/theke/source/repos/KenyonDevLabs/KenyonDevLabs/Layout/NavMenu.razor]
+[C:/Users/theke/source/repos/KenyonDevLabs/kenyondevlabs/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-8gxkc6cuic

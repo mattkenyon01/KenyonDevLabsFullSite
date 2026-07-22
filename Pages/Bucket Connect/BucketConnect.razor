@@ -813,9 +813,29 @@
         }
 
         .bc-hero-grid {
-            flex-direction: column;
+            flex-direction: column-reverse;
             text-align: center;
+            gap: 3rem; /* match hero padding-top (space below header) */
         }
+
+        /* Icon Wide is 16:9 with large black padding — crop in tight on the bucket */
+        .bc-hero-visual {
+            margin: 0;
+            padding: 0;
+            width: min(110px, 28vw);
+            height: min(110px, 28vw);
+            overflow: hidden;
+            flex: 0 0 auto;
+            align-self: center;
+        }
+
+            .bc-hero-visual img {
+                width: 175%;
+                max-width: none;
+                height: 175%;
+                object-fit: cover;
+                object-position: center;
+            }
 
         .bc-hero-copy p {
             margin-left: auto;

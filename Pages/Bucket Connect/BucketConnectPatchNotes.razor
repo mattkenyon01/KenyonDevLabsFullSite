@@ -21,7 +21,7 @@
                 </p>
             </div>
             <div class="bc-hero-visual">
-                <img src="/images/Bucket Connect/icons/1.1 Wide.png" alt="Bucket Connect app icon" />
+                <img src="images/Bucket Connect/icons/1.1.png" alt="Bucket Connect app icon" />
             </div>
         </div>
     </section>
@@ -428,19 +428,38 @@
         opacity: 0.75;
     }
 
-    @@media (max-width: 760px) {
+    @@media (max-width: 768px) {
         .bc-section {
             padding: 3rem 1.25rem;
         }
 
         .bc-hero {
-            padding-bottom: 4rem;
+            padding-bottom: 4.5rem;
         }
 
         .bc-hero-grid {
-            flex-direction: column;
+            flex-direction: column-reverse;
             text-align: center;
+            gap: 3rem; /* match hero padding-top (space below header) */
         }
+
+        .bc-hero-visual {
+            margin: 0;
+            padding: 0;
+            width: min(110px, 28vw);
+            height: min(110px, 28vw);
+            overflow: hidden;
+            flex: 0 0 auto;
+            align-self: center;
+        }
+
+            .bc-hero-visual img {
+                width: 100%;
+                max-width: none;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
 
         .bc-hero-copy p {
             margin-left: auto;

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "KenyonDevLabs",
   "resources": {
-    "hash": "sha256-c5/DbebPHSy4VoIWvXNFL6AtISbMWR/vLhoZb28PHyU=",
+    "hash": "sha256-d5LxJ5J9X6gMoLqNHOyqNnJPo0+R0kT1nvwqzb+7DaQ=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-kl1kEnJ/0kgP6CiBXxh0TGGx8OxEjqiOqEqYEpUL7HE="
     },
@@ -67,7 +67,7 @@
       "System.Threading.Tasks.Extensions.wasm": "sha256-Gd1qxXivz5MpsAX+TBr8vugvZOcbJp4fgOCd8pjkP+o=",
       "netstandard.wasm": "sha256-Olm3WHQsUSBfbcde5TI/ttI1Hu2pDvnGXlYp+mwxBck=",
       "System.Private.CoreLib.wasm": "sha256-xyQwCBKToCdNFtO+STGsxsg+NHLg9QzUEKaY2JnhD4s=",
-      "KenyonDevLabs.wasm": "sha256-mE7ofQrV40XsmdM/FO6r7wiAO5vQjWu4YOUblETDnEk="
+      "KenyonDevLabs.wasm": "sha256-5920D2J1mLLd8uY/FScNb4IttIDwul9DyBcRjvkGH/U="
     }
   },
   "cacheBootResources": true,
