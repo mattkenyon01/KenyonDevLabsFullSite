@@ -15,11 +15,23 @@
 
 <HomeHeader />
 
-<!-- Welcome section: full-width hero image with overlaid text -->
-<section class="welcome-section">
+<!-- Welcome section: default (<1800) -->
+<section class="welcome-section welcome-section--default">
     <div class="welcome-inner">
         <div class="welcome-content">
-            <span class="welcome-eyebrow">About the studio</span>
+            <h2 class="welcome-title">Welcome to my site</h2>
+            <p>
+                Kenyon Dev Labs is my personal indie studio, where I create unique games and apps with heart and enthusiasm.
+                As a solo developer, I pour myself into every detail to craft experiences that feel thoughtful, polished, and fun.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Welcome section: ultra-wide (1800+) - placeholder copy of default for now -->
+<section class="welcome-section welcome-section--wide">
+    <div class="welcome-inner">
+        <div class="welcome-content">
             <h2 class="welcome-title">Welcome to my site</h2>
             <p>
                 Kenyon Dev Labs is my personal indie studio, where I create unique games and apps with heart and enthusiasm.
@@ -75,6 +87,10 @@ html, body {
         box-sizing: border-box;
     }
 
+    .welcome-section--wide {
+        display: none;
+    }
+
     .welcome-inner {
         position: relative;
         z-index: 1;
@@ -89,18 +105,43 @@ html, body {
         color: #fff;
     }
 
-    /* Ultra-wide only (~2160) - taller hero, image shifted right, text in middle column */
+    /*
+     * Ultra-wide (1800+) - separate layout slot.
+     * Currently a placeholder that mirrors the default welcome section.
+     * Change .welcome-section--wide markup/CSS below when you want a distinct layout.
+     */
     @@media (min-width: 1800px) {
-        .welcome-section {
-            display: block;
-            min-height: 52vh;
-            padding: 2.25rem 2rem 3.5rem;
-            background-position: 0% center;
+        .welcome-section--default {
+            display: none;
         }
 
-        .welcome-inner {
-            max-width: 960px;
+        .welcome-section--wide {
+            display: flex;
+            align-items: flex-start;
+            min-height: 52vh;
+            padding: 2.25rem 4rem 3.5rem;
+            background-position: 15% center;
+        }
+
+        .welcome-section--wide .welcome-inner {
+            width: 100%;
+        }
+
+        .welcome-section--wide .welcome-content {
+            max-width: 34rem;
             margin: 0 auto;
+            transform: translate(-17rem, 1.5rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .welcome-section--wide .welcome-title::after {
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
@@ -130,7 +171,7 @@ html, body {
         width: 3.5rem;
         height: 3px;
         margin-top: 1rem;
-        background: #e7571d;
+        background: #fff;
         border-radius: 999px;
     }
 
