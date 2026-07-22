@@ -66,13 +66,6 @@
                 }
 
                 <article class="news-page-card">
-                    <div class="news-page-date"
-                         style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
-                        <span class="day">@item.Date.ToString("dd")</span>
-                        <span class="mon">@item.Date.ToString("MMM")</span>
-                        <span class="yr">@item.Date.ToString("yyyy")</span>
-                    </div>
-
                     <div class="news-page-body">
                         <div class="news-page-body-header">
                             <div class="news-page-title-row">
@@ -82,7 +75,15 @@
                                 }
                                 <h2>@item.Title</h2>
                             </div>
-                            <span class="news-category-pill @GetCategoryClass(item)">@GetCategory(item)</span>
+                            <div class="news-page-header-meta">
+                                <span class="news-category-pill @GetCategoryClass(item)">@GetCategory(item)</span>
+                                <div class="news-page-date"
+                                     style="background: linear-gradient(135deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
+                                    <span class="day">@item.Date.ToString("dd")</span>
+                                    <span class="mon">@item.Date.ToString("MMM")</span>
+                                    <span class="yr">@item.Date.ToString("yyyy")</span>
+                                </div>
+                            </div>
                         </div>
 
                         <p>@((MarkupString)item.Summary)</p>
@@ -254,7 +255,7 @@
 
     .news-page-card {
         display: grid;
-        grid-template-columns: 5.5rem 1fr auto;
+        grid-template-columns: 1fr auto;
         gap: 0;
         align-items: stretch;
         background: var(--page-bg-b);
@@ -269,40 +270,13 @@
             transform: translateY(-2px);
         }
 
-    .news-page-date {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 0.75rem;
-        text-align: center;
-        font-weight: 700;
-    }
-
-        .news-page-date .day {
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .news-page-date .mon {
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-top: 0.2rem;
-        }
-
-        .news-page-date .yr {
-            font-size: 0.72rem;
-            opacity: 0.85;
-            margin-top: 0.15rem;
-        }
-
     .news-page-body {
         padding: 1.25rem 1.5rem;
         color: #fff;
         display: flex;
         flex-direction: column;
         gap: 0.65rem;
+        min-width: 0;
     }
 
     .news-page-body-header {
@@ -319,6 +293,41 @@
         flex: 1;
         min-width: 0;
     }
+
+    .news-page-header-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        flex-shrink: 0;
+    }
+
+    .news-page-date {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.3rem;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+        .news-page-date .day {
+            font-size: 0.95rem;
+        }
+
+        .news-page-date .mon {
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .news-page-date .yr {
+            font-size: 0.72rem;
+            opacity: 0.9;
+        }
 
     .news-page-icon {
         width: 2rem;
@@ -423,20 +432,12 @@
             grid-template-columns: 1fr;
         }
 
-        .news-page-date {
-            flex-direction: row;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1rem;
+        .news-page-body {
+            padding: 1.15rem 1.25rem 1.25rem;
         }
 
-            .news-page-date .mon,
-            .news-page-date .yr {
-                margin-top: 0;
-            }
-
-        .news-page-body {
-            padding: 0 1.25rem 1.25rem 1.25rem;
+        .news-page-body-header {
+            flex-wrap: wrap;
         }
 
         .news-page-media-wrap {

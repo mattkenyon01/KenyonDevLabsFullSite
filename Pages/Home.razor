@@ -329,18 +329,20 @@ html, body {
             @foreach (var item in latestNews)
             {
                 <article class="news-home-card">
-                    <div class="news-home-date"
-                         style="background: linear-gradient(180deg, @GetNewsTop(item), @GetNewsBottom(item)); color: @GetNewsDateText(item);">
-                        <span class="day">@item.Date.ToString("dd")</span>
-                        <span class="mon">@item.Date.ToString("MMM")</span>
-                    </div>
                     <div class="news-home-body">
                         <div class="news-home-title-row">
-                            @if (!string.IsNullOrWhiteSpace(item.IconUrl))
-                            {
-                                <img class="news-home-icon" src="@item.IconUrl" alt="" />
-                            }
-                            <h3>@item.Title</h3>
+                            <div class="news-home-title-left">
+                                @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                                {
+                                    <img class="news-home-icon" src="@item.IconUrl" alt="" />
+                                }
+                                <h3>@item.Title</h3>
+                            </div>
+                            <div class="news-home-date"
+                                 style="background: linear-gradient(135deg, @GetNewsTop(item), @GetNewsBottom(item)); color: @GetNewsDateText(item);">
+                                <span class="day">@item.Date.ToString("dd")</span>
+                                <span class="mon">@item.Date.ToString("MMM")</span>
+                            </div>
                         </div>
                         <p>@TruncateSummary(item.Summary)</p>
                     </div>
@@ -454,10 +456,7 @@ html, body {
     }
 
     .news-home-card {
-        display: grid;
-        grid-template-columns: 5.5rem 1fr;
-        gap: 1rem;
-        align-items: stretch;
+        display: block;
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 0.85rem;
         overflow: hidden;
@@ -471,38 +470,50 @@ html, body {
         background: rgba(41, 24, 36, 0.75);
     }
 
-    .news-home-date {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0.75rem;
-        text-align: center;
-        font-weight: 700;
-    }
-
-        .news-home-date .day {
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .news-home-date .mon {
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
     .news-home-body {
-        padding: 1rem 1.1rem 1rem 0;
+        padding: 1.1rem 1.15rem 1.15rem;
         color: #fff;
     }
 
     .news-home-title-row {
         display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.85rem;
+        margin-bottom: 0.55rem;
+    }
+
+    .news-home-title-left {
+        display: flex;
         align-items: center;
         gap: 0.65rem;
-        margin-bottom: 0.5rem;
+        min-width: 0;
+        flex: 1;
     }
+
+    .news-home-date {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-shrink: 0;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+        .news-home-date .day {
+            font-size: 0.95rem;
+        }
+
+        .news-home-date .mon {
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
 
     .news-home-icon {
         width: 1.75rem;
@@ -657,20 +668,6 @@ html, body {
     }
 
     @@media (max-width: 768px) {
-        .news-home-card {
-            grid-template-columns: 1fr;
-        }
-
-        .news-home-date {
-            flex-direction: row;
-            gap: 0.5rem;
-            padding: 0.85rem 1rem;
-        }
-
-        .news-home-body {
-            padding: 0 1rem 1rem;
-        }
-
         .dev-grid {
             grid-template-columns: 1fr;
         }

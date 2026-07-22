@@ -56,19 +56,21 @@
                         }
 
                         <article class="bc-news-card">
-                            <div class="bc-news-date"
-                                 style="background: linear-gradient(180deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
-                                <span class="day">@item.Date.ToString("dd")</span>
-                                <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
-                                <span class="yr">@item.Date.ToString("yyyy")</span>
-                            </div>
                             <div class="bc-news-body">
                                 <div class="bc-news-title-row">
-                                    @if (!string.IsNullOrWhiteSpace(item.IconUrl))
-                                    {
-                                        <img class="bc-news-icon" src="@item.IconUrl" alt="" />
-                                    }
-                                    <h3>@item.Title</h3>
+                                    <div class="bc-news-title-left">
+                                        @if (!string.IsNullOrWhiteSpace(item.IconUrl))
+                                        {
+                                            <img class="bc-news-icon" src="@item.IconUrl" alt="" />
+                                        }
+                                        <h3>@item.Title</h3>
+                                    </div>
+                                    <div class="bc-news-date"
+                                         style="background: linear-gradient(135deg, @GetTop(item), @GetBottom(item)); color: @GetDateText(item);">
+                                        <span class="day">@item.Date.ToString("dd")</span>
+                                        <span class="mon">@item.Date.ToString("MMM", CultureInfo.InvariantCulture)</span>
+                                        <span class="yr">@item.Date.ToString("yyyy")</span>
+                                    </div>
                                 </div>
                                 <p>@((MarkupString)item.Summary)</p>
                             </div>
@@ -294,9 +296,7 @@
         }
 
     .bc-news-card {
-        display: grid;
-        grid-template-columns: 5.5rem 1fr;
-        align-items: stretch;
+        display: block;
         background: #fff;
         border: 1px solid rgba(9, 121, 105, 0.12);
         border-radius: var(--bc-radius);
@@ -310,46 +310,56 @@
             box-shadow: var(--bc-shadow);
         }
 
-    .bc-news-date {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0.85rem 0.5rem;
-        font-weight: 800;
-        text-align: center;
-    }
-
-        .bc-news-date .day {
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .bc-news-date .mon {
-            font-size: 0.8rem;
-            opacity: 0.9;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-top: 0.15rem;
-        }
-
-        .bc-news-date .yr {
-            font-size: 0.72rem;
-            opacity: 0.85;
-            margin-top: 0.15rem;
-        }
-
     .bc-news-body {
-        padding: 1rem 1.25rem 1.1rem 1.25rem;
+        padding: 1.1rem 1.25rem 1.15rem;
         color: var(--bc-text);
     }
 
     .bc-news-title-row {
         display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.85rem;
+        margin-bottom: 0.55rem;
+    }
+
+    .bc-news-title-left {
+        display: flex;
         align-items: center;
         gap: 0.65rem;
-        margin-bottom: 0.45rem;
+        min-width: 0;
+        flex: 1;
     }
+
+    .bc-news-date {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-shrink: 0;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        font-weight: 800;
+        text-align: center;
+        line-height: 1;
+    }
+
+        .bc-news-date .day {
+            font-size: 0.95rem;
+        }
+
+        .bc-news-date .mon {
+            font-size: 0.72rem;
+            opacity: 0.95;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .bc-news-date .yr {
+            font-size: 0.72rem;
+            opacity: 0.9;
+        }
 
     .bc-news-icon {
         width: 1.75rem;
@@ -432,26 +442,6 @@
         .bc-hero-copy p {
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .bc-news-card {
-            grid-template-columns: 1fr;
-        }
-
-        .bc-news-date {
-            flex-direction: row;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1rem;
-        }
-
-            .bc-news-date .mon,
-            .bc-news-date .yr {
-                margin-top: 0;
-            }
-
-        .bc-news-body {
-            padding: 0 1.1rem 1.1rem 1.1rem;
         }
     }
 </style>
