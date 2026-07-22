@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\KenyonDevLabs\\KenyonDevLabs.csproj": {}
+    "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\kenyondevlabs\\KenyonDevLabs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\KenyonDevLabs\\KenyonDevLabs.csproj": {
+    "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\kenyondevlabs\\KenyonDevLabs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\KenyonDevLabs\\KenyonDevLabs.csproj",
+        "projectUniqueName": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\kenyondevlabs\\KenyonDevLabs.csproj",
         "projectName": "KenyonDevLabs",
-        "projectPath": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\KenyonDevLabs\\KenyonDevLabs.csproj",
+        "projectPath": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\kenyondevlabs\\KenyonDevLabs.csproj",
         "packagesPath": "C:\\Users\\theke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\KenyonDevLabs\\obj\\",
+        "outputPath": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\kenyondevlabs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

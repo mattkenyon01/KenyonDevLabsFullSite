@@ -1,0 +1,2 @@
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\publish\emcc-props.json
+C:\Users\theke\source\repos\KenyonDevLabs\KenyonDevLabs\publish\web.config
