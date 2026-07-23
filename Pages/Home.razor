@@ -238,42 +238,49 @@ html, body {
         </p>
     </div>
 
-    <div class="dev-grid dev-grid-centered">
-        <article class="dev-card">
-            <div class="dev-card-visual bucket-connect-visual" aria-hidden="true"></div>
-            <div class="dev-card-body">
-                <div class="dev-card-title-row">
-                    <img class="dev-card-icon" src="images/Bucket Connect/icons/The Bucket List Icon NB.png" alt="" />
-                    <h3>Bucket Connect</h3>
+    <div class="dev-carousel" id="apps-carousel">
+        <div class="dev-carousel-track dev-grid dev-grid-centered" id="apps-carousel-track">
+            <article class="dev-card">
+                <div class="dev-card-visual bucket-connect-visual" aria-hidden="true"></div>
+                <div class="dev-card-body">
+                    <div class="dev-card-title-row">
+                        <img class="dev-card-icon" src="images/Bucket Connect/icons/The Bucket List Icon NB.png" alt="" />
+                        <h3>Bucket Connect</h3>
+                    </div>
+                    <p>Bucket Connect is the best way for you to track and chase your dreams.</p>
+                    <a class="secondary-button dev-card-button" href="/BucketConnect">View Project</a>
                 </div>
-                <p>Bucket Connect is the best way for you to track and chase your dreams.</p>
-                <a class="secondary-button dev-card-button" href="/BucketConnect">View Project</a>
-            </div>
-        </article>
+            </article>
 
-        <article class="dev-card">
-            <div class="dev-card-visual girls-who-connect-visual" aria-hidden="true"></div>
-            <div class="dev-card-body">
-                <div class="dev-card-title-row">
-                    <img class="dev-card-icon" src="images/Girls Who Connect/icons/Girls Who Connect Logo NB.png" alt="" />
-                    <h3>Girls Who Connect</h3>
+            <article class="dev-card">
+                <div class="dev-card-visual girls-who-connect-visual" aria-hidden="true"></div>
+                <div class="dev-card-body">
+                    <div class="dev-card-title-row">
+                        <img class="dev-card-icon" src="images/Girls Who Connect/icons/Girls Who Connect Logo NB.png" alt="" />
+                        <h3>Girls Who Connect</h3>
+                    </div>
+                    <p>Stay up to date with community walks in your area.</p>
+                    <a class="secondary-button dev-card-button" href="/GirlsWhoConnect">View Project</a>
                 </div>
-                <p>Stay up to date with community walks in your area.</p>
-                <a class="secondary-button dev-card-button" href="/GirlsWhoConnect">View Project</a>
-            </div>
-        </article>
+            </article>
 
-        <article class="dev-card">
-            <div class="dev-card-visual castle-climbers-dev-visual" aria-hidden="true"></div>
-            <div class="dev-card-body">
-                <div class="dev-card-title-row">
-                    <img class="dev-card-icon" src="images/castle_climbers/icons/3.0 CC.png" alt="" />
-                    <h3>Castle Climbers</h3>
+            <article class="dev-card">
+                <div class="dev-card-visual castle-climbers-dev-visual" aria-hidden="true"></div>
+                <div class="dev-card-body">
+                    <div class="dev-card-title-row">
+                        <img class="dev-card-icon" src="images/castle_climbers/icons/3.0 CC.png" alt="" />
+                        <h3>Castle Climbers</h3>
+                    </div>
+                    <p>A vertical 2D adventure with procedural environments, custom characters, and competitive challenges.</p>
+                    <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Removed from App Store</span>
                 </div>
-                <p>A vertical 2D adventure with procedural environments, custom characters, and competitive challenges.</p>
-                <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Removed from App Store</span>
-            </div>
-        </article>
+            </article>
+        </div>
+        <div class="dev-carousel-dots" role="tablist" aria-label="Apps and games">
+            <button type="button" class="dev-carousel-dot active" aria-label="Show Bucket Connect" aria-selected="true" data-index="0"></button>
+            <button type="button" class="dev-carousel-dot" aria-label="Show Girls Who Connect" aria-selected="false" data-index="1"></button>
+            <button type="button" class="dev-carousel-dot" aria-label="Show Castle Climbers" aria-selected="false" data-index="2"></button>
+        </div>
     </div>
 </section>
 
@@ -287,30 +294,36 @@ html, body {
         </p>
     </div>
 
-    <div class="dev-grid dev-grid-centered">
-        <article class="dev-card">
-            <div class="dev-card-visual other-projects-visual" aria-hidden="true"></div>
-            <div class="dev-card-body">
-                <h3>Past work & prototypes</h3>
-                <p>
-                    A broader look at everything I've built - released apps, shipped games, prototypes,
-                    and university projects that show the range of my work.
-                </p>
-                <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Coming soon…</span>
-            </div>
-        </article>
+    <div class="dev-carousel" id="other-projects-carousel">
+        <div class="dev-carousel-track dev-grid dev-grid-centered" id="other-projects-carousel-track">
+            <article class="dev-card">
+                <div class="dev-card-visual other-projects-visual" aria-hidden="true"></div>
+                <div class="dev-card-body">
+                    <h3>Past work & prototypes</h3>
+                    <p>
+                        A broader look at everything I've built - released apps, shipped games, prototypes,
+                        and university projects that show the range of my work.
+                    </p>
+                    <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Coming soon…</span>
+                </div>
+            </article>
 
-        <article class="dev-card">
-            <div class="dev-card-visual papers-visual" aria-hidden="true"></div>
-            <div class="dev-card-body">
-                <h3>Papers written</h3>
-                <p>
-                    Academic dissertations and papers on procedural generation, accessibility in game design,
-                    and rehabilitation technology - available to read and download.
-                </p>
-                <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Coming soon…</span>
-            </div>
-        </article>
+            <article class="dev-card">
+                <div class="dev-card-visual papers-visual" aria-hidden="true"></div>
+                <div class="dev-card-body">
+                    <h3>Papers written</h3>
+                    <p>
+                        Academic dissertations and papers on procedural generation, accessibility in game design,
+                        and rehabilitation technology - available to read and download.
+                    </p>
+                    <span class="secondary-button dev-card-button dev-card-button-muted" aria-disabled="true">Coming soon…</span>
+                </div>
+            </article>
+        </div>
+        <div class="dev-carousel-dots" role="tablist" aria-label="Other projects">
+            <button type="button" class="dev-carousel-dot active" aria-label="Show Past work and prototypes" aria-selected="true" data-index="0"></button>
+            <button type="button" class="dev-carousel-dot" aria-label="Show Papers written" aria-selected="false" data-index="1"></button>
+        </div>
     </div>
 </section>
 
@@ -561,6 +574,15 @@ html, body {
         padding: 4rem 2rem;
     }
 
+    .dev-carousel {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .dev-carousel-dots {
+        display: none;
+    }
+
     .dev-grid {
         max-width: 960px;
         margin: 0 auto;
@@ -671,17 +693,91 @@ html, body {
     }
 
     @@media (max-width: 768px) {
-        .dev-grid {
+        .dev-grid:not(.dev-carousel-track) {
             grid-template-columns: 1fr;
         }
 
-            .dev-grid .dev-card:last-child:nth-child(odd) {
+            .dev-grid:not(.dev-carousel-track) .dev-card:last-child:nth-child(odd) {
                 max-width: 100%;
+            }
+
+        .dev-carousel {
+            max-width: none;
+            width: 100%;
+        }
+
+        .dev-carousel-track {
+            display: flex;
+            grid-template-columns: none;
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            gap: 0;
+            padding: 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: 0;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            overscroll-behavior-x: contain;
+        }
+
+            .dev-carousel-track::-webkit-scrollbar {
+                display: none;
+            }
+
+            .dev-carousel-track .dev-card {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: none;
+                grid-column: auto;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+            }
+
+                .dev-carousel-track .dev-card:last-child:nth-child(odd) {
+                    max-width: none;
+                    justify-self: auto;
+                }
+
+        .dev-carousel-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.55rem;
+            margin-top: 1.35rem;
+            padding: 0;
+        }
+
+        .dev-carousel-dot {
+            width: 0.55rem;
+            height: 0.55rem;
+            padding: 0;
+            border: none;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+            .dev-carousel-dot.active {
+                background: #e7571d;
+                transform: scale(1.2);
+            }
+
+            .dev-carousel-dot:focus-visible {
+                outline: 2px solid #fff;
+                outline-offset: 3px;
             }
 
         .news-home-section,
         .dev-section {
             padding: 3rem 1.5rem;
+        }
+
+        .news-home-card:nth-child(n + 2) {
+            display: none;
         }
     }
 
@@ -865,6 +961,15 @@ html, body {
             .OrderByDescending(n => n.Date)
             .Take(3)
             .ToList();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("initDevCarousel", "apps-carousel");
+            await JS.InvokeVoidAsync("initDevCarousel", "other-projects-carousel");
+        }
     }
 
     private static string TruncateSummary(string? summary, int maxLength = 140)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vEZtOXuA4cA=",
+  "dgSpecHash": "3MNKSF/Kxns=",
   "success": true,
-  "projectFilePath": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\kenyondevlabs\\KenyonDevLabs.csproj",
+  "projectFilePath": "C:\\Users\\theke\\source\\repos\\KenyonDevLabs\\KenyonDevLabs\\KenyonDevLabs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\theke\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.20\\microsoft.aspnetcore.authorization.8.0.20.nupkg.sha512",
     "C:\\Users\\theke\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.20\\microsoft.aspnetcore.components.8.0.20.nupkg.sha512",
